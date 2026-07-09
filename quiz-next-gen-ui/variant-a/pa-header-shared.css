@@ -1,0 +1,39 @@
+/* Promotion Academy — shared dark header surface with check grid lines (module only) */
+:root {
+    --pa-header-surface-bg:
+        radial-gradient(circle at 88% 14%, rgba(37, 99, 235, 0.2) 0%, transparent 42%),
+        linear-gradient(165deg, #0f172a 0%, #0f2447 48%, #1a3461 100%);
+    --pa-header-surface-shadow: 0 12px 28px rgba(10, 22, 40, 0.16);
+    --pa-header-checks-opacity: 0.22;
+    --pa-header-checks-size: 18px;
+}
+
+/* AI Coach */
+.app-header {
+    background: var(--pa-header-surface-bg) !important;
+    border-radius: 0 0 36px 36px !important;
+    box-shadow: var(--pa-header-surface-shadow) !important;
+    border-bottom: none !important;
+    overflow: visible !important;
+    position: relative;
+}
+
+.app-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: var(--pa-header-checks-size) var(--pa-header-checks-size);
+    background-position: center;
+    opacity: var(--pa-header-checks-opacity);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.app-header > * {
+    position: relative;
+    z-index: 2;
+}

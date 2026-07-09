@@ -16,7 +16,7 @@ const QuizEngine = {
     practiceSelectedSubSubs: [],
     practiceAidsData: {
         "Crime": {
-            icon: "../images/crime-badge.svg",
+            icon: "../images/3d-icons/mock-exam.png",
             subTopics: {
                 "Mens Rea (State of Mind)": { badge: "Gold", subSubs: { "Intent": 8, "Recklessness": 3, "Negligence": 1, "Strict Liability": 3, "Transferred Mens Rea": 4 } },
                 "Actus Reus (Criminal Conduct)": { badge: "Gold", subSubs: { "Automatism": 2, "Coincidence with Mens Rea": 5, "Omissions": 3, "Causal Link or Chain of Causation": 5, "Intervening Act": 5, "Principals and Accessories": 18, "Joint Enterprise": 3, "Corporate Liability": 2 } },
@@ -37,7 +37,7 @@ const QuizEngine = {
             }
         },
         "Evidence & Procedure": {
-            icon: "../images/nie-magnifier.svg",
+            icon: "../images/3d-icons/inspector-exam.png",
             subTopics: {
                 "Instituting Criminal Proceedings": { badge: "Silver", subSubs: { "Written Charge and Requisition": 2, "Service of Summons, Written Charge and Requisition": 3, "Service Outside England and Wales": 1, "Execution of Warrants": 6 } },
                 "Release of Person Arrested": { badge: "Bronze", subSubs: { "Person Arrested Elsewhere than at a Police Station": 18, "Pre-Charge Release of Person Arrested and Bail": 12, "Police Bail After Charge": 2, "Police Bail Restrictions": 6, "Grounds for Refusing Police Bail": 12, "Custody Officer - Granting Bail": 9, "Police Bail - Surety": 8, "Security": 2, "Liability to Arrest for Absconding or Breaking Bail Conditions": 4, "Offence of Absconding by Person Released on Bail": 2, "Remands in Police Custody": 1 } },
@@ -50,7 +50,7 @@ const QuizEngine = {
             }
         },
         "General Police Duties": {
-            icon: "../images/general-police-duties-badge.svg",
+            icon: "../images/3d-icons/sergeant-exam.png",
             subTopics: {
                 "Stop and Search": { badge: "", subSubs: { "Code A - 1 Principles Governing Stop and Search": 4, "Code A - 2 Types of Stop and Search Powers": 29, "Code A - 3 Conduct of Searches": 7, "Code A - 4 Recording Requirements": 9 } },
                 "Entry, Search and Seizure": { badge: "", subSubs: { "Code B - 2 General": 4, "Code B - 3 Search Warrants and Production Orders": 5, "Search Warrants for Indictable Offences": 3, "Execution of a Warrant": 1, "Code B - 4 Entry without Warrant - Particular Powers": 20, "Code B - 5 Search with Consent": 2, "Code B - 6 Searching Premises - General Considerations": 6, "Code B - 7 Seizure and Retention of Property": 13, "Code B - 8 Action After Searches": 2 } },
@@ -4549,7 +4549,10 @@ const QuizEngine = {
             const isSelected = this.practiceSelectedMains.includes(mainTopic);
             const isExpanded = this.practiceExpandedMains.includes(mainTopic);
 
-            const subTopics = this.practiceAidsData[mainTopic].subTopics;
+            const topicData = this.practiceAidsData[mainTopic];
+            const topicTone = this.getPracticeTopicTone(mainTopic);
+            const topicIcon = topicData.icon || '../images/3d-icons/mock-exam.png';
+            const subTopics = topicData.subTopics;
             const subTopicsCount = Object.keys(subTopics).length;
 
             let totalQuestionsCount = 0;
@@ -4566,8 +4569,8 @@ const QuizEngine = {
                 <div class="pa-topic-card-wrap${isExpanded ? ' is-expanded' : ''}">
                     <div class="pa-topic-card format-card${isSelected ? ' is-selected' : ''}${isExpanded ? ' is-expanded' : ''}${isDisabled ? ' is-disabled' : ''}"
                          onclick="QuizEngine.togglePracticeMainExpand('${mainTopic}')">
-                        <div class="pa-card-icon blue" aria-hidden="true">
-                            ${this.getPracticeTopicIcon(mainTopic)}
+                        <div class="pa-card-icon ${topicTone} pa-card-icon-3d" aria-hidden="true">
+                            <img src="${topicIcon}" alt="">
                         </div>
                         <div class="pa-topic-card-body">
                             <div class="pa-topic-card-head">
@@ -4608,7 +4611,7 @@ const QuizEngine = {
                     }
 
                     html += `
-                        <div class="practice-sub-card ${isSubSelected ? 'selected' : ''}" onclick="event.stopPropagation(); QuizEngine.togglePracticeSub('${subTopic}')" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; border-radius: 12px; background: ${isSubSelected ? '#eff6ff' : 'rgba(15, 23, 42, 0.01)'}; border: ${isSubSelected ? '1.5px solid rgba(37, 99, 235, 0.2)' : 'none'}; box-shadow: ${isSubSelected ? '0 4px 10px rgba(37, 99, 235, 0.05)' : 'none'}; transition: all 0.2s ease;">
+                        <div class="practice-sub-card ${isSubSelected ? 'selected' : ''}" onclick="event.stopPropagation(); QuizEngine.togglePracticeSub('${subTopic}')" style="display: flex; align-items: center; justify-content: space-between; padding: 12px; margin-bottom: 8px; cursor: pointer; border-radius: 12px; background: ${isSubSelected ? '#eff6ff' : 'rgba(15, 23, 42, 0.01)'}; border: ${isSubSelected ? '1.5px solid rgba(37, 99, 235, 0.2)' : 'none'}; box-shadow: ${isSubSelected ? '0 4px 10px rgba(37, 99, 235, 0.05)' : 'none'}; transition: all 0.2s ease;">
                             
                             <div style="display: flex; align-items: center; gap: 12px; flex: 1;">
                                 <div class="mixed-checkbox" style="width: 20px; height: 20px; border-radius: 6px; border: 2px solid ${isSubSelected ? '#466ba9' : '#cbd5e1'}; background: ${isSubSelected ? '#466ba9' : 'transparent'}; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0;">
@@ -4634,13 +4637,13 @@ const QuizEngine = {
         this.updatePracticeFooter();
     },
 
-    getPracticeTopicIcon: function (topic) {
-        const icons = {
-            'Crime': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>',
-            'Evidence & Procedure': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>',
-            'General Police Duties': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>'
+    getPracticeTopicTone: function (topic) {
+        const tones = {
+            'Crime': 'blue',
+            'Evidence & Procedure': 'purple',
+            'General Police Duties': 'teal'
         };
-        return icons[topic] || icons['Crime'];
+        return tones[topic] || 'blue';
     },
 
     togglePracticeMainExpand: function (topic) {
@@ -4740,7 +4743,7 @@ const QuizEngine = {
                 else if (badge === 'Rare') { badgeColor = '#f3e8ff'; badgeText = '#7e22ce'; }
 
                 html += `
-                    <div class="practice-card ${isSelected ? 'selected' : ''}" onclick="QuizEngine.togglePracticeSub('${subTopic}')" style="align-items: center; padding: 16px 20px; cursor: pointer; border: ${isSelected ? '1.5px solid rgba(70, 107, 169, 0.3)' : 'none'}; background: ${isSelected ? '#eff6ff' : '#ffffff'}; margin-bottom: 12px; border-radius: 16px; transition: all 0.2s ease; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);">
+                    <div class="practice-card ${isSelected ? 'selected' : ''}" onclick="QuizEngine.togglePracticeSub('${subTopic}')" style="align-items: center; padding: 12px; cursor: pointer; border: ${isSelected ? '1.5px solid rgba(70, 107, 169, 0.3)' : 'none'}; background: ${isSelected ? '#eff6ff' : '#ffffff'}; margin-bottom: 12px; border-radius: 16px; transition: all 0.2s ease; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);">
                         <div style="flex: 1; font-size: 16px; font-weight: 700; color: ${isSelected ? '#1e3a8a' : '#0f172a'};">${subTopic}</div>
                         <div class="mixed-checkbox" style="width: 24px; height: 24px; border-radius: 6px; border: 2px solid ${isSelected ? '#466ba9' : '#cbd5e1'}; background: ${isSelected ? '#466ba9' : 'transparent'}; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; margin-right: ${badge ? '30px' : '0'};">
                             ${isSelected ? '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' : ''}
