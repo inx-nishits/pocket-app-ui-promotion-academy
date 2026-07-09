@@ -34,11 +34,11 @@
     --pa-space-sm: 8px;
     --pa-space-md: 12px;
     --pa-space-lg: 16px;
-    --pa-space-xl: 20px;
+    --pa-space-xl: 16px;
     --pa-hub-content-top-spacing: calc(var(--pa-space-xl) + var(--pa-space-xs));
     --pa-hub-section-gap: var(--pa-space-xl);
     --pa-hub-header-bottom-spacing: var(--pa-space-lg);
-    --pa-float-search-content-top-spacing: var(--pa-space-md);
+    --pa-float-search-content-top-spacing: var(--pa-space-xl);
     --success: #10b981;
     --danger: #ef4444;
     --warning: #f59e0b;
