@@ -8,15 +8,14 @@
     <title>Promotion Academy - Pocket Sergeant</title>
 
     <!-- Fonts (Matching existing design system) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="quiz.css?v=117">
+    <link rel="stylesheet" href="quiz.css?v=120">
 
     <!-- Chart.js & Plugins -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -107,7 +106,7 @@
             align-items: center;
             gap: 6px;
             font-size: 11px;
-            font-weight: 800;
+            font-weight: 600;
             color: #fbbf24;
             text-transform: uppercase;
             letter-spacing: 0.75px;
@@ -177,7 +176,7 @@
         .ring-text {
             position: relative;
             font-size: 15px;
-            font-weight: 800;
+            font-weight: 600;
             color: #ffffff;
             z-index: 1;
         }
@@ -190,7 +189,7 @@
 
         .resume-title {
             font-size: 17px;
-            font-weight: 800;
+            font-weight: 600;
             color: #ffffff;
             line-height: 1.3;
             margin: 0;
@@ -224,7 +223,7 @@
             background: #ffffff;
             color: var(--accent-blue);
             font-size: 15px;
-            font-weight: 700;
+            font-weight: 600;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -525,7 +524,7 @@
                 </div>
 
                 <div style="display: none;">
-                    <h2 style="font-size: 20px; font-weight: 800; color: #1e293b; margin: 8px 0 0 0;">Competitive
+                    <h2 style="font-size: 20px; font-weight: 600; color: #1e293b; margin: 8px 0 0 0;">Competitive
                         Learning
                     </h2>
                     <!-- 1. Quick Play -->
@@ -1012,7 +1011,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 style="font-size: 16px; font-weight: 800; color: #0f172a; margin: 0 0 4px 0;">Number
+                                <h3 style="font-size: 16px; font-weight: 600; color: #0f172a; margin: 0 0 4px 0;">Number
                                     of Questions</h3>
                                 <p style="font-size: 13px; color: #64748b; margin: 0; line-height: 1.4;">Select the
                                     question count for your study session</p>
@@ -1020,15 +1019,15 @@
                         </div>
                         <div style="display: flex; gap: 8px; width: 100%;">
                             <button class="count-btn" data-count="10" onclick="QuizEngine.selectPracticeCount(10)"
-                                style="flex: 1; padding: 12px 0; border-radius: 14px; border: 1.5px solid rgba(15, 23, 42, 0.08); background: white; color: #64748b; font-weight: 700; font-size: 15px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.01);">10</button>
+                                style="flex: 1; padding: 12px 0; border-radius: 14px; border: 1.5px solid rgba(15, 23, 42, 0.08); background: white; color: #64748b; font-weight: 600; font-size: 15px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.01);">10</button>
                             <button class="count-btn" data-count="20" onclick="QuizEngine.selectPracticeCount(20)"
-                                style="flex: 1; padding: 12px 0; border-radius: 14px; border: 1.5px solid rgba(15, 23, 42, 0.08); background: white; color: #64748b; font-weight: 700; font-size: 15px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.01);">20</button>
+                                style="flex: 1; padding: 12px 0; border-radius: 14px; border: 1.5px solid rgba(15, 23, 42, 0.08); background: white; color: #64748b; font-weight: 600; font-size: 15px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.01);">20</button>
                             <button class="count-btn" data-count="30" onclick="QuizEngine.selectPracticeCount(30)"
-                                style="flex: 1; padding: 12px 0; border-radius: 14px; border: 1.5px solid rgba(15, 23, 42, 0.08); background: white; color: #64748b; font-weight: 700; font-size: 15px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.01);">30</button>
+                                style="flex: 1; padding: 12px 0; border-radius: 14px; border: 1.5px solid rgba(15, 23, 42, 0.08); background: white; color: #64748b; font-weight: 600; font-size: 15px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.01);">30</button>
                             <button class="count-btn" data-count="40" onclick="QuizEngine.selectPracticeCount(40)"
-                                style="flex: 1; padding: 12px 0; border-radius: 14px; border: 1.5px solid rgba(15, 23, 42, 0.08); background: white; color: #64748b; font-weight: 700; font-size: 15px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.01);">40</button>
+                                style="flex: 1; padding: 12px 0; border-radius: 14px; border: 1.5px solid rgba(15, 23, 42, 0.08); background: white; color: #64748b; font-weight: 600; font-size: 15px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.01);">40</button>
                             <button class="count-btn" data-count="50" onclick="QuizEngine.selectPracticeCount(50)"
-                                style="flex: 1; padding: 12px 0; border-radius: 14px; border: 1.5px solid rgba(15, 23, 42, 0.08); background: white; color: #64748b; font-weight: 700; font-size: 15px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.01);">50</button>
+                                style="flex: 1; padding: 12px 0; border-radius: 14px; border: 1.5px solid rgba(15, 23, 42, 0.08); background: white; color: #64748b; font-weight: 600; font-size: 15px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.01);">50</button>
                         </div>
                     </div>
                     <div id="practice-main-topics-list" style="padding: 0;"></div>
@@ -1097,7 +1096,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Criminal Law">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">
                                     Criminal Law</h3>
                             </div>
                         </div>
@@ -1114,7 +1113,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Traffic">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">Traffic
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">Traffic
                                 </h3>
                             </div>
                         </div>
@@ -1131,7 +1130,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Custody">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">Custody
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">Custody
                                 </h3>
                             </div>
                         </div>
@@ -1148,7 +1147,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Evidence">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">
                                     Evidence</h3>
                             </div>
                         </div>
@@ -1166,7 +1165,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Domestic Abuse">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">
                                     Domestic Abuse</h3>
                             </div>
                         </div>
@@ -1184,7 +1183,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Detectives">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">
                                     Detectives</h3>
                             </div>
                         </div>
@@ -1201,7 +1200,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="PACE">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">PACE
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">PACE
                                 </h3>
                             </div>
                         </div>
@@ -1215,7 +1214,7 @@
             <div
                 style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 16px; background: linear-gradient(to top, var(--bg-color) 80%, transparent); z-index: 50; display: flex; justify-content: center; pointer-events: none;">
                 <button id="mixed-continue-btn" onclick="QuizEngine.submitMixedTopics()" disabled
-                    style="pointer-events: auto; background: #e2e8f0; color: #94a3b8; width: 100%; max-width: 400px; padding: 16px; border-radius: 16px; font-size: 16px; font-weight: 700; border: none; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">Continue</button>
+                    style="pointer-events: auto; background: #e2e8f0; color: #94a3b8; width: 100%; max-width: 400px; padding: 16px; border-radius: 16px; font-size: 16px; font-weight: 600; border: none; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">Continue</button>
             </div>
         </div>
 
@@ -1447,9 +1446,9 @@
                     <div style="display: none;">
                         <!-- Future Exams -->
                         <h2
-                            style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 16px 0; display: flex; align-items: center; justify-content: space-between;">
+                            style="font-size: 18px; font-weight: 600; color: #0f172a; margin: 0 0 16px 0; display: flex; align-items: center; justify-content: space-between;">
                             Future Exams <span
-                                style="font-size: 12px; font-weight: 700; color: #ffffff; background: #466ba9; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">COMING
+                                style="font-size: 12px; font-weight: 600; color: #ffffff; background: #466ba9; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;">COMING
                                 SOON</span></h2>
 
                         <!-- Firearms -->
@@ -1462,7 +1461,7 @@
                                         style="width: 24px; height: 24px; object-fit: contain;" alt="">
                                 </div>
                                 <div class="format-info">
-                                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;">
+                                    <h3 style="font-size: 16px; font-weight: 600; color: #0f172a; margin: 0 0 4px 0;">
                                         Firearms Assessment</h3>
                                     <p style="font-size: 13px; color: #64748b; margin: 0;">Coming Soon</p>
                                 </div>
@@ -1481,7 +1480,7 @@
                                         style="width: 24px; height: 24px; object-fit: contain;" alt="">
                                 </div>
                                 <div class="format-info">
-                                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;">
+                                    <h3 style="font-size: 16px; font-weight: 600; color: #0f172a; margin: 0 0 4px 0;">
                                         Roads
                                         Policing</h3>
                                     <p style="font-size: 13px; color: #64748b; margin: 0;">Coming Soon</p>
@@ -1501,7 +1500,7 @@
                                         style="width: 24px; height: 24px; object-fit: contain;" alt="">
                                 </div>
                                 <div class="format-info">
-                                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;">
+                                    <h3 style="font-size: 16px; font-weight: 600; color: #0f172a; margin: 0 0 4px 0;">
                                         Public
                                         Order Command</h3>
                                     <p style="font-size: 13px; color: #64748b; margin: 0;">Coming Soon</p>
@@ -1521,7 +1520,7 @@
                                         style="width: 24px; height: 24px; object-fit: contain;" alt="">
                                 </div>
                                 <div class="format-info">
-                                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;">
+                                    <h3 style="font-size: 16px; font-weight: 600; color: #0f172a; margin: 0 0 4px 0;">
                                         FLO
                                         Exam</h3>
                                     <p style="font-size: 13px; color: #64748b; margin: 0;">Coming Soon</p>
@@ -1567,7 +1566,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Criminal Law">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">
                                     Criminal Law</h3>
                             </div>
                         </div>
@@ -1584,7 +1583,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Traffic">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">Traffic
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">Traffic
                                 </h3>
                             </div>
                         </div>
@@ -1601,7 +1600,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Custody">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">Custody
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">Custody
                                 </h3>
                             </div>
                         </div>
@@ -1618,7 +1617,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Evidence">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">
                                     Evidence</h3>
                             </div>
                         </div>
@@ -1636,7 +1635,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Domestic Abuse">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">
                                     Domestic Abuse</h3>
                             </div>
                         </div>
@@ -1654,7 +1653,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="Detectives">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">
                                     Detectives</h3>
                             </div>
                         </div>
@@ -1671,7 +1670,7 @@
                                     style="width: 24px; height: 24px; object-fit: contain;" alt="PACE">
                             </div>
                             <div class="format-info" style="width: 100%;">
-                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 700; color: #0f172a;">PACE
+                                <h3 style="font-size: 17px; margin-bottom: 0; font-weight: 600; color: #0f172a;">PACE
                                 </h3>
                             </div>
                         </div>
@@ -1685,7 +1684,7 @@
             <div
                 style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 16px; background: linear-gradient(to top, var(--bg-color) 80%, transparent); z-index: 50; display: flex; justify-content: center; pointer-events: none;">
                 <button id="mixed-continue-btn" onclick="QuizEngine.submitMixedTopics()" disabled
-                    style="pointer-events: auto; background: #e2e8f0; color: #94a3b8; width: 100%; max-width: 400px; padding: 16px; border-radius: 16px; font-size: 16px; font-weight: 700; border: none; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">Continue</button>
+                    style="pointer-events: auto; background: #e2e8f0; color: #94a3b8; width: 100%; max-width: 400px; padding: 16px; border-radius: 16px; font-size: 16px; font-weight: 600; border: none; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">Continue</button>
             </div>
         </div>
 
@@ -1703,7 +1702,7 @@
                         </button>
                     </div>
                     <h1
-                        style="font-size: 32px; font-weight: 800; color: #0f172a; margin: 0 0 8px 0; letter-spacing: -0.5px;">
+                        style="font-size: 32px; font-weight: 600; color: #0f172a; margin: 0 0 8px 0; letter-spacing: -0.5px;">
                         Mock Exams</h1>
                     <p style="font-size: 15px; color: #64748b; margin: 0 0 16px 0;">Full timed simulations under exam
                         conditions.</p>
@@ -1720,7 +1719,7 @@
                             style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                             <div style="flex: 1;">
                                 <h3
-                                    style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 6px 0; line-height: 1.3;">
+                                    style="font-size: 18px; font-weight: 600; color: #0f172a; margin: 0 0 6px 0; line-height: 1.3;">
                                     Sergeant Exam <span style="font-size: 14px; font-weight: 500; color: #64748b;">(NPPF
                                         Step 2)</span></h3>
 
@@ -1736,15 +1735,15 @@
                             style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; width: 100%; text-align: left; padding-top: 16px; border-top: 1.5px solid rgba(15, 23, 42, 0.04);">
                             <div>
                                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">Questions</div>
-                                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">150</div>
+                                <div style="font-size: 18px; font-weight: 600; color: #0f172a;">150</div>
                             </div>
                             <div>
                                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">Duration</div>
-                                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">3h 15m</div>
+                                <div style="font-size: 18px; font-weight: 600; color: #0f172a;">3h 15m</div>
                             </div>
                             <div>
                                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">Pass Mark</div>
-                                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">55%</div>
+                                <div style="font-size: 18px; font-weight: 600; color: #0f172a;">55%</div>
                             </div>
                         </div>
                     </div>
@@ -1756,7 +1755,7 @@
                             style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                             <div style="flex: 1;">
                                 <h3
-                                    style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 6px 0; line-height: 1.3;">
+                                    style="font-size: 18px; font-weight: 600; color: #0f172a; margin: 0 0 6px 0; line-height: 1.3;">
                                     Inspector Exam <span
                                         style="font-size: 14px; font-weight: 500; color: #64748b;">(NPPF Step 2)</span>
                                 </h3>
@@ -1773,15 +1772,15 @@
                             style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; width: 100%; text-align: left; padding-top: 16px; border-top: 1.5px solid rgba(15, 23, 42, 0.04);">
                             <div>
                                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">Questions</div>
-                                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">150</div>
+                                <div style="font-size: 18px; font-weight: 600; color: #0f172a;">150</div>
                             </div>
                             <div>
                                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">Duration</div>
-                                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">3h 15m</div>
+                                <div style="font-size: 18px; font-weight: 600; color: #0f172a;">3h 15m</div>
                             </div>
                             <div>
                                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">Pass Mark</div>
-                                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">55%</div>
+                                <div style="font-size: 18px; font-weight: 600; color: #0f172a;">55%</div>
                             </div>
                         </div>
                     </div>
@@ -1793,7 +1792,7 @@
                             style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                             <div style="flex: 1;">
                                 <h3
-                                    style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 6px 0; line-height: 1.3;">
+                                    style="font-size: 18px; font-weight: 600; color: #0f172a; margin: 0 0 6px 0; line-height: 1.3;">
                                     National Investigators Exam</h3>
 
                             </div>
@@ -1808,15 +1807,15 @@
                             style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; width: 100%; text-align: left; padding-top: 16px; border-top: 1.5px solid rgba(15, 23, 42, 0.04);">
                             <div>
                                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">Questions</div>
-                                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">80</div>
+                                <div style="font-size: 18px; font-weight: 600; color: #0f172a;">80</div>
                             </div>
                             <div>
                                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">Duration</div>
-                                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">2h</div>
+                                <div style="font-size: 18px; font-weight: 600; color: #0f172a;">2h</div>
                             </div>
                             <div>
                                 <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">Pass Mark</div>
-                                <div style="font-size: 18px; font-weight: 700; color: #0f172a;">55%</div>
+                                <div style="font-size: 18px; font-weight: 600; color: #0f172a;">55%</div>
                             </div>
                         </div>
                     </div>
@@ -1825,7 +1824,7 @@
                 <!-- Future Exams -->
                 <div style="margin-bottom: 12px;">
                     <span
-                        style="font-size: 12px; font-weight: 700; color: #64748b; letter-spacing: 0.5px; text-transform: uppercase;">Future
+                        style="font-size: 12px; font-weight: 600; color: #64748b; letter-spacing: 0.5px; text-transform: uppercase;">Future
                         Exams &middot; Coming Soon</span>
                 </div>
                 <div
@@ -1934,7 +1933,7 @@
                                     concepts and foundational rules.</p>
                                 <div style="display: flex; align-items: center; gap: 8px;">
                                     <span
-                                        style="font-size: 11px; font-weight: 700; color: #10b981; background: #ecfdf5; padding: 4px 8px; border-radius: 6px;">10
+                                        style="font-size: 11px; font-weight: 600; color: #10b981; background: #ecfdf5; padding: 4px 8px; border-radius: 6px;">10
                                         XP/Q</span>
                                     <span style="font-size: 12px; font-weight: 500; color: #64748b;">~5 mins</span>
                                 </div>
@@ -1947,7 +1946,7 @@
                         onclick="QuizEngine.handlePracticeDifficultySelection('Intermediate')"
                         style="position: relative; overflow: hidden;">
                         <div
-                            style="position: absolute; top: 0; right: 0; background: #f59e0b; color: white; font-size: 10px; font-weight: 800; padding: 4px 12px; border-radius: 0 16px 0 16px; z-index: 2;">
+                            style="position: absolute; top: 0; right: 0; background: #f59e0b; color: white; font-size: 10px; font-weight: 600; padding: 4px 12px; border-radius: 0 16px 0 16px; z-index: 2;">
                             RECOMMENDED</div>
                         <div class="format-card-left" style="align-items: flex-start; width: 100%;">
                             <div class="category-icon-top"
@@ -1964,7 +1963,7 @@
                                     Applied scenarios and standard procedures.</p>
                                 <div style="display: flex; align-items: center; gap: 8px;">
                                     <span
-                                        style="font-size: 11px; font-weight: 700; color: #3b82f6; background: #eff6ff; padding: 4px 8px; border-radius: 6px;">25
+                                        style="font-size: 11px; font-weight: 600; color: #3b82f6; background: #eff6ff; padding: 4px 8px; border-radius: 6px;">25
                                         XP/Q</span>
                                     <span style="font-size: 12px; font-weight: 500; color: #64748b;">~10 mins</span>
                                 </div>
@@ -1990,7 +1989,7 @@
                                     Complex situations and legal exceptions.</p>
                                 <div style="display: flex; align-items: center; gap: 8px;">
                                     <span
-                                        style="font-size: 11px; font-weight: 700; color: #f59e0b; background: #fffbeb; padding: 4px 8px; border-radius: 6px;">50
+                                        style="font-size: 11px; font-weight: 600; color: #f59e0b; background: #fffbeb; padding: 4px 8px; border-radius: 6px;">50
                                         XP/Q</span>
                                     <span style="font-size: 12px; font-weight: 500; color: #64748b;">~15 mins</span>
                                 </div>
@@ -2001,7 +2000,7 @@
                     <!-- Expert -->
                     <div class="format-card difficulty-card-expert" style="opacity: 0.6; position: relative;">
                         <div
-                            style="position: absolute; top: -10px; right: 16px; background: #94a3b8; color: white; font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 4px; z-index: 2;">
+                            style="position: absolute; top: -10px; right: 16px; background: #94a3b8; color: white; font-size: 10px; font-weight: 600; padding: 4px 8px; border-radius: 4px; z-index: 2;">
                             PRO</div>
                         <div class="format-card-left" style="align-items: flex-start; width: 100%;">
                             <div class="category-icon-top"
@@ -2018,7 +2017,7 @@
                                     scenarios and absolute mastery.</p>
                                 <div style="display: flex; align-items: center; gap: 8px;">
                                     <span
-                                        style="font-size: 11px; font-weight: 700; color: #94a3b8; background: #f1f5f9; padding: 4px 8px; border-radius: 6px;">100
+                                        style="font-size: 11px; font-weight: 600; color: #94a3b8; background: #f1f5f9; padding: 4px 8px; border-radius: 6px;">100
                                         XP/Q</span>
                                     <span style="font-size: 12px; font-weight: 500; color: #94a3b8;">~20 mins</span>
                                 </div>
@@ -2053,7 +2052,7 @@
                     <div class="format-card difficulty-card-beginner" onclick="QuizEngine.startCountdownWithCount(10)">
                         <div class="format-card-left" style="align-items: flex-start; width: 100%;">
                             <div class="category-icon-top"
-                                style="background: #ecfdf5; color: #10b981; width: 48px; height: 48px; margin-bottom: 0; font-size: 20px; font-weight: 800; font-family: 'Inter', sans-serif;">
+                                style="background: #ecfdf5; color: #10b981; width: 48px; height: 48px; margin-bottom: 0; font-size: 20px; font-weight: 600; font-family: 'Inter', sans-serif;">
                                 10
                             </div>
                             <div class="format-info" style="width: 100%;">
@@ -2068,11 +2067,11 @@
                     <div class="format-card difficulty-card-intermediate"
                         onclick="QuizEngine.startCountdownWithCount(20)" style="position: relative; overflow: hidden;">
                         <div
-                            style="position: absolute; top: 0; right: 0; background: #f59e0b; color: white; font-size: 10px; font-weight: 800; padding: 4px 12px; border-radius: 0 16px 0 16px; z-index: 2;">
+                            style="position: absolute; top: 0; right: 0; background: #f59e0b; color: white; font-size: 10px; font-weight: 600; padding: 4px 12px; border-radius: 0 16px 0 16px; z-index: 2;">
                             RECOMMENDED</div>
                         <div class="format-card-left" style="align-items: flex-start; width: 100%;">
                             <div class="category-icon-top"
-                                style="background: #eff6ff; color: #3b82f6; width: 48px; height: 48px; margin-bottom: 0; font-size: 20px; font-weight: 800; font-family: 'Inter', sans-serif;">
+                                style="background: #eff6ff; color: #3b82f6; width: 48px; height: 48px; margin-bottom: 0; font-size: 20px; font-weight: 600; font-family: 'Inter', sans-serif;">
                                 20
                             </div>
                             <div class="format-info" style="width: 100%;">
@@ -2087,7 +2086,7 @@
                     <div class="format-card difficulty-card-advanced" onclick="QuizEngine.startCountdownWithCount(50)">
                         <div class="format-card-left" style="align-items: flex-start; width: 100%;">
                             <div class="category-icon-top"
-                                style="background: #fffbeb; color: #f59e0b; width: 48px; height: 48px; margin-bottom: 0; font-size: 20px; font-weight: 800; font-family: 'Inter', sans-serif;">
+                                style="background: #fffbeb; color: #f59e0b; width: 48px; height: 48px; margin-bottom: 0; font-size: 20px; font-weight: 600; font-family: 'Inter', sans-serif;">
                                 50
                             </div>
                             <div class="format-info" style="width: 100%;">
@@ -2102,7 +2101,7 @@
                     <div class="format-card difficulty-card-expert" onclick="QuizEngine.startCountdownWithCount(100)">
                         <div class="format-card-left" style="align-items: flex-start; width: 100%;">
                             <div class="category-icon-top"
-                                style="background: #f1f5f9; color: #64748b; width: 48px; height: 48px; margin-bottom: 0; font-size: 20px; font-weight: 800; font-family: 'Inter', sans-serif;">
+                                style="background: #f1f5f9; color: #64748b; width: 48px; height: 48px; margin-bottom: 0; font-size: 20px; font-weight: 600; font-family: 'Inter', sans-serif;">
                                 100
                             </div>
                             <div class="format-info" style="width: 100%;">
@@ -2660,7 +2659,7 @@
                         </svg>
                     </div>
                     <h2 id="waiting-title"
-                        style="color: white; font-size: 22px; font-weight: 800; margin: 0; text-align: center;">
+                        style="color: white; font-size: 22px; font-weight: 600; margin: 0; text-align: center;">
                         Connecting...</h2>
                 </div>
 
@@ -2689,7 +2688,7 @@
                             <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <span style="font-weight: 700; color: var(--text-primary); font-size: 16px;">You</span>
+                        <span style="font-weight: 600; color: var(--text-primary); font-size: 16px;">You</span>
                     </div>
 
                     <!-- VS Badge -->
@@ -2717,7 +2716,7 @@
                                 style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: grayscale(100%); transition: all 0.5s;">
                         </div>
                         <span id="confirm-opponent"
-                            style="font-weight: 700; color: var(--text-secondary); font-size: 16px;">Opponent</span>
+                            style="font-weight: 600; color: var(--text-secondary); font-size: 16px;">Opponent</span>
                     </div>
                 </div>
 
@@ -2813,7 +2812,7 @@
                             <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
                             <div style="display: flex; flex-direction: column; justify-content: center;">
-                                <span style="font-size: 14px; font-weight: 700; color: #1e293b; line-height: 1.2;">PC
+                                <span style="font-size: 14px; font-weight: 600; color: #1e293b; line-height: 1.2;">PC
                                     James Wilson</span>
                             </div>
                         </div>
@@ -2848,7 +2847,7 @@
                 <!-- Main Challenge Card -->
                 <div class="card" style="padding: 20px; margin-bottom: 16px; border-radius: 16px;">
                     <h2
-                        style="font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 24px; text-align: center;">
+                        style="font-size: 20px; font-weight: 600; color: #1e293b; margin-bottom: 24px; text-align: center;">
                         Incoming Challenge!</h2>
 
                     <!-- Challenger Section -->
@@ -2856,12 +2855,12 @@
                         style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 24px;">
                         <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                             style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                        <div style="font-size: 18px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">PC James
+                        <div style="font-size: 18px; font-weight: 600; color: #1e293b; margin-bottom: 4px;">PC James
                             Wilson</div>
                         <div style="font-size: 14px; font-weight: 600; color: #64748b; margin-bottom: 12px;">Response
                             Team</div>
                         <div
-                            style="display: inline-block; background: rgba(59, 130, 246, 0.1); color: var(--accent-blue); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+                            style="display: inline-block; background: rgba(59, 130, 246, 0.1); color: var(--accent-blue); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
                             Invited You</div>
                     </div>
 
@@ -2870,37 +2869,37 @@
                         <div
                             style="background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid rgba(15,23,42,0.05); text-align: center;">
                             <div
-                                style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 700;">
+                                style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 600;">
                                 Category</div>
-                            <div style="font-size: 14px; font-weight: 700; color: #1e293b;">Criminal Law</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #1e293b;">Criminal Law</div>
                         </div>
                         <div
                             style="background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid rgba(15,23,42,0.05); text-align: center;">
                             <div
-                                style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 700;">
+                                style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 600;">
                                 Difficulty</div>
-                            <div style="font-size: 14px; font-weight: 700; color: #1e293b;">Intermediate</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #1e293b;">Intermediate</div>
                         </div>
                         <div
                             style="background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid rgba(15,23,42,0.05); text-align: center;">
                             <div
-                                style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 700;">
+                                style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 600;">
                                 Questions</div>
-                            <div style="font-size: 14px; font-weight: 700; color: #1e293b;">15 Questions</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #1e293b;">15 Questions</div>
                         </div>
                         <div
                             style="background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid rgba(15,23,42,0.05); text-align: center;">
                             <div
-                                style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 700;">
+                                style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 600;">
                                 Reward</div>
-                            <div style="font-size: 14px; font-weight: 800; color: var(--accent-blue);">+500 XP</div>
+                            <div style="font-size: 14px; font-weight: 600; color: var(--accent-blue);">+500 XP</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Rules Section -->
                 <h3
-                    style="font-size: 16px; font-weight: 700; color: var(--text-secondary); margin: 0 4px 12px; text-transform: uppercase; letter-spacing: 0.5px;">
+                    style="font-size: 16px; font-weight: 600; color: var(--text-secondary); margin: 0 4px 12px; text-transform: uppercase; letter-spacing: 0.5px;">
                     Rules</h3>
                 <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;">
                     <div
@@ -2928,7 +2927,7 @@
                 <!-- What Happens Next Section -->
                 <div class="card"
                     style="padding: 24px; border-radius: 20px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                    <h3 style="font-size: 18px; font-weight: 800; color: #1e293b; margin-bottom: 20px;">How This Works
+                    <h3 style="font-size: 18px; font-weight: 600; color: #1e293b; margin-bottom: 20px;">How This Works
                     </h3>
 
                     <div style="display: flex; flex-direction: column; gap: 14px;">
@@ -2965,7 +2964,7 @@
 
                 <!-- Challenge Benefits Section (Hidden per request) -->
                 <div style="display: none;">
-                    <h3 style="font-size: 16px; font-weight: 800; color: #1e293b; margin: 0 4px 12px;">Challenge
+                    <h3 style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0 4px 12px;">Challenge
                         Benefits</h3>
                     <div class="card"
                         style="padding: 16px; border-radius: 16px; margin-bottom: 24px; display: flex; flex-direction: column; gap: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
@@ -2981,7 +2980,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <div style="font-size: 14px; font-weight: 700; color: #1e293b;">Earn 500 XP</div>
+                                <div style="font-size: 14px; font-weight: 600; color: #1e293b;">Earn 500 XP</div>
                             </div>
                         </div>
 
@@ -2997,7 +2996,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <div style="font-size: 14px; font-weight: 700; color: #1e293b;">Improve Leaderboard
+                                <div style="font-size: 14px; font-weight: 600; color: #1e293b;">Improve Leaderboard
                                     Position</div>
                             </div>
                         </div>
@@ -3013,7 +3012,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <div style="font-size: 14px; font-weight: 700; color: #1e293b;">Extend Learning Streak
+                                <div style="font-size: 14px; font-weight: 600; color: #1e293b;">Extend Learning Streak
                                 </div>
                             </div>
                         </div>
@@ -3030,7 +3029,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <div style="font-size: 14px; font-weight: 700; color: #1e293b;">Progress Towards
+                                <div style="font-size: 14px; font-weight: 600; color: #1e293b;">Progress Towards
                                     Criminal Law Badge</div>
                             </div>
                         </div>
@@ -3040,12 +3039,12 @@
                 <!-- Actions -->
                 <div style="padding: 0 4px;">
                     <button class="btn-primary w-100"
-                        style="font-size: 16px; padding: 16px; font-weight: 700; margin-bottom: 12px; border-radius: 14px;"
+                        style="font-size: 16px; padding: 16px; font-weight: 600; margin-bottom: 12px; border-radius: 14px;"
                         onclick="QuizEngine.navigate('view-active', {mode: '1v1 Challenge', count: 15})">
                         Accept Challenge
                     </button>
                     <button class="w-100"
-                        style="background: transparent; border: 2px solid #e2e8f0; color: #64748b; font-size: 16px; font-weight: 700; padding: 14px; border-radius: 14px;"
+                        style="background: transparent; border: 2px solid #e2e8f0; color: #64748b; font-size: 16px; font-weight: 600; padding: 14px; border-radius: 14px;"
                         onclick="QuizEngine.navigateBack()">
                         Decline Challenge
                     </button>
@@ -3077,31 +3076,31 @@
                     style="padding: 20px; margin-bottom: 24px; border-radius: 16px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
                     <div style="display: flex; gap: 8px; margin-bottom: 16px;">
                         <span
-                            style="background: #fef2f2; color: #ef4444; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                            style="background: #fef2f2; color: #ef4444; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
                             <div style="width: 6px; height: 6px; border-radius: 50%; background: #ef4444;"></div> LIVE
                         </span>
                         <span
-                            style="background: #fffbeb; color: #f59e0b; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 4px;">⭐
+                            style="background: #fffbeb; color: #f59e0b; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 4px;">⭐
                             POPULAR</span>
                     </div>
 
                     <h2
-                        style="font-size: 20px; font-weight: 800; color: #1e293b; margin-bottom: 6px; line-height: 1.3;">
+                        style="font-size: 20px; font-weight: 600; color: #1e293b; margin-bottom: 6px; line-height: 1.3;">
                         Alpha Squad Friday Face-off</h2>
                     <div style="font-size: 14px; font-weight: 500; color: #64748b; margin-bottom: 20px;">Created by Sgt.
                         Davies</div>
 
                     <div style="display: flex; gap: 8px; margin-bottom: 24px;">
                         <span
-                            style="background: #f0f9ff; color: #0284c7; padding: 6px 14px; border-radius: 16px; font-size: 12px; font-weight: 700;">Criminal
+                            style="background: #f0f9ff; color: #0284c7; padding: 6px 14px; border-radius: 16px; font-size: 12px; font-weight: 600;">Criminal
                             Law</span>
                         <span
-                            style="background: #fef2f2; color: #ef4444; padding: 6px 14px; border-radius: 16px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 4px;">📚
+                            style="background: #fef2f2; color: #ef4444; padding: 6px 14px; border-radius: 16px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px;">📚
                             Expert</span>
                     </div>
 
                     <div
-                        style="display: flex; align-items: center; gap: 8px; color: #ef4444; font-size: 13px; font-weight: 800;">
+                        style="display: flex; align-items: center; gap: 8px; color: #ef4444; font-size: 13px; font-weight: 600;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -3112,16 +3111,16 @@
                 </div>
 
                 <!-- Information Section -->
-                <h3 style="font-size: 16px; font-weight: 800; color: #1e293b; margin: 0 4px 12px;">Information</h3>
+                <h3 style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0 4px 12px;">Information</h3>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
                     <div
                         style="background: white; padding: 16px 14px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; align-items: center; gap: 12px;">
                         <div style="font-size: 20px; flex-shrink: 0;">❓</div>
                         <div>
-                            <div style="font-size: 14px; font-weight: 800; color: #1e293b; margin-bottom: 2px;">15
+                            <div style="font-size: 14px; font-weight: 600; color: #1e293b; margin-bottom: 2px;">15
                                 Questions</div>
                             <div
-                                style="font-size: 10px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">
+                                style="font-size: 10px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">
                                 FORMAT</div>
                         </div>
                     </div>
@@ -3129,10 +3128,10 @@
                         style="background: white; padding: 16px 14px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; align-items: center; gap: 12px;">
                         <div style="font-size: 20px; flex-shrink: 0;">⏳</div>
                         <div>
-                            <div style="font-size: 14px; font-weight: 800; color: #1e293b; margin-bottom: 2px;">45m
+                            <div style="font-size: 14px; font-weight: 600; color: #1e293b; margin-bottom: 2px;">45m
                                 Duration</div>
                             <div
-                                style="font-size: 10px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">
+                                style="font-size: 10px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">
                                 TOTAL TIME</div>
                         </div>
                     </div>
@@ -3140,10 +3139,10 @@
                         style="background: white; padding: 16px 14px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; align-items: center; gap: 12px;">
                         <div style="font-size: 20px; flex-shrink: 0;">⏱️</div>
                         <div>
-                            <div style="font-size: 14px; font-weight: 800; color: #1e293b; margin-bottom: 2px;">10s Per
+                            <div style="font-size: 14px; font-weight: 600; color: #1e293b; margin-bottom: 2px;">10s Per
                                 Q</div>
                             <div
-                                style="font-size: 10px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">
+                                style="font-size: 10px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">
                                 SPEED</div>
                         </div>
                     </div>
@@ -3151,17 +3150,17 @@
                         style="background: white; padding: 16px 14px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; align-items: center; gap: 12px;">
                         <div style="font-size: 20px; flex-shrink: 0;">👥</div>
                         <div>
-                            <div style="font-size: 14px; font-weight: 800; color: #1e293b; margin-bottom: 2px;">12/20
+                            <div style="font-size: 14px; font-weight: 600; color: #1e293b; margin-bottom: 2px;">12/20
                             </div>
                             <div
-                                style="font-size: 10px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">
+                                style="font-size: 10px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">
                                 PLAYERS</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Rules & Mechanics -->
-                <h3 style="font-size: 16px; font-weight: 800; color: #1e293b; margin: 0 4px 12px;">Rules & Mechanics
+                <h3 style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0 4px 12px;">Rules & Mechanics
                 </h3>
                 <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
                     <div
@@ -3170,7 +3169,7 @@
                             style="width: 40px; height: 40px; border-radius: 10px; background: #fffbeb; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">
                             ⚠️</div>
                         <div>
-                            <div style="font-size: 15px; font-weight: 800; color: #1e293b; margin-bottom: 4px;">No
+                            <div style="font-size: 15px; font-weight: 600; color: #1e293b; margin-bottom: 4px;">No
                                 Second Chances</div>
                             <div style="font-size: 13px; color: #64748b; font-weight: 500; line-height: 1.4;">Once you
                                 answer, you cannot go back or change it.</div>
@@ -3182,7 +3181,7 @@
                             style="width: 40px; height: 40px; border-radius: 10px; background: #fffbeb; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">
                             🏆 </div>
                         <div>
-                            <div style="font-size: 15px; font-weight: 800; color: #1e293b; margin-bottom: 4px;">Highest
+                            <div style="font-size: 15px; font-weight: 600; color: #1e293b; margin-bottom: 4px;">Highest
                                 Score Wins</div>
                             <div style="font-size: 13px; color: #64748b; font-weight: 500; line-height: 1.4;">Rankings
                                 are based on score first, then speed.</div>
@@ -3191,7 +3190,7 @@
                 </div>
 
                 <!-- Participants -->
-                <h3 style="font-size: 16px; font-weight: 800; color: #1e293b; margin: 0 4px 12px;">Participants</h3>
+                <h3 style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0 4px 12px;">Participants</h3>
                 <div
                     style="background: white; padding: 16px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
                     <div style="display: flex; align-items: center;">
@@ -3202,11 +3201,11 @@
                         <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                             style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; object-fit: cover; margin-left: -12px; z-index: 1;">
                         <div
-                            style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: #64748b; margin-left: -12px; z-index: 0;">
+                            style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #64748b; margin-left: -12px; z-index: 0;">
                             +9</div>
                     </div>
                     <div>
-                        <div style="font-size: 15px; font-weight: 800; color: #1e293b; margin-bottom: 2px;">12 Joined
+                        <div style="font-size: 15px; font-weight: 600; color: #1e293b; margin-bottom: 2px;">12 Joined
                         </div>
                         <div style="font-size: 12px; color: #64748b; font-weight: 500;">Sgt. Marcus and 3 friends are
                             playing.</div>
@@ -3214,7 +3213,7 @@
                 </div>
 
                 <!-- Challenge Benefits Section -->
-                <h3 style="font-size: 16px; font-weight: 800; color: #1e293b; margin: 0 4px 12px;">Challenge Benefits
+                <h3 style="font-size: 16px; font-weight: 600; color: #1e293b; margin: 0 4px 12px;">Challenge Benefits
                 </h3>
                 <div class="card"
                     style="padding: 16px; border-radius: 16px; margin-bottom: 24px; display: flex; flex-direction: column; gap: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
@@ -3230,7 +3229,7 @@
                             </svg>
                         </div>
                         <div>
-                            <div style="font-size: 14px; font-weight: 700; color: #1e293b;">Earn 500 XP</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #1e293b;">Earn 500 XP</div>
                         </div>
                     </div>
 
@@ -3246,7 +3245,7 @@
                             </svg>
                         </div>
                         <div>
-                            <div style="font-size: 14px; font-weight: 700; color: #1e293b;">Improve Leaderboard Position
+                            <div style="font-size: 14px; font-weight: 600; color: #1e293b;">Improve Leaderboard Position
                             </div>
                         </div>
                     </div>
@@ -3262,7 +3261,7 @@
                             </svg>
                         </div>
                         <div>
-                            <div style="font-size: 14px; font-weight: 700; color: #1e293b;">Extend Learning Streak</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #1e293b;">Extend Learning Streak</div>
                         </div>
                     </div>
 
@@ -3278,7 +3277,7 @@
                             </svg>
                         </div>
                         <div>
-                            <div style="font-size: 14px; font-weight: 700; color: #1e293b;">Progress Towards Criminal
+                            <div style="font-size: 14px; font-weight: 600; color: #1e293b;">Progress Towards Criminal
                                 Law Badge</div>
                         </div>
                     </div>
@@ -3287,7 +3286,7 @@
                 <!-- Actions -->
                 <div style="padding: 0 4px;">
                     <button class="btn-primary w-100"
-                        style="background: #3b82f6; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); font-size: 16px; padding: 18px; font-weight: 800; border-radius: 16px;"
+                        style="background: #3b82f6; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); font-size: 16px; padding: 18px; font-weight: 600; border-radius: 16px;"
                         onclick="QuizEngine.navigate('view-active', {mode: 'Live Challenge', count: 15})">
                         Join & Start Now
                     </button>
@@ -3457,16 +3456,7 @@
                         style="display: flex; justify-content: space-between; align-items: flex-start; padding: 20px; border: 1.5px solid rgba(15, 23, 42, 0.04); margin-bottom: 16px; background: #ffffff; border-radius: 16px;">
                         <div style="flex: 1;">
                             <h2
-                                style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
-                                <span
-                                    style="display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #3b82f6; border-radius: 50%; color: white;">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <line x1="12" y1="16" x2="12" y2="12"></line>
-                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                                    </svg>
-                                </span>
+                                style="font-size: 18px; font-weight: 600; color: #0f172a; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
                                 About this Exam
                             </h2>
                             <p style="font-size: 14px; color: #475569; line-height: 1.5; margin: 0;">This is a
@@ -3522,7 +3512,7 @@
             <div
                 style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: transparent; z-index: 50;">
                 <button class="ios-btn-primary" onclick="QuizEngine.beginMockSimulation()"
-                    style="background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; width: 100%; padding: 16px; border-radius: 12px; font-size: 16px; font-weight: 700; border: none;">Start
+                    style="background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; width: 100%; padding: 16px; border-radius: 12px; font-size: 16px; font-weight: 600; border: none;">Start
                     Mock Exam</button>
             </div>
         </div>
@@ -3540,7 +3530,7 @@
                     </button>
 
                     <div class="quiz-timer timer-normal" id="active-timer"
-                        style="display: flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.2); padding: 8px 16px; border-radius: 20px; font-size: 16px; font-weight: 700; color: white; margin-left: auto; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        style="display: flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.2); padding: 8px 16px; border-radius: 20px; font-size: 16px; font-weight: 600; color: white; margin-left: auto; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                         <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/23f0.png"
                             style="width: 20px; height: 20px;">
                         <span id="active-timer-text" style="letter-spacing: 0.5px;">00:00</span>
@@ -3551,7 +3541,7 @@
                     <div
                         style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
                         <span id="active-question-counter"
-                            style="color: white; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">Question
+                            style="color: white; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">Question
                             1 of 10</span>
                         <span id="active-progress-text"
                             style="color: rgba(255,255,255,0.8); font-size: 12px; font-weight: 600; white-space: nowrap;">0%
@@ -3578,7 +3568,7 @@
                             </div>
                             <div style="display: flex; align-items: baseline; gap: 6px;">
                                 <span
-                                    style="font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Answered</span>
+                                    style="font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Answered</span>
                                 <strong id="stat-answered"
                                     style="color: white; font-size: 18px; font-weight: 900;">0</strong>
                             </div>
@@ -3600,7 +3590,7 @@
                             </div>
                             <div style="display: flex; align-items: baseline; gap: 6px;">
                                 <span
-                                    style="font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Skipped</span>
+                                    style="font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Skipped</span>
                                 <strong id="stat-skipped"
                                     style="color: white; font-size: 18px; font-weight: 900;">0</strong>
                             </div>
@@ -3630,7 +3620,7 @@
                         </div>
                         <div style="flex: 1; display: flex; flex-direction: column; gap: 1px;">
                             <h3 class="feedback-title" id="inline-feedback-title"
-                                style="font-size: 17px; font-weight: 800; margin: 0; color: white; line-height: 1.2;"></h3>
+                                style="font-size: 17px; font-weight: 600; margin: 0; color: white; line-height: 1.2;"></h3>
                             <div id="inline-feedback-subtitle"
                                 style="font-size: 12px; font-weight: 500; color: rgba(255, 255, 255, 0.92); margin: 0; line-height: 1.3; display: none;">
                             </div>
@@ -3648,7 +3638,7 @@
                     <div id="inline-feedback-details"
                         style="font-size: 14px; font-weight: 600; display: none; flex-direction: column; gap: 2px; margin: 6px 0 0; color: rgba(255,255,255,0.9);">
                         <span class="feedback-xp" id="inline-feedback-xp"
-                            style="font-size: 14px; font-weight: 700;"></span>
+                            style="font-size: 14px; font-weight: 600;"></span>
                         <span id="inline-feedback-streak-msg"></span>
                         <span id="inline-feedback-accuracy"></span>
                     </div>
@@ -3656,7 +3646,7 @@
                     <!-- Next Question & View Explanation Buttons -->
                     <div style="display: flex; gap: 8px; align-items: center; margin-top: 10px;">
                         <button class="btn-secondary"
-                            style="flex: 1; height: 40px; margin-top: 0; padding: 0 12px; font-size: 13px; font-weight: 700; border-radius: 12px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: background 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 6px;"
+                            style="flex: 1; height: 40px; margin-top: 0; padding: 0 12px; font-size: 13px; font-weight: 600; border-radius: 12px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: background 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 6px;"
                             onclick="QuizEngine.openFeedbackSheet()">
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -3665,7 +3655,7 @@
                             View Explanation
                         </button>
                         <button class="btn-primary" id="inline-next-btn"
-                            style="flex: 1; height: 40px; margin-top: 0; padding: 0 12px; font-size: 13px; font-weight: 700; border-radius: 12px; background: white; color: var(--accent-blue); border: 1px solid transparent; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0, 0.2); transition: transform 0.2s, box-shadow 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 6px;"
+                            style="flex: 1; height: 40px; margin-top: 0; padding: 0 12px; font-size: 13px; font-weight: 600; border-radius: 12px; background: white; color: var(--accent-blue); border: 1px solid transparent; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0, 0.2); transition: transform 0.2s, box-shadow 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 6px;"
                             onclick="QuizEngine.nextQuestion()">
                             Next Question
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -3713,7 +3703,7 @@
                         <div class="feedback-icon" id="feedback-icon" style="font-size: 24px;"></div>
                         <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
                             <h3 class="feedback-title" id="feedback-title"
-                                style="font-size: 18px; font-weight: 800; margin: 0;">Correct!</h3>
+                                style="font-size: 18px; font-weight: 600; margin: 0;">Correct!</h3>
                             <div id="feedback-subtitle"
                                 style="font-size: 14px; font-weight: 500; color: #64748b; margin: 0; display: none;">
                             </div>
@@ -3730,7 +3720,7 @@
                     <div id="feedback-details"
                         style="font-size: 15px; font-weight: 600; display: flex; flex-direction: column; gap: 6px; margin: 8px 0 0 0;">
                         <span class="feedback-xp" id="feedback-xp"
-                            style="background: transparent; color: inherit; padding: 0; font-size: 16px; font-weight: 700;">+30
+                            style="background: transparent; color: inherit; padding: 0; font-size: 16px; font-weight: 600;">+30
                             XP Earned</span>
                         <span id="feedback-streak-msg" style="color: inherit;">🔥 Streak Increased to 4</span>
                         <span id="feedback-accuracy" style="color: inherit;">🎯 Accuracy: 80%</span>
@@ -3739,7 +3729,7 @@
                 <div class="ai-explanation-box" id="ai-explanation-box"
                     style="background: transparent; border-radius: 12px; padding: 0; margin: 0 0 24px 0; border: none;">
                     <div id="ai-explanation-badge"
-                        style="display: flex; align-items: center; gap: 6px; margin-bottom: 12px; font-size: 14px; font-weight: 800; color: #1e40af;">
+                        style="display: flex; align-items: center; gap: 6px; margin-bottom: 12px; font-size: 14px; font-weight: 600; color: #1e40af;">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path>
@@ -3754,7 +3744,7 @@
 
 
                 <button class="btn-primary w-100" id="feedback-next-btn"
-                    style="padding: 16px; font-size: 16px; font-weight: 700; background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
+                    style="padding: 16px; font-size: 16px; font-weight: 600; background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
                     onclick="QuizEngine.closeFeedbackSheet()">Close Explanation</button>
             </div>
 
@@ -3766,12 +3756,12 @@
             <div class="quiz-header">
                 <div class="quiz-top-bar"
                     style="padding-bottom: 12px; display: flex; align-items: center; padding-right: 16px; padding-left: 16px;">
-                    <div style="font-size: 20px; font-weight: 700; color: white; flex: 1; text-align: left;">
+                    <div style="font-size: 20px; font-weight: 600; color: white; flex: 1; text-align: left;">
                         Question Navigator</div>
                 </div>
             </div>
             <div class="view-content" style="padding-top: 16px;">
-                <!--<h2 style="font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;">Skipped
+                <!--<h2 style="font-size: 20px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Skipped
                     Questions</h2>-->
                 <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px;">Select a question to
                     answer it. You must answer these before the timer runs out.</p>
@@ -3868,67 +3858,67 @@
                         <div class="comp-row"
                             style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed #e2e8f0; font-family: 'Inter', sans-serif;">
                             <span id="my-correct-val"
-                                style="font-size: 15px; font-weight: 700; color: var(--result-accent); width: 50px; text-align: left;">8</span>
+                                style="font-size: 15px; font-weight: 600; color: var(--result-accent); width: 50px; text-align: left;">8</span>
                             <span
                                 style="font-size: 12px; color: #64748b; font-weight: 600; flex: 1; text-align: center; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 4px;"><img
                                     src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/2705.png"
                                     style="width: 1.2em; height: 1.2em;"> Correct</span>
                             <span id="opp-correct-val"
-                                style="font-size: 15px; font-weight: 700; color: #000000; width: 50px; text-align: right;">6</span>
+                                style="font-size: 15px; font-weight: 600; color: #000000; width: 50px; text-align: right;">6</span>
                         </div>
 
                         <!-- Comparison Row: Accuracy -->
                         <div class="comp-row"
                             style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed #e2e8f0; font-family: 'Inter', sans-serif;">
                             <span id="my-acc-val"
-                                style="font-size: 15px; font-weight: 700; color: var(--result-accent); width: 50px; text-align: left;">80%</span>
+                                style="font-size: 15px; font-weight: 600; color: var(--result-accent); width: 50px; text-align: left;">80%</span>
                             <span
                                 style="font-size: 12px; color: #64748b; font-weight: 600; flex: 1; text-align: center; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 4px;"><img
                                     src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f3af.png"
                                     style="width: 1.2em; height: 1.2em;"> Accuracy</span>
                             <span id="opp-acc-val"
-                                style="font-size: 15px; font-weight: 700; color: #000000; width: 50px; text-align: right;">60%</span>
+                                style="font-size: 15px; font-weight: 600; color: #000000; width: 50px; text-align: right;">60%</span>
                         </div>
 
                         <!-- Comparison Row: Fastest Answer -->
                         <div class="comp-row"
                             style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed #e2e8f0; font-family: 'Inter', sans-serif;">
                             <span id="my-fastest-val"
-                                style="font-size: 15px; font-weight: 700; color: var(--result-accent); width: 50px; text-align: left;">1.2s</span>
+                                style="font-size: 15px; font-weight: 600; color: var(--result-accent); width: 50px; text-align: left;">1.2s</span>
                             <span
                                 style="font-size: 12px; color: #64748b; font-weight: 600; flex: 1; text-align: center; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 4px;"><img
                                     src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/26a1.png"
                                     style="width: 1.2em; height: 1.2em;"> Fastest</span>
                             <span id="opp-fastest-val"
-                                style="font-size: 15px; font-weight: 700; color: #000000; width: 50px; text-align: right;">1.8s</span>
+                                style="font-size: 15px; font-weight: 600; color: #000000; width: 50px; text-align: right;">1.8s</span>
                         </div>
 
                         <!-- Comparison Row: Best Streak -->
                         <div class="comp-row"
                             style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed #e2e8f0; font-family: 'Inter', sans-serif;">
                             <span id="my-streak-val"
-                                style="font-size: 15px; font-weight: 700; color: var(--result-accent); width: 50px; text-align: left;">5</span>
+                                style="font-size: 15px; font-weight: 600; color: var(--result-accent); width: 50px; text-align: left;">5</span>
                             <span
                                 style="font-size: 12px; color: #64748b; font-weight: 600; flex: 1; text-align: center; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 4px;"><img
                                     src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f525.png"
                                     style="width: 1.2em; height: 1.2em;"> Best
                                 Streak</span>
                             <span id="opp-streak-val"
-                                style="font-size: 15px; font-weight: 700; color: #000000; width: 50px; text-align: right;">3</span>
+                                style="font-size: 15px; font-weight: 600; color: #000000; width: 50px; text-align: right;">3</span>
                         </div>
 
                         <!-- Comparison Row: Response Time -->
                         <div class="comp-row"
                             style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; font-family: 'Inter', sans-serif;">
                             <span id="my-time-val"
-                                style="font-size: 15px; font-weight: 700; color: var(--result-accent); width: 50px; text-align: left;">2.4s</span>
+                                style="font-size: 15px; font-weight: 600; color: var(--result-accent); width: 50px; text-align: left;">2.4s</span>
                             <span
                                 style="font-size: 12px; color: #64748b; font-weight: 600; flex: 1; text-align: center; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 4px;"><img
                                     src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/23f1-fe0f.png"
                                     style="width: 1.2em; height: 1.2em;"> Avg
                                 Time</span>
                             <span id="opp-time-val"
-                                style="font-size: 15px; font-weight: 700; color: #000000; width: 50px; text-align: right;">3.1s</span>
+                                style="font-size: 15px; font-weight: 600; color: #000000; width: 50px; text-align: right;">3.1s</span>
                         </div>
 
                     </div>
@@ -4083,7 +4073,7 @@
                         <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f4c8.png"
                             style="width: 24px; height: 24px; margin-right: 8px;">
                         <span
-                            style="font-size: 15px; font-weight: 700; color: #1e40af; font-family: 'Inter', sans-serif;">Progress
+                            style="font-size: 15px; font-weight: 600; color: #1e40af; font-family: 'Inter', sans-serif;">Progress
                             Insight</span>
                     </div>
                     <p id="solo-insight-text"
@@ -4304,7 +4294,7 @@
                 <div class="format-card"
                     style="display: flex; flex-direction: column; align-items: stretch; cursor: default; padding: 20px; margin-bottom: 16px; background: white; border-radius: 16px; border: 1.5px solid rgba(15, 23, 42, 0.04);">
                     <h3
-                        style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0 0 20px 0;">
+                        style="font-size: 17px; font-weight: 600; color: #0f172a; margin: 0 0 20px 0;">
                         Topic Performance Breakdown
                     </h3>
                     <div id="topic-performance-list" style="display: flex; flex-direction: column; gap: 20px;">
@@ -4316,9 +4306,7 @@
                 <div class="format-card"
                     style="display: flex; flex-direction: column; align-items: stretch; cursor: default; padding: 20px; margin-bottom: 16px; background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); border-radius: 16px; border: 1.5px solid rgba(59, 130, 246, 0.2);">
                     <h3
-                        style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-                        <span
-                            style="background: #dbeafe; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px;">🤖</span>
+                        style="font-size: 17px; font-weight: 600; color: #0f172a; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
                         AI Focus Tutor
                     </h3>
                     <p style="font-size: 13px; color: #475569; margin: 0 0 16px 0; line-height: 1.5;">Based on your
@@ -4335,7 +4323,7 @@
                             Practice Length:</div>
                         <div style="display: flex; gap: 8px;">
                             <button class="ai-count-btn selected" onclick="QuizEngine.setAiCount(10)" data-count="10"
-                                style="flex: 1; padding: 10px 0; border-radius: 10px; border: 2px solid #466ba9; background: rgba(70, 107, 169, 0.1); color: #466ba9; font-weight: 700; font-size: 13px; cursor: pointer; transition: all 0.2s;">10
+                                style="flex: 1; padding: 10px 0; border-radius: 10px; border: 2px solid #466ba9; background: rgba(70, 107, 169, 0.1); color: #466ba9; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.2s;">10
                                 Qs</button>
                             <button class="ai-count-btn" onclick="QuizEngine.setAiCount(20)" data-count="20"
                                 style="flex: 1; padding: 10px 0; border-radius: 10px; border: 2px solid #e2e8f0; background: white; color: #64748b; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.2s;">20
@@ -4347,7 +4335,7 @@
                     </div>
 
                     <button onclick="QuizEngine.startAiPractice()"
-                        style="background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; width: 100%; padding: 16px; border-radius: 12px; font-size: 15px; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(70, 107, 169, 0.25); transition: background 0.2s;">
+                        style="background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; width: 100%; padding: 16px; border-radius: 12px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(70, 107, 169, 0.25); transition: background 0.2s;">
                         Start AI Focus Session
                     </button>
                 </div>
@@ -4355,7 +4343,7 @@
                 <!-- Focus Areas -->
                 <div class="format-card"
                     style="display: flex; flex-direction: column; align-items: stretch; cursor: default; padding: 20px; margin-bottom: 16px; background: white; border-radius: 16px; border: 1.5px solid rgba(15, 23, 42, 0.04);">
-                    <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0 0 8px 0;">
+                    <h3 style="font-size: 17px; font-weight: 600; color: #0f172a; margin: 0 0 8px 0;">
                         Deep Dive Focus Areas
                     </h3>
                     <p style="font-size: 13px; color: #64748b; margin: 0 0 20px 0;">Tap a card to jump directly to
@@ -4372,7 +4360,7 @@
                         <div style="display: flex; align-items: center; gap: 8px;">
                             <span
                                 style="display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #fff7ed; border-radius: 8px;">🔥</span>
-                            <span style="font-size: 16px; font-weight: 700; color: #0f172a;">Study Streak Tracker</span>
+                            <span style="font-size: 16px; font-weight: 600; color: #0f172a;">Study Streak Tracker</span>
                         </div>
                         <label class="toggle-switch">
                             <input type="checkbox" checked id="toggle-streak">
@@ -4385,10 +4373,10 @@
 
                         <div
                             style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                            <div style="font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">Study
+                            <div style="font-size: 15px; font-weight: 600; color: #0f172a; margin-bottom: 8px;">Study
                                 Streak Checklist</div>
                             <span
-                                style="font-size: 13px; font-weight: 700; color: #ea580c; background: #fff7ed; padding: 2px 8px; border-radius: 6px;">8
+                                style="font-size: 13px; font-weight: 600; color: #ea580c; background: #fff7ed; padding: 2px 8px; border-radius: 6px;">8
                                 Days Active</span>
                         </div>
                         <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0;">Complete at least one practice
@@ -4398,45 +4386,45 @@
                         <div
                             style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 12px; border-radius: 12px;">
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-                                <span style="font-size: 10px; font-weight: 700; color: #64748b;">M</span>
+                                <span style="font-size: 10px; font-weight: 600; color: #64748b;">M</span>
                                 <div
-                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
+                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
                                     ✅</div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-                                <span style="font-size: 10px; font-weight: 700; color: #64748b;">T</span>
+                                <span style="font-size: 10px; font-weight: 600; color: #64748b;">T</span>
                                 <div
-                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
+                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
                                     ✅</div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-                                <span style="font-size: 10px; font-weight: 700; color: #64748b;">W</span>
+                                <span style="font-size: 10px; font-weight: 600; color: #64748b;">W</span>
                                 <div
-                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
+                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
                                     ✅</div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-                                <span style="font-size: 10px; font-weight: 700; color: #64748b;">T</span>
+                                <span style="font-size: 10px; font-weight: 600; color: #64748b;">T</span>
                                 <div
-                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
+                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
                                     ✅</div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-                                <span style="font-size: 10px; font-weight: 700; color: #64748b;">F</span>
+                                <span style="font-size: 10px; font-weight: 600; color: #64748b;">F</span>
                                 <div
-                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
+                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
                                     ✅</div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-                                <span style="font-size: 10px; font-weight: 700; color: #64748b;">S</span>
+                                <span style="font-size: 10px; font-weight: 600; color: #64748b;">S</span>
                                 <div
-                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
+                                    style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
                                     ✅</div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-                                <span style="font-size: 10px; font-weight: 700; color: #3b82f6;">S</span>
+                                <span style="font-size: 10px; font-weight: 600; color: #3b82f6;">S</span>
                                 <div class="pulse-yellow-dot"
-                                    style="width: 26px; height: 26px; border-radius: 50%; background: #fff7ed; border: 2px dashed #ea580c; color: #ea580c; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;">
+                                    style="width: 26px; height: 26px; border-radius: 50%; background: #fff7ed; border: 2px dashed #ea580c; color: #ea580c; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600;">
                                     🔥</div>
                             </div>
                         </div>
@@ -4447,63 +4435,63 @@
                 <div class="format-card"
                     style="display: none !important; display: flex; flex-direction: column; align-items: stretch; cursor: default; padding: 20px; margin-bottom: 16px; background: white; border-radius: 16px; border: 1.5px solid rgba(15, 23, 42, 0.04);">
                     <h3
-                        style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0 0 20px 0; display: flex; align-items: center; gap: 8px;">
+                        style="font-size: 17px; font-weight: 600; color: #0f172a; margin: 0 0 20px 0; display: flex; align-items: center; gap: 8px;">
                         <span
                             style="background: #eff6ff; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">📊</span>
                         Statistics & Study Activity
                     </h3>
 
                     <div
-                        style="font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">
+                        style="font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">
                         Accuracy Metrics</div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
                         <div
                             style="background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid rgba(15,23,42,0.02); display: flex; flex-direction: column; justify-content: center;">
                             <div style="font-size: 11px; color: #64748b; font-weight: 600; margin-bottom: 4px;">Overall
                                 Accuracy</div>
-                            <div style="font-size: 20px; font-weight: 800; color: #0f172a;">74%</div>
+                            <div style="font-size: 20px; font-weight: 600; color: #0f172a;">74%</div>
                         </div>
                         <div
                             style="background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid rgba(15,23,42,0.02); display: flex; flex-direction: column; justify-content: center;">
                             <div style="font-size: 11px; color: #64748b; font-weight: 600; margin-bottom: 4px;">Avg
                                 Response Time</div>
-                            <div style="font-size: 20px; font-weight: 800; color: #0f172a;">14 sec</div>
+                            <div style="font-size: 20px; font-weight: 600; color: #0f172a;">14 sec</div>
                         </div>
                         <div
                             style="background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid rgba(15,23,42,0.02); display: flex; flex-direction: column; justify-content: center;">
                             <div style="font-size: 11px; color: #64748b; font-weight: 600; margin-bottom: 4px;">
                                 Questions Attempted</div>
-                            <div style="font-size: 20px; font-weight: 800; color: #0f172a;">2,450</div>
+                            <div style="font-size: 20px; font-weight: 600; color: #0f172a;">2,450</div>
                         </div>
                         <div
                             style="background: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid rgba(15,23,42,0.02); display: flex; flex-direction: column; justify-content: center;">
                             <div style="font-size: 11px; color: #64748b; font-weight: 600; margin-bottom: 4px;">Correct
                                 Answers</div>
-                            <div style="font-size: 20px; font-weight: 800; color: #10b981;">1,813</div>
+                            <div style="font-size: 20px; font-weight: 600; color: #10b981;">1,813</div>
                         </div>
                     </div>
 
                     <div
-                        style="font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">
+                        style="font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">
                         Study Activity</div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
                         <div
                             style="background: #f8fafc; padding: 12px 8px; border-radius: 12px; border: 1px solid rgba(15,23,42,0.02); text-align: center;">
                             <div style="font-size: 11px; color: #64748b; font-weight: 600; margin-bottom: 6px;">Days
                                 Active</div>
-                            <div style="font-size: 18px; font-weight: 800; color: #0f172a;">23</div>
+                            <div style="font-size: 18px; font-weight: 600; color: #0f172a;">23</div>
                         </div>
                         <div
                             style="background: #f8fafc; padding: 12px 8px; border-radius: 12px; border: 1px solid rgba(15,23,42,0.02); text-align: center;">
                             <div style="font-size: 11px; color: #64748b; font-weight: 600; margin-bottom: 6px;">Streak
                             </div>
-                            <div style="font-size: 18px; font-weight: 800; color: #e11d48;">8 Days</div>
+                            <div style="font-size: 18px; font-weight: 600; color: #e11d48;">8 Days</div>
                         </div>
                         <div
                             style="background: #f8fafc; padding: 12px 8px; border-radius: 12px; border: 1px solid rgba(15,23,42,0.02); text-align: center;">
                             <div style="font-size: 11px; color: #64748b; font-weight: 600; margin-bottom: 6px;">Hours
                                 Studied</div>
-                            <div style="font-size: 18px; font-weight: 800; color: #466ba9; white-space: nowrap;">18.5h
+                            <div style="font-size: 18px; font-weight: 600; color: #466ba9; white-space: nowrap;">18.5h
                             </div>
                         </div>
                     </div>
@@ -4519,7 +4507,7 @@
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <span style="font-size: 20px;">📈</span>
                             <span
-                                style="font-size: 13px; font-weight: 700; color: #0f172a; line-height: 1.2; text-align: left;">Performance<br>Trend</span>
+                                style="font-size: 13px; font-weight: 600; color: #0f172a; line-height: 1.2; text-align: left;">Performance<br>Trend</span>
                         </div>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -4535,7 +4523,7 @@
                         onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <span
-                                style="font-size: 13px; font-weight: 700; color: #0f172a; line-height: 1.2; text-align: left;">Mock
+                                style="font-size: 13px; font-weight: 600; color: #0f172a; line-height: 1.2; text-align: left;">Mock
                                 Exam<br>Journey</span>
                         </div>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5"
@@ -4560,7 +4548,7 @@
                     </div>
                     <div class="pa-sheet-header">
                         <h3
-                            style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0;">
+                            style="font-size: 18px; font-weight: 600; color: #0f172a; margin: 0;">
                             Performance Trend
                         </h3>
                         <div style="background: #f1f5f9; padding: 4px; border-radius: 8px; display: flex;">
@@ -4591,7 +4579,7 @@
                     </div>
                     <div class="pa-sheet-header">
                         <h3
-                            style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0;">
+                            style="font-size: 18px; font-weight: 600; color: #0f172a; margin: 0;">
                             Mock Exam Journey
                         </h3>
                     </div>
@@ -4602,15 +4590,15 @@
                                 onclick="openExamReview(this)" onmouseover="this.style.opacity='0.7'"
                                 onmouseout="this.style.opacity='1'">
                                 <div
-                                    style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #ecfdf5; border: 2.5px solid #10b981; display: flex; align-items: center; justify-content: center; color: #10b981; font-weight: 800; font-size: 12px; box-shadow: 0 2px 4px rgba(16,185,129,0.15);">
+                                    style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #ecfdf5; border: 2.5px solid #10b981; display: flex; align-items: center; justify-content: center; color: #10b981; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(16,185,129,0.15);">
                                     ✅</div>
                                 <div>
-                                    <div style="font-size: 14px; font-weight: 700; color: #0f172a;">Mock Exam #6</div>
+                                    <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #6</div>
                                     <div style="font-size: 12px; color: #64748b; font-weight: 500;">Oct 24, 2025 at
                                         10:30 AM</div>
                                 </div>
                                 <span
-                                    style="font-size: 13px; font-weight: 800; color: #16a34a; background: #ecfdf5; border: 1px solid rgba(22,163,74,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">73%</span>
+                                    style="font-size: 13px; font-weight: 600; color: #16a34a; background: #ecfdf5; border: 1px solid rgba(22,163,74,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">73%</span>
                             </div>
 
                             <!-- Mock 3 -->
@@ -4618,15 +4606,15 @@
                                 onclick="openExamReview(this)" onmouseover="this.style.opacity='0.7'"
                                 onmouseout="this.style.opacity='1'">
                                 <div
-                                    style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #ecfdf5; border: 2.5px solid #10b981; display: flex; align-items: center; justify-content: center; color: #10b981; font-weight: 800; font-size: 12px; box-shadow: 0 2px 4px rgba(16,185,129,0.15);">
+                                    style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #ecfdf5; border: 2.5px solid #10b981; display: flex; align-items: center; justify-content: center; color: #10b981; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(16,185,129,0.15);">
                                     ✅</div>
                                 <div>
-                                    <div style="font-size: 14px; font-weight: 700; color: #0f172a;">Mock Exam #5</div>
+                                    <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #5</div>
                                     <div style="font-size: 12px; color: #64748b; font-weight: 500;">Oct 17, 2025 at
                                         02:15 PM</div>
                                 </div>
                                 <span
-                                    style="font-size: 13px; font-weight: 800; color: #16a34a; background: #ecfdf5; border: 1px solid rgba(22,163,74,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">69%</span>
+                                    style="font-size: 13px; font-weight: 600; color: #16a34a; background: #ecfdf5; border: 1px solid rgba(22,163,74,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">69%</span>
                             </div>
 
                             <!-- Mock 2 -->
@@ -4634,15 +4622,15 @@
                                 onclick="openExamReview(this)" onmouseover="this.style.opacity='0.7'"
                                 onmouseout="this.style.opacity='1'">
                                 <div
-                                    style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #ecfdf5; border: 2.5px solid #10b981; display: flex; align-items: center; justify-content: center; color: #10b981; font-weight: 800; font-size: 12px; box-shadow: 0 2px 4px rgba(16,185,129,0.15);">
+                                    style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #ecfdf5; border: 2.5px solid #10b981; display: flex; align-items: center; justify-content: center; color: #10b981; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(16,185,129,0.15);">
                                     ✅</div>
                                 <div>
-                                    <div style="font-size: 14px; font-weight: 700; color: #0f172a;">Mock Exam #4</div>
+                                    <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #4</div>
                                     <div style="font-size: 12px; color: #64748b; font-weight: 500;">Oct 10, 2025 at
                                         09:00 AM</div>
                                 </div>
                                 <span
-                                    style="font-size: 13px; font-weight: 800; color: #16a34a; background: #ecfdf5; border: 1px solid rgba(22,163,74,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">62%</span>
+                                    style="font-size: 13px; font-weight: 600; color: #16a34a; background: #ecfdf5; border: 1px solid rgba(22,163,74,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">62%</span>
                             </div>
 
                             <!-- Mock 1 -->
@@ -4650,15 +4638,15 @@
                                 onclick="openExamReview(this)" onmouseover="this.style.opacity='0.7'"
                                 onmouseout="this.style.opacity='1'">
                                 <div
-                                    style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #fff7ed; border: 2.5px solid #ea580c; display: flex; align-items: center; justify-content: center; color: #ea580c; font-weight: 800; font-size: 12px; box-shadow: 0 2px 4px rgba(234,88,12,0.15);">
+                                    style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #fff7ed; border: 2.5px solid #ea580c; display: flex; align-items: center; justify-content: center; color: #ea580c; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(234,88,12,0.15);">
                                     ✅</div>
                                 <div>
-                                    <div style="font-size: 14px; font-weight: 700; color: #0f172a;">Mock Exam #3</div>
+                                    <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #3</div>
                                     <div style="font-size: 12px; color: #64748b; font-weight: 500;">Oct 03, 2025 at
                                         04:45 PM</div>
                                 </div>
                                 <span
-                                    style="font-size: 13px; font-weight: 800; color: #ea580c; background: #fff7ed; border: 1px solid rgba(234,88,12,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">54%</span>
+                                    style="font-size: 13px; font-weight: 600; color: #ea580c; background: #fff7ed; border: 1px solid rgba(234,88,12,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">54%</span>
                             </div>
 
                             <!-- Older Exams (Hidden by default) -->
@@ -4668,32 +4656,32 @@
                                     onclick="openExamReview(this)" onmouseover="this.style.opacity='0.7'"
                                     onmouseout="this.style.opacity='1'">
                                     <div
-                                        style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #fff7ed; border: 2.5px solid #ea580c; display: flex; align-items: center; justify-content: center; color: #ea580c; font-weight: 800; font-size: 12px; box-shadow: 0 2px 4px rgba(234,88,12,0.15);">
+                                        style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #fff7ed; border: 2.5px solid #ea580c; display: flex; align-items: center; justify-content: center; color: #ea580c; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(234,88,12,0.15);">
                                         ✅</div>
                                     <div>
-                                        <div style="font-size: 14px; font-weight: 700; color: #0f172a;">Mock Exam #2
+                                        <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #2
                                         </div>
                                         <div style="font-size: 12px; color: #64748b; font-weight: 500;">Sep 05, 2025 at
                                             02:30 PM</div>
                                     </div>
                                     <span
-                                        style="font-size: 13px; font-weight: 800; color: #ea580c; background: #fff7ed; border: 1px solid rgba(234,88,12,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">51%</span>
+                                        style="font-size: 13px; font-weight: 600; color: #ea580c; background: #fff7ed; border: 1px solid rgba(234,88,12,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">51%</span>
                                 </div>
                                 <!-- Mock 1 -->
                                 <div style="position: relative; display: flex; align-items: center; justify-content: space-between; z-index: 2; cursor: pointer; transition: opacity 0.2s;"
                                     onclick="openExamReview(this)" onmouseover="this.style.opacity='0.7'"
                                     onmouseout="this.style.opacity='1'">
                                     <div
-                                        style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #fef2f2; border: 2.5px solid #ef4444; display: flex; align-items: center; justify-content: center; color: #ef4444; font-weight: 800; font-size: 12px; box-shadow: 0 2px 4px rgba(239,68,68,0.15);">
+                                        style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #fef2f2; border: 2.5px solid #ef4444; display: flex; align-items: center; justify-content: center; color: #ef4444; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(239,68,68,0.15);">
                                         ✖️</div>
                                     <div>
-                                        <div style="font-size: 14px; font-weight: 700; color: #0f172a;">Mock Exam #1
+                                        <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #1
                                         </div>
                                         <div style="font-size: 12px; color: #64748b; font-weight: 500;">Aug 15, 2025 at
                                             11:00 AM</div>
                                     </div>
                                     <span
-                                        style="font-size: 13px; font-weight: 800; color: #ef4444; background: #fef2f2; border: 1px solid rgba(239,68,68,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">48%</span>
+                                        style="font-size: 13px; font-weight: 600; color: #ef4444; background: #fef2f2; border: 1px solid rgba(239,68,68,0.15); padding: 4px 10px; border-radius: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">48%</span>
                                 </div>
                             </div>
                         </div>
@@ -5047,22 +5035,22 @@
                     <div style="display: flex; gap: 32px;">
                         <div>
                             <span
-                                style="display: block; font-size: 11px; color: var(--text-dim); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Team
+                                style="display: block; font-size: 11px; color: var(--text-dim); font-weight: 600; text-transform: uppercase; margin-bottom: 6px;">Team
                                 Rank</span>
                             <span
-                                style="font-size: 24px; font-weight: 800; color: var(--text-primary); display: flex; align-items: center;">#4
+                                style="font-size: 24px; font-weight: 600; color: var(--text-primary); display: flex; align-items: center;">#4
                                 <span
-                                    style="font-size: 14px; font-weight: 700; color: var(--success); margin-left: 8px; background: rgba(52, 199, 89, 0.1); padding: 2px 6px; border-radius: 6px;">▲
+                                    style="font-size: 14px; font-weight: 600; color: var(--success); margin-left: 8px; background: rgba(52, 199, 89, 0.1); padding: 2px 6px; border-radius: 6px;">▲
                                     2</span></span>
                         </div>
                         <div style="border-left: 1px solid rgba(226, 232, 240, 0.8); padding-left: 32px;">
                             <span
-                                style="display: block; font-size: 11px; color: var(--text-dim); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">National
+                                style="display: block; font-size: 11px; color: var(--text-dim); font-weight: 600; text-transform: uppercase; margin-bottom: 6px;">National
                                 Rank</span>
                             <span
-                                style="font-size: 24px; font-weight: 800; color: var(--text-primary); display: flex; align-items: center;">#142
+                                style="font-size: 24px; font-weight: 600; color: var(--text-primary); display: flex; align-items: center;">#142
                                 <span
-                                    style="font-size: 14px; font-weight: 700; color: var(--success); margin-left: 8px; background: rgba(52, 199, 89, 0.1); padding: 2px 6px; border-radius: 6px;">▲
+                                    style="font-size: 14px; font-weight: 600; color: var(--success); margin-left: 8px; background: rgba(52, 199, 89, 0.1); padding: 2px 6px; border-radius: 6px;">▲
                                     12</span></span>
                         </div>
                     </div>
@@ -5079,9 +5067,9 @@
                 <div class="premium-card">
                     <div class="category-performance-item" style="margin-bottom: 20px;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                            <span style="font-size: 14px; font-weight: 700; color: var(--text-primary);">Traffic
+                            <span style="font-size: 14px; font-weight: 600; color: var(--text-primary);">Traffic
                                 Law</span>
-                            <span style="font-size: 14px; font-weight: 800; color: var(--accent-blue);">92%</span>
+                            <span style="font-size: 14px; font-weight: 600; color: var(--accent-blue);">92%</span>
                         </div>
                         <div
                             style="background: rgba(70, 107, 169, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
@@ -5092,9 +5080,9 @@
                     </div>
                     <div class="category-performance-item" style="margin-bottom: 20px;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                            <span style="font-size: 14px; font-weight: 700; color: var(--text-primary);">Criminal
+                            <span style="font-size: 14px; font-weight: 600; color: var(--text-primary);">Criminal
                                 Law</span>
-                            <span style="font-size: 14px; font-weight: 800; color: var(--accent-blue);">85%</span>
+                            <span style="font-size: 14px; font-weight: 600; color: var(--accent-blue);">85%</span>
                         </div>
                         <div
                             style="background: rgba(70, 107, 169, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
@@ -5105,9 +5093,9 @@
                     </div>
                     <div class="category-performance-item" style="margin-bottom: 20px;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                            <span style="font-size: 14px; font-weight: 700; color: var(--text-primary);">Workplace
+                            <span style="font-size: 14px; font-weight: 600; color: var(--text-primary);">Workplace
                                 Safety</span>
-                            <span style="font-size: 14px; font-weight: 800; color: var(--accent-blue);">78%</span>
+                            <span style="font-size: 14px; font-weight: 600; color: var(--accent-blue);">78%</span>
                         </div>
                         <div
                             style="background: rgba(70, 107, 169, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
@@ -5118,9 +5106,9 @@
                     </div>
                     <div class="category-performance-item">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                            <span style="font-size: 14px; font-weight: 700; color: var(--text-primary);">Evidence
+                            <span style="font-size: 14px; font-weight: 600; color: var(--text-primary);">Evidence
                                 Law</span>
-                            <span style="font-size: 14px; font-weight: 800; color: var(--accent-blue);">65%</span>
+                            <span style="font-size: 14px; font-weight: 600; color: var(--accent-blue);">65%</span>
                         </div>
                         <div
                             style="background: rgba(70, 107, 169, 0.1); height: 8px; border-radius: 4px; overflow: hidden;">
@@ -5145,10 +5133,10 @@
                             📝</div>
                         <div style="flex: 1;">
                             <h4
-                                style="margin: 0 0 4px; font-size: 15px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.2px;">
+                                style="margin: 0 0 4px; font-size: 15px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.2px;">
                                 Completed Traffic Law Quiz</h4>
                             <p style="margin: 0; font-size: 13px; color: var(--text-dim); font-weight: 500;">Scored 90%
-                                • <span style="color: var(--accent-blue); font-weight: 700;">+45 XP</span></p>
+                                • <span style="color: var(--accent-blue); font-weight: 600;">+45 XP</span></p>
                         </div>
                         <span style="font-size: 12px; color: var(--text-dim); font-weight: 600;">2h ago</span>
                     </div>
@@ -5159,10 +5147,10 @@
                             ⚔️</div>
                         <div style="flex: 1;">
                             <h4
-                                style="margin: 0 0 4px; font-size: 15px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.2px;">
+                                style="margin: 0 0 4px; font-size: 15px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.2px;">
                                 Won Challenge</h4>
                             <p style="margin: 0; font-size: 13px; color: var(--text-dim); font-weight: 500;">vs Officer
-                                Jenkins • <span style="color: var(--success); font-weight: 700;">+100 XP</span>
+                                Jenkins • <span style="color: var(--success); font-weight: 600;">+100 XP</span>
                             </p>
                         </div>
                         <span style="font-size: 12px; color: var(--text-dim); font-weight: 600;">Yesterday</span>
@@ -5174,7 +5162,7 @@
                             🏆¦</div>
                         <div style="flex: 1;">
                             <h4
-                                style="margin: 0 0 4px; font-size: 15px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.2px;">
+                                style="margin: 0 0 4px; font-size: 15px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.2px;">
                                 Earned Sharpshooter</h4>
                             <p style="margin: 0; font-size: 13px; color: var(--text-dim); font-weight: 500;">10 Perfect
                                 Quizzes</p>
@@ -5238,9 +5226,9 @@
                         <div
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
                             <span id="practice-score-val"
-                                style="font-size: 26px; font-weight: 800; color: #0f172a; line-height: 1; font-family: 'Poppins', sans-serif;">9/10</span>
+                                style="font-size: 26px; font-weight: 700; color: #0f172a; line-height: 1; font-family: 'Poppins', sans-serif;">9/10</span>
                             <span
-                                style="font-size: 11px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">Score</span>
+                                style="font-size: 11px; font-weight: 600; color: #475569; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">Score</span>
                         </div>
                     </div>
 
@@ -5248,15 +5236,15 @@
                     <div style="flex: 1; display: flex; flex-direction: column; gap: 12px; z-index: 1;">
                         <div>
                             <span
-                                style="font-size: 12px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; margin-bottom: 4px;"><img
+                                style="font-size: 12px; font-weight: 600; color: #475569; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; margin-bottom: 4px;"><img
                                     src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f3af.png"
                                     style="width: 1.2em; height: 1.2em;"> Accuracy</span>
                             <span id="practice-accuracy-val"
-                                style="font-size: 38px; font-weight: 800; color: #0f172a; line-height: 1; font-family: 'Poppins', sans-serif;">90%</span>
+                                style="font-size: 38px; font-weight: 700; color: #0f172a; line-height: 1; font-family: 'Poppins', sans-serif;">90%</span>
                         </div>
                         <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
                             <div
-                                style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.7); color: #d97706; padding: 6px 12px; border-radius: 10px; font-size: 14px; font-weight: 700; border: 1px solid rgba(253, 230, 138, 0.8); width: fit-content; line-height: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                                style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.7); color: #d97706; padding: 6px 12px; border-radius: 10px; font-size: 14px; font-weight: 600; border: 1px solid rgba(253, 230, 138, 0.8); width: fit-content; line-height: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
                                 <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/2b50.png"
                                     style="width: 1.2em; height: 1.2em;">
                                 <span id="practice-xp-val">+360 XP</span>
@@ -5274,7 +5262,7 @@
                 <!-- Weak Areas -->
                 <div style="margin-bottom: 36px;">
                     <h3
-                        style="font-size: 13px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 14px 4px; display: flex; align-items: center; gap: 6px;">
+                        style="font-size: 13px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 14px 4px; display: flex; align-items: center; gap: 6px;">
                         <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f6e0-fe0f.png"
                             style="width: 1.2em; height: 1.2em;"> Weak Areas
                     </h3>
@@ -5294,12 +5282,12 @@
                                 </svg>
                             </div>
                             <div style="flex: 1;">
-                                <div style="font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 3px;">
+                                <div style="font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 3px;">
                                     Homicide Ã¢â‚¬â€ Intent</div>
                                 <div style="font-size: 13px; font-weight: 500; color: #64748b;">2 of 5 correct</div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 10px;">
-                                <span style="font-size: 15px; font-weight: 700; color: #ef4444;">40%</span>
+                                <span style="font-size: 15px; font-weight: 600; color: #ef4444;">40%</span>
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1"
                                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -5322,12 +5310,12 @@
                                 </svg>
                             </div>
                             <div style="flex: 1;">
-                                <div style="font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 3px;">
+                                <div style="font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 3px;">
                                     Disclosure Ã¢â‚¬â€ CPIA Schedules</div>
                                 <div style="font-size: 13px; font-weight: 500; color: #64748b;">1 of 3 correct</div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 10px;">
-                                <span style="font-size: 15px; font-weight: 700; color: #f59e0b;">33%</span>
+                                <span style="font-size: 15px; font-weight: 600; color: #f59e0b;">33%</span>
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1"
                                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -5340,15 +5328,15 @@
                 <!-- Action Buttons -->
                 <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 12px; margin-bottom: 32px;">
                     <button class="ios-btn-primary" onclick="QuizEngine.startFlow('topic')"
-                        style="background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: #ffffff; width: 100%; padding: 18px; border-radius: 16px; font-size: 16px; font-weight: 700; border: none; box-shadow: 0 6px 16px rgba(70, 107, 169, 0.25); cursor: pointer; transition: all 0.2s;">
+                        style="background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: #ffffff; width: 100%; padding: 18px; border-radius: 16px; font-size: 16px; font-weight: 600; border: none; box-shadow: 0 6px 16px rgba(70, 107, 169, 0.25); cursor: pointer; transition: all 0.2s;">
                         Practice Weak Areas
                     </button>
                     <button class="ios-btn-primary" onclick="QuizEngine.startFlow('mock')"
-                        style="background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: #ffffff; width: 100%; padding: 18px; border-radius: 16px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                        style="background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: #ffffff; width: 100%; padding: 18px; border-radius: 16px; font-size: 16px; font-weight: 600; border: none; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
                         Start Mock Exam
                     </button>
                     <button class="ios-btn-secondary" onclick="QuizEngine.returnHome()"
-                        style="background: #f8fafc; color: #475569; width: 100%; padding: 18px; border-radius: 16px; font-size: 16px; font-weight: 700; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s;">
+                        style="background: #f8fafc; color: #475569; width: 100%; padding: 18px; border-radius: 16px; font-size: 16px; font-weight: 600; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s;">
                         Return to Home
                     </button>
                 </div>
@@ -5377,7 +5365,7 @@
                 style="padding: 0 20px 16px; border-bottom: 1px solid rgba(15,23,42,0.05); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
                 <div>
                     <h2 id="wrong-questions-title"
-                        style="font-size: 20px; font-weight: 800; color: #0f172a; font-family: 'Poppins', sans-serif; margin: 0;">
+                        style="font-size: 20px; font-weight: 700; color: #0f172a; font-family: 'Poppins', sans-serif; margin: 0;">
                         Homicide Ã¢â‚¬â€ Intent</h2>
                     <p style="font-size: 13px; color: #64748b; margin-top: 2px; margin-bottom: 0;">Review incorrect
                         questions</p>
@@ -5420,24 +5408,24 @@
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px;">
                         <span style="font-size: 14px; font-weight: 600; color: #64748b;">Exam</span>
-                        <span style="font-size: 14px; font-weight: 700; color: #0f172a; text-align: right;">--</span>
+                        <span style="font-size: 14px; font-weight: 600; color: #0f172a; text-align: right;">--</span>
                     </div>
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px;">
                         <span style="font-size: 14px; font-weight: 600; color: #64748b;">Completed On</span>
                         <span id="review-exam-date"
-                            style="font-size: 14px; font-weight: 700; color: #0f172a; text-align: right;">--</span>
+                            style="font-size: 14px; font-weight: 600; color: #0f172a; text-align: right;">--</span>
                     </div>
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px;">
                         <span style="font-size: 14px; font-weight: 600; color: #64748b;">Final Score</span>
                         <span id="review-exam-score"
-                            style="font-size: 18px; font-weight: 800; color: #16a34a;">--</span>
+                            style="font-size: 18px; font-weight: 600; color: #16a34a;">--</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <span style="font-size: 14px; font-weight: 600; color: #64748b;">Performance Status</span>
                         <span id="review-exam-status"
-                            style="font-size: 14px; font-weight: 700; color: #16a34a; background: #ecfdf5; padding: 4px 12px; border-radius: 20px;">--</span>
+                            style="font-size: 14px; font-weight: 600; color: #16a34a; background: #ecfdf5; padding: 4px 12px; border-radius: 20px;">--</span>
                     </div>
                 </div>
 
@@ -5446,10 +5434,10 @@
                     style="background: white; border-radius: 16px; padding: 24px; border: 1.5px solid rgba(15,23,42,0.04); margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                         <span id="review-q-num"
-                            style="font-size: 13px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px;">Question
+                            style="font-size: 13px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px;">Question
                             1 of 5</span>
                         <span id="review-q-status"
-                            style="font-size: 13px; font-weight: 700; color: #16a34a; background: #ecfdf5; padding: 4px 12px; border-radius: 20px;">Correct</span>
+                            style="font-size: 13px; font-weight: 600; color: #16a34a; background: #ecfdf5; padding: 4px 12px; border-radius: 20px;">Correct</span>
                     </div>
 
                     <div class="quiz-content-area" style="padding: 0; min-height: auto;">
@@ -5468,7 +5456,7 @@
                     <div
                         style="margin-top: 24px; background: #f8fafc; border-radius: 12px; padding: 20px; border: 1px solid rgba(15,23,42,0.04);">
                         <h4
-                            style="font-size: 14px; font-weight: 700; color: #0f172a; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+                            style="font-size: 14px; font-weight: 600; color: #0f172a; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
                             <span>💡</span> Explanation
                         </h4>
                         <p id="review-explanation-text"
@@ -5481,10 +5469,10 @@
                 <!-- Footer Nav -->
                 <div style="display: flex; gap: 16px; margin-top: 24px;">
                     <button id="review-prev-btn" class="btn-secondary"
-                        style="flex: 1; margin-top: 0; background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1.5px solid #ffffff; color: var(--accent-blue); font-weight: 700; box-shadow: 0 4px 10px rgba(0,0,0,0.03);"
+                        style="flex: 1; margin-top: 0; background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1.5px solid #ffffff; color: var(--accent-blue); font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.03);"
                         onclick="changeReviewQuestion(-1)">Previous</button>
                     <button id="review-next-btn" class="btn-primary"
-                        style="flex: 1; margin-top: 0; font-weight: 700; background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; border: none; box-shadow: 0 4px 12px rgba(70, 107, 169, 0.25); cursor: pointer; transition: all 0.2s;"
+                        style="flex: 1; margin-top: 0; font-weight: 600; background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; border: none; box-shadow: 0 4px 12px rgba(70, 107, 169, 0.25); cursor: pointer; transition: all 0.2s;"
                         onclick="changeReviewQuestion(1)">Next</button>
                 </div>
             </div>
@@ -5672,7 +5660,7 @@
                     const letter = String.fromCharCode(65 + idx);
                     html = `
                     <button class="answer-btn correct correct-revealed" style="display: flex; gap: 12px; align-items: flex-start; cursor: default; pointer-events: none;">
-                        <span style="font-weight: 700; opacity: 0.7; flex-shrink: 0;">${letter}.</span>
+                        <span style="font-weight: 600; opacity: 0.7; flex-shrink: 0;">${letter}.</span>
                         <span style="text-align: left;">${opt.text}</span>
                     </button>`;
                 } else {
@@ -5683,15 +5671,15 @@
                     const correctLetter = String.fromCharCode(65 + correctIdx);
 
                     html = `
-                    <div style="margin-bottom: 6px; font-size: 12px; font-weight: 800; color: #ef4444; text-transform: uppercase; letter-spacing: 0.5px;">Your Answer</div>
+                    <div style="margin-bottom: 6px; font-size: 12px; font-weight: 600; color: #ef4444; text-transform: uppercase; letter-spacing: 0.5px;">Your Answer</div>
                     <button class="answer-btn wrong" style="display: flex; gap: 12px; align-items: flex-start; cursor: default; pointer-events: none; margin-bottom: 16px;">
-                        <span style="font-weight: 700; opacity: 0.7; flex-shrink: 0;">${userLetter}.</span>
+                        <span style="font-weight: 600; opacity: 0.7; flex-shrink: 0;">${userLetter}.</span>
                         <span style="text-align: left;">${userOpt.text}</span>
                     </button>
                     
-                    <div style="margin-bottom: 6px; font-size: 12px; font-weight: 800; color: #16a34a; text-transform: uppercase; letter-spacing: 0.5px;">Correct Answer</div>
+                    <div style="margin-bottom: 6px; font-size: 12px; font-weight: 600; color: #16a34a; text-transform: uppercase; letter-spacing: 0.5px;">Correct Answer</div>
                     <button class="answer-btn correct correct-revealed" style="display: flex; gap: 12px; align-items: flex-start; cursor: default; pointer-events: none;">
-                        <span style="font-weight: 700; opacity: 0.7; flex-shrink: 0;">${correctLetter}.</span>
+                        <span style="font-weight: 600; opacity: 0.7; flex-shrink: 0;">${correctLetter}.</span>
                         <span style="text-align: left;">${correctOpt.text}</span>
                     </button>`;
                 }
@@ -5796,7 +5784,7 @@
                 </div>
 
                 <h3
-                    style="font-size: 22px; font-weight: 800; color: #0f172a; margin: 0 0 4px 0; letter-spacing: -0.5px; text-align: center;">
+                    style="font-size: 22px; font-weight: 600; color: #0f172a; margin: 0 0 4px 0; letter-spacing: -0.5px; text-align: center;">
                     Exit Exam?</h3>
                 <p style="font-size: 14px; color: #64748b; margin: 0 0 16px 0; line-height: 1.5; text-align: center;">What
                     would you like to do with your current progress?</p>
@@ -5864,7 +5852,7 @@
                 </div>
 
                 <h3
-                    style="margin: 0 0 4px 0; font-size: 22px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; text-align: center;">
+                    style="margin: 0 0 4px 0; font-size: 22px; font-weight: 600; color: #0f172a; letter-spacing: -0.5px; text-align: center;">
                     Discard Progress?</h3>
                 <p style="margin: 0 0 16px 0; font-size: 14px; color: #64748b; line-height: 1.5; text-align: center;">This
                     will permanently delete your current progress. You will start from Question 1 next time.</p>
@@ -5905,14 +5893,14 @@
                 </div>
 
                 <h3
-                    style="margin: 0 0 4px 0; font-size: 24px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px;">
+                    style="margin: 0 0 4px 0; font-size: 24px; font-weight: 600; color: #0f172a; letter-spacing: -0.5px;">
                     Incomplete Exam</h3>
                 <p style="margin: 0 0 16px 0; font-size: 15px; color: #64748b; line-height: 1.5; padding: 0 10px;">You
                     must complete your resumed Mock Exam before starting a new one.</p>
 
                 <div style="width: 100%; display: flex; flex-direction: column; gap: 12px;">
                     <button onclick="QuizEngine.proceedResumeExam()"
-                        style="width: 100%; padding: 16px; background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; border: none; border-radius: 16px; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 20px rgba(70, 107, 169, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);"
+                        style="width: 100%; padding: 16px; background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; border: none; border-radius: 16px; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 20px rgba(70, 107, 169, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);"
                         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 24px rgba(70, 107, 169, 0.4), inset 0 1px 0 rgba(255,255,255,0.2)';"
                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(70, 107, 169, 0.3), inset 0 1px 0 rgba(255,255,255,0.2)';">
                         Resume Exam
@@ -5930,7 +5918,7 @@
                 <div class="pa-sheet-handle" aria-hidden="true"></div>
                 <button type="button" class="pa-sheet-close-btn" onclick="QuizEngine.closeReportSheet()" aria-label="Close">&times;</button>
             </div>
-            <h3 style="margin: 0 0 20px; font-size: 20px; font-weight: 700; color: #0f172a; line-height: 1.3;">Help us
+            <h3 style="margin: 0 0 20px; font-size: 20px; font-weight: 600; color: #0f172a; line-height: 1.3;">Help us
                 improve AI-generated
                 questions by telling us what seems wrong.</h3>
 
@@ -5986,7 +5974,7 @@
             </div>
 
             <button onclick="QuizEngine.submitReport()"
-                style="width: 100%; padding: 16px; background: #ef4444; color: white; border: none; border-radius: 14px; font-size: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25); transition: transform 0.1s ease;"
+                style="width: 100%; padding: 16px; background: #ef4444; color: white; border: none; border-radius: 14px; font-size: 16px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25); transition: transform 0.1s ease;"
                 onactive="this.style.transform='scale(0.98)'">Submit Feedback</button>
         </div>
 
@@ -6022,7 +6010,7 @@
                             <rect x="16" y="16" width="4.5" height="4.5" rx="1"></rect>
                         </svg>
                         <div>
-                            <h3 style="font-size: 17px; font-weight: 700; color: #111827; margin: 0 0 2px 0;">Question
+                            <h3 style="font-size: 17px; font-weight: 600; color: #111827; margin: 0 0 2px 0;">Question
                                 Navigator</h3>
                             <p style="font-size: 13px; color: #6b7280; margin: 0;">Tap a number to go to that question
                             </p>
@@ -6111,7 +6099,7 @@
                 </div>
 
                 <h3
-                    style="font-size: 24px; font-weight: 800; color: #0f172a; margin: 0 0 4px 0; letter-spacing: -0.5px;">
+                    style="font-size: 24px; font-weight: 600; color: #0f172a; margin: 0 0 4px 0; letter-spacing: -0.5px;">
                     Hold On!</h3>
                 <p style="font-size: 15px; color: #64748b; margin: 0 0 16px 0; line-height: 1.5; padding: 0 10px;">You
                     have skipped some questions. Please review them before submitting.</p>
@@ -6119,7 +6107,7 @@
                 <div style="width: 100%; display: flex; flex-direction: column; gap: 12px;">
                     <button
                         onclick="document.getElementById('incomplete-modal').style.display='none'; QuizEngine.startReviewSkipped();"
-                        style="width: 100%; padding: 16px; background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; border: none; border-radius: 16px; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 20px rgba(70, 107, 169, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);"
+                        style="width: 100%; padding: 16px; background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; border: none; border-radius: 16px; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 20px rgba(70, 107, 169, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);"
                         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 24px rgba(70, 107, 169, 0.4), inset 0 1px 0 rgba(255,255,255,0.2)';"
                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(70, 107, 169, 0.3), inset 0 1px 0 rgba(255,255,255,0.2)';">
                         Review skipped questions

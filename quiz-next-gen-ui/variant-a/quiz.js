@@ -121,7 +121,7 @@ const QuizEngine = {
                             <img src="${data.iconSrc}" style="width: 52px; height: 52px; object-fit: contain;" alt="${examName}">
                         </div>
                         <div style="flex: 1;">
-                            <h3 style="font-size: 18px; font-weight: 700; color: #0f172a; margin: 0; line-height: 1.3;">${examName}</h3>
+                            <h3 style="font-size: 18px; font-weight: 600; color: #0f172a; margin: 0; line-height: 1.3;">${examName}</h3>
                             ${nppfTag}
                             <p style="font-size: 13px; color: #64748b; margin: 2px 0 0 0; line-height: 1.4;">${data.desc}</p>
                         </div>
@@ -134,7 +134,7 @@ const QuizEngine = {
                         </div>
                         <div>
                             <div style="font-size: 11px; color: #64748b; margin-bottom: 2px;">Questions</div>
-                            <div style="font-size: 14px; font-weight: 700; color: #0f172a;">${data.q}</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0f172a;">${data.q}</div>
                         </div>
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px;">
@@ -143,7 +143,7 @@ const QuizEngine = {
                         </div>
                         <div>
                             <div style="font-size: 11px; color: #64748b; margin-bottom: 2px;">Duration</div>
-                            <div style="font-size: 14px; font-weight: 700; color: #0f172a;">${data.d}</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0f172a;">${data.d}</div>
                         </div>
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px;">
@@ -152,7 +152,7 @@ const QuizEngine = {
                         </div>
                         <div>
                             <div style="font-size: 11px; color: #64748b; margin-bottom: 2px;">Pass Mark</div>
-                            <div style="font-size: 14px; font-weight: 700; color: #0f172a;">${data.pass}</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0f172a;">${data.pass}</div>
                         </div>
                     </div>
                 </div>
@@ -991,10 +991,10 @@ const QuizEngine = {
 
                     if (oIndex === qData.correct) {
                         style = "padding: 12px 14px; border-radius: 10px; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; border: 1.5px solid #10b981; background: #ecfdf5; color: #065f46;";
-                        icon = '<span style="font-size: 16px; font-weight: 700; color: #10b981;">✅</span>';
+                        icon = '<span style="font-size: 16px; font-weight: 600; color: #10b981;">✅</span>';
                     } else if (oIndex === qData.selected) {
                         style = "padding: 12px 14px; border-radius: 10px; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; border: 1.5px solid #ef4444; background: #fef2f2; color: #991b1b;";
-                        icon = '<span style="font-size: 16px; font-weight: 700; color: #ef4444;">❌</span>';
+                        icon = '<span style="font-size: 16px; font-weight: 600; color: #ef4444;">❌</span>';
                     }
 
                     return `<div style="${style}">${opt} ${icon}</div>`;
@@ -1002,11 +1002,11 @@ const QuizEngine = {
 
                 contentEl.innerHTML += `
                     <div style="background: white; border-radius: 16px; padding: 18px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03); border: 1px solid rgba(15, 23, 42, 0.04); text-align: left;">
-                        <div style="font-size: 12px; font-weight: 700; color: #ef4444; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Question ${qIndex + 1}</div>
-                        <h4 style="font-size: 15px; font-weight: 700; color: #0f172a; margin: 0 0 14px 0; line-height: 1.4;">${qData.q}</h4>
+                        <div style="font-size: 12px; font-weight: 600; color: #ef4444; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Question ${qIndex + 1}</div>
+                        <h4 style="font-size: 15px; font-weight: 600; color: #0f172a; margin: 0 0 14px 0; line-height: 1.4;">${qData.q}</h4>
                         <div style="margin-bottom: 16px;">${optionsHTML}</div>
                         <div style="background: #f3e8ff; border-radius: 12px; padding: 12px; border: 1px solid rgba(139, 92, 246, 0.08);">
-                            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; font-size: 11px; font-weight: 800; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px;">
+                            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; font-size: 11px; font-weight: 600; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px;">
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path>
                                 </svg>
@@ -2201,7 +2201,7 @@ const QuizEngine = {
                 iconHtml = `<div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; background: #466ba9; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><div style="width: 6px; height: 6px; border-radius: 50%; background: white;"></div></div>`;
             }
 
-            html += `<button onclick="QuizEngine.jumpToQuestion(` + i + `)" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 50px; border-radius: 12px; border: 1.5px solid currentColor; ` + stateClass + ` background: #ffffff; font-weight: 700; font-size: 16px; cursor: pointer;">` + (i + 1) + iconHtml + `</button>`;
+            html += `<button onclick="QuizEngine.jumpToQuestion(` + i + `)" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 50px; border-radius: 12px; border: 1.5px solid currentColor; ` + stateClass + ` background: #ffffff; font-weight: 600; font-size: 16px; cursor: pointer;">` + (i + 1) + iconHtml + `</button>`;
         }
 
         grid.innerHTML = html;
@@ -3583,22 +3583,22 @@ const QuizEngine = {
             const diff = topic.score - topic.prevScore;
             let trendHtml = '';
             if (diff > 0) {
-                trendHtml = `<span style="font-size: 11px; font-weight: 700; color: ${this.paPerfColors.teal.color}; margin-left: 6px;">+${diff}%</span>`;
+                trendHtml = `<span style="font-size: 11px; font-weight: 600; color: ${this.paPerfColors.teal.color}; margin-left: 6px;">+${diff}%</span>`;
             } else if (diff < 0) {
-                trendHtml = `<span style="font-size: 11px; font-weight: 700; color: ${this.paPerfColors.red.color}; margin-left: 6px;">${diff}%</span>`;
+                trendHtml = `<span style="font-size: 11px; font-weight: 600; color: ${this.paPerfColors.red.color}; margin-left: 6px;">${diff}%</span>`;
             } else {
-                trendHtml = `<span style="font-size: 11px; font-weight: 700; color: #94a3b8; margin-left: 6px;">0%</span>`;
+                trendHtml = `<span style="font-size: 11px; font-weight: 600; color: #94a3b8; margin-left: 6px;">0%</span>`;
             }
 
             html += `
                 <div>
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <span style="font-size: 14px; font-weight: 700; color: #1e293b;">${topic.name}</span>
-                            <span style="font-size: 10px; font-weight: 700; color: ${color}; background: ${bgColor}; padding: 2px 6px; border-radius: 6px;">${title}</span>
+                            <span style="font-size: 14px; font-weight: 600; color: #1e293b;">${topic.name}</span>
+                            <span style="font-size: 10px; font-weight: 600; color: ${color}; background: ${bgColor}; padding: 2px 6px; border-radius: 6px;">${title}</span>
                         </div>
                         <div style="display: flex; align-items: center;">
-                            <span style="font-size: 15px; font-weight: 800; color: ${color};">${topic.score}%</span>
+                            <span style="font-size: 15px; font-weight: 600; color: ${color};">${topic.score}%</span>
                             ${trendHtml}
                         </div>
                     </div>
@@ -3621,10 +3621,10 @@ const QuizEngine = {
             html += `
                 <div onclick="QuizEngine.startTopicRevision('${topic.name}')" style="cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: ${this.paPerfColors.purple.bg}; padding: 14px 16px; border-radius: 12px; border: 1px solid #ddd6fe; transition: transform 0.1s ease, box-shadow 0.2s; box-shadow: 0 1px 2px rgba(124, 58, 237, 0.05);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(124, 58, 237, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px rgba(124, 58, 237, 0.05)';">
                     <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="font-size: 15px; font-weight: 800; color: ${this.paPerfColors.purple.color};">${topic.name}</span>
+                        <span style="font-size: 15px; font-weight: 600; color: ${this.paPerfColors.purple.color};">${topic.name}</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px;">
-                        <span style="font-size: 12px; font-weight: 700; color: ${this.paPerfColors.purple.color}; background: rgba(124, 58, 237, 0.1); padding: 4px 8px; border-radius: 6px;">${topic.score}% Accuracy</span>
+                        <span style="font-size: 12px; font-weight: 600; color: ${this.paPerfColors.purple.color}; background: rgba(124, 58, 237, 0.1); padding: 4px 8px; border-radius: 6px;">${topic.score}% Accuracy</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="${this.paPerfColors.purple.color}" stroke-width="2" style="width: 16px; height: 16px;"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
                 </div>
@@ -3645,7 +3645,7 @@ const QuizEngine = {
 
         let html = '';
         this.weakestSubjectsList.forEach(name => {
-            html += `<span style="font-size: 12px; font-weight: 700; color: ${this.paPerfColors.blue.color}; background: ${this.paPerfColors.blue.bg}; padding: 4px 10px; border-radius: 20px;">${name}</span>`;
+            html += `<span style="font-size: 12px; font-weight: 600; color: ${this.paPerfColors.blue.color}; background: ${this.paPerfColors.blue.bg}; padding: 4px 10px; border-radius: 20px;">${name}</span>`;
         });
         container.innerHTML = html;
     },
@@ -3872,10 +3872,10 @@ const QuizEngine = {
             if (filter === 'all') {
                 if (index === 0) {
                     const title = isUnlocked ? 'Unlocked' : 'Locked';
-                    grid.innerHTML += `<div style="grid-column: 1 / -1; font-size: 18px; font-weight: 700; color: var(--text-primary, #1e293b); font-family: 'Poppins', sans-serif; margin-bottom: 0px;">${title}</div>`;
+                    grid.innerHTML += `<div style="grid-column: 1 / -1; font-size: 18px; font-weight: 600; color: var(--text-primary, #1e293b); font-family: 'Poppins', sans-serif; margin-bottom: 0px;">${title}</div>`;
                 } else if (previousState === 'unlocked' && !isUnlocked) {
                     grid.innerHTML += `
-                        <div style="grid-column: 1 / -1; font-size: 18px; font-weight: 700; color: var(--text-primary, #1e293b); font-family: 'Poppins', sans-serif; margin-top: 8px; margin-bottom: 0px;">Locked</div>
+                        <div style="grid-column: 1 / -1; font-size: 18px; font-weight: 600; color: var(--text-primary, #1e293b); font-family: 'Poppins', sans-serif; margin-top: 8px; margin-bottom: 0px;">Locked</div>
                     `;
                 }
             }
@@ -3907,7 +3907,7 @@ const QuizEngine = {
                             <div style="height: 100%; width: ${percent}%; background: rgba(0,0,0,0.3); border-radius: 3px;"></div>
                         </div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                            <span style="font-size: 11px; font-weight: 700; color: #4b5563;">${badge.currentProgress} / ${badge.targetProgress} ${badge.progressUnit}</span>
+                            <span style="font-size: 11px; font-weight: 600; color: #4b5563;">${badge.currentProgress} / ${badge.targetProgress} ${badge.progressUnit}</span>
                         </div>
                         <div style="font-size: 10px; color: #8e8e93; font-weight: 500;">
                             ${badge.progressUnit === '%' ? `Complete ${remaining} more points to unlock` : `${remaining} More Required`}
@@ -3918,7 +3918,7 @@ const QuizEngine = {
                 const glowColor = badge.bg.match(/#[0-9a-fA-F]{6}/) ? badge.bg.match(/#[0-9a-fA-F]{6}/)[0] : '#34c759';
                 boxEffect = `box-shadow: 0 8px 24px ${glowColor}40; border: 1px solid ${glowColor}60;`;
                 progressSection = `
-                    <div style="margin-top: 16px; font-size: 12px; color: rgba(0,0,0,0.7); font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                    <div style="margin-top: 16px; font-size: 12px; color: rgba(0,0,0,0.7); font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 4px;">
                         Earned ${badge.earnedDate}
                     </div>
                 `;
@@ -3936,7 +3936,7 @@ const QuizEngine = {
                                 <img src="${badge.iconUrl}" style="width: 40px; height: 40px; object-fit: contain; filter: ${iconFilter};">
                             </div>
                         </div>
-                        <div style="font-size: 14px; font-weight: 700; color: ${titleColor}; margin-bottom: 4px; font-family: 'Poppins', sans-serif; letter-spacing: -0.3px;">${badge.title}</div>
+                        <div style="font-size: 14px; font-weight: 600; color: ${titleColor}; margin-bottom: 4px; font-family: 'Poppins', sans-serif; letter-spacing: -0.3px;">${badge.title}</div>
                         ${progressSection}
                     </div>
                 </div>
@@ -3967,7 +3967,7 @@ const QuizEngine = {
                 <div style="margin-bottom: 16px;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                         <span style="font-size: 13px; color: var(--text-secondary, #64748b); font-weight: 500;">Current Progress</span>
-                        <span style="font-size: 13px; color: var(--text-primary, #1e293b); font-weight: 700;">${percent}%</span>
+                        <span style="font-size: 13px; color: var(--text-primary, #1e293b); font-weight: 600;">${percent}%</span>
                     </div>
                     <div style="height: 8px; background: rgba(0,0,0,0.06); border-radius: 4px; overflow: hidden;">
                         <div style="height: 100%; width: ${percent}%; background: ${badge.bg}; border-radius: 4px;"></div>
@@ -3995,7 +3995,7 @@ const QuizEngine = {
                         <img src="${badge.iconUrl}" style="width: 80px; height: 80px; object-fit: contain; filter: ${iconFilter};">
                     </div>
                 </div>
-                <h2 style="font-size: 24px; font-weight: 700; color: var(--text-primary, #1e293b); letter-spacing: -0.5px; margin-bottom: 12px; font-family: 'Poppins', sans-serif;">${badge.title}</h2>
+                <h2 style="font-size: 24px; font-weight: 600; color: var(--text-primary, #1e293b); letter-spacing: -0.5px; margin-bottom: 12px; font-family: 'Poppins', sans-serif;">${badge.title}</h2>
                 ${statusBadge}
                 
                 <div style="background: #ffffff; border: 1px solid rgba(15,23,42,0.05); border-radius: 16px; padding: 20px; text-align: left; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
@@ -4006,13 +4006,13 @@ const QuizEngine = {
 
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                         <span style="font-size: 13px; color: var(--text-secondary, #64748b); font-weight: 500;">Reward XP</span>
-                        <span style="font-size: 14px; color: #b45309; font-weight: 700;">⭐ +${badge.rewardXp} XP</span>
+                        <span style="font-size: 14px; color: #b45309; font-weight: 600;">⭐ +${badge.rewardXp} XP</span>
                     </div>
                     <div style="height: 1px; background: rgba(15,23,42,0.05); margin-bottom: 16px;"></div>
                     
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                         <span style="font-size: 13px; color: var(--text-secondary, #64748b); font-weight: 500;">Rarity Level</span>
-                        <span style="font-size: 13px; color: #466ba9; font-weight: 700; background: rgba(70,107,169,0.1); padding: 4px 8px; border-radius: 8px;">${badge.rarityLevel}</span>
+                        <span style="font-size: 13px; color: #466ba9; font-weight: 600; background: rgba(70,107,169,0.1); padding: 4px 8px; border-radius: 8px;">${badge.rarityLevel}</span>
                     </div>
                     <div style="height: 1px; background: rgba(15,23,42,0.05); margin-bottom: 16px;"></div>
                     
@@ -4164,7 +4164,7 @@ const QuizEngine = {
         podiumOrder.forEach(item => {
             if (item.isUser) userItem = item;
             const rankClass = `lb-podium-rank-${item.rank}`;
-            const extraStatHTML = item.extraStat ? `<div class="lb-podium-extra-stat" style="font-size:10px; font-weight:700; color:var(--text-dim); margin-top:4px;">${item.extraStat}</div>` : '';
+            const extraStatHTML = item.extraStat ? `<div class="lb-podium-extra-stat" style="font-size:10px; font-weight: 600; color:var(--text-dim); margin-top:4px;">${item.extraStat}</div>` : '';
 
             // Celebration support for rank 1
             const confettiClass = (item.isUser && item.rank === 1) ? 'celebration-confetti' : '';
@@ -4198,8 +4198,8 @@ const QuizEngine = {
                 <div class="lb-weekly-mvp-card" style="background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 16px; padding: 16px; margin: 0 0 24px; border: 1px solid #fcd34d; display: flex; align-items: center; gap: 16px;">
                     <div style="font-size: 32px;"><img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f3c6.png" style="width: 1.2em; height: 1.2em; vertical-align: -0.2em; display: inline-block;"></div>
                     <div style="flex: 1;">
-                        <div style="font-size: 12px; font-weight: 800; color: #b45309; text-transform: uppercase;">Weekly MVP</div>
-                        <div style="font-size: 16px; font-weight: 800; color: #92400e; margin-bottom: 4px;">Officer Smith</div>
+                        <div style="font-size: 12px; font-weight: 600; color: #b45309; text-transform: uppercase;">Weekly MVP</div>
+                        <div style="font-size: 16px; font-weight: 600; color: #92400e; margin-bottom: 4px;">Officer Smith</div>
                         <div style="font-size: 12px; color: #b45309; font-weight: 600;">+520 XP This Week • 12 Challenges</div>
                     </div>
                 </div>
@@ -4208,19 +4208,19 @@ const QuizEngine = {
             // Weekly Achievements Section
             weeklyAchieveContainer.innerHTML = `
                 <div class="lb-weekly-achievements" style="margin: 0 0 24px; background: white; border-radius: 16px; padding: 20px; border: 1px solid rgba(15,23,42,0.05);">
-                    <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px; color: var(--text-primary);">Weekly Achievements</h3>
+                    <h3 style="font-size: 15px; font-weight: 600; margin-bottom: 16px; color: var(--text-primary);">Weekly Achievements</h3>
                     <div style="display: flex; flex-direction: column; gap: 12px;">
                         <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 14px 16px; border-radius: 12px;">
-                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-size: 20px;"><img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f525.png" style="width: 1.2em; height: 1.2em; vertical-align: -0.2em; display: inline-block;"></span> <span style="font-size: 14px; font-weight: 700; color: var(--text-secondary);">Fastest Climber</span></div>
-                            <div style="text-align: right;"><div style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">Officer Smith</div><div style="font-size: 12px; font-weight: 600; color: #166534;">↑ 12 Positions</div></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-size: 20px;"><img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f525.png" style="width: 1.2em; height: 1.2em; vertical-align: -0.2em; display: inline-block;"></span> <span style="font-size: 14px; font-weight: 600; color: var(--text-secondary);">Fastest Climber</span></div>
+                            <div style="text-align: right;"><div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">Officer Smith</div><div style="font-size: 12px; font-weight: 600; color: #166534;">↑ 12 Positions</div></div>
                         </div>
                         <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 14px 16px; border-radius: 12px;">
-                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-size: 20px;"><img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f3c6.png" style="width: 1.2em; height: 1.2em; vertical-align: -0.2em; display: inline-block;"></span> <span style="font-size: 14px; font-weight: 700; color: var(--text-secondary);">Most Completed</span></div>
-                            <div style="text-align: right;"><div style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">Emma Davis</div><div style="font-size: 12px; font-weight: 600; color: var(--accent-blue);">24 Challenges</div></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-size: 20px;"><img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f3c6.png" style="width: 1.2em; height: 1.2em; vertical-align: -0.2em; display: inline-block;"></span> <span style="font-size: 14px; font-weight: 600; color: var(--text-secondary);">Most Completed</span></div>
+                            <div style="text-align: right;"><div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">Emma Davis</div><div style="font-size: 12px; font-weight: 600; color: var(--accent-blue);">24 Challenges</div></div>
                         </div>
                         <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 14px 16px; border-radius: 12px;">
-                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-size: 20px;"><img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/26a1.png" style="width: 1.2em; height: 1.2em; vertical-align: -0.2em; display: inline-block;"></span> <span style="font-size: 14px; font-weight: 700; color: var(--text-secondary);">Longest Streak</span></div>
-                            <div style="text-align: right;"><div style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">Sarah Connor</div><div style="font-size: 12px; font-weight: 600; color: #f59e0b;">11 Days</div></div>
+                            <div style="display: flex; align-items: center; gap: 12px;"><span style="font-size: 20px;"><img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/26a1.png" style="width: 1.2em; height: 1.2em; vertical-align: -0.2em; display: inline-block;"></span> <span style="font-size: 14px; font-weight: 600; color: var(--text-secondary);">Longest Streak</span></div>
+                            <div style="text-align: right;"><div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">Sarah Connor</div><div style="font-size: 12px; font-weight: 600; color: #f59e0b;">11 Days</div></div>
                         </div>
                     </div>
                 </div>
@@ -4268,10 +4268,10 @@ const QuizEngine = {
 
             let extraTeamStat = '';
             if (tabName === 'team' && item.performanceMetric) {
-                extraTeamStat = `<div style="font-size: 11px; font-weight: 700; color: var(--text-secondary); margin-top: 4px;">${item.performanceMetric}</div>`;
+                extraTeamStat = `<div style="font-size: 11px; font-weight: 600; color: var(--text-secondary); margin-top: 4px;">${item.performanceMetric}</div>`;
             }
 
-            const nationalBadgeHTML = (tabName === 'national' && item.isNationalLeader) ? `<span style="background: #fef3c7; color: #b45309; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 700; border: 1px solid #fde68a;"><img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/2b50.png" style="width: 1.2em; height: 1.2em; vertical-align: -0.2em; display: inline-block;"> National Leader</span>` : '';
+            const nationalBadgeHTML = (tabName === 'national' && item.isNationalLeader) ? `<span style="background: #fef3c7; color: #b45309; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; border: 1px solid #fde68a;"><img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/2b50.png" style="width: 1.2em; height: 1.2em; vertical-align: -0.2em; display: inline-block;"> National Leader</span>` : '';
 
             // User Inline Progress (Friends tab)
             let inlineProgressHTML = '';
@@ -4283,7 +4283,7 @@ const QuizEngine = {
 
                 inlineProgressHTML = `
                     <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.05); width: 100%;">
-                        <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
                             <span>Progress to Rank #${item.rank - 1}</span>
                             <span style="color: var(--accent-blue);">${diff} XP away</span>
                         </div>
@@ -4324,7 +4324,7 @@ const QuizEngine = {
         // Add Full Leaderboard CTA only on friends tab
         if (tabName === 'friends') {
             listContainer.innerHTML += `
-                <button class="btn-primary w-100 mt-4 lb-full-cta" style="border-radius: 16px; padding: 16px; font-weight: 700;" onclick="QuizEngine.switchLeaderboardTab(document.querySelectorAll('.tab-btn')[2], 'national')">View Full Global Rankings</button>
+                <button class="btn-primary w-100 mt-4 lb-full-cta" style="border-radius: 16px; padding: 16px; font-weight: 600;" onclick="QuizEngine.switchLeaderboardTab(document.querySelectorAll('.tab-btn')[2], 'national')">View Full Global Rankings</button>
             `;
         }
 
@@ -4343,7 +4343,7 @@ const QuizEngine = {
                     <div class="lb-sticky-progress-wrap">
                         <div class="lb-sticky-progress-text">
                             <span>Progress to Rank #${userItem.rank - 1}</span>
-                            <span style="color: #fbbf24; font-weight: 800; letter-spacing: 0.2px;">Only ${diff} XP away!</span>
+                            <span style="color: #fbbf24; font-weight: 600; letter-spacing: 0.2px;">Only ${diff} XP away!</span>
                         </div>
                         <div class="lb-sticky-progress-bar">
                             <div class="lb-sticky-progress-fill" style="width: ${percent}%;"></div>
@@ -4353,7 +4353,7 @@ const QuizEngine = {
             } else if (userItem.rank === 1) {
                 progressHTML = `
                     <div class="lb-sticky-progress-wrap">
-                        <div class="lb-sticky-progress-text" style="justify-content: center; color: #f59e0b; font-weight: 700;">
+                        <div class="lb-sticky-progress-text" style="justify-content: center; color: #f59e0b; font-weight: 600;">
                             <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/1f3c6.png" style="width: 1.2em; height: 1.2em; vertical-align: -0.2em; display: inline-block;"> You are the Top Performer! Keep defending your title!
                         </div>
                     </div>
@@ -4607,7 +4607,7 @@ const QuizEngine = {
                         else if (badge === 'Silver') { badgeColor = 'linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%)'; badgeText = '#334155'; }
                         else if (badge === 'Bronze') { badgeColor = 'linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)'; badgeText = '#9a3412'; }
                         else if (badge === 'Rare') { badgeColor = 'linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%)'; badgeText = '#7e22ce'; }
-                        badgeHtml = `<div style="background: ${badgeColor}; color: ${badgeText}; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 8px; margin-left: 12px; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">${badge}</div>`;
+                        badgeHtml = `<div style="background: ${badgeColor}; color: ${badgeText}; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 8px; margin-left: 12px; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">${badge}</div>`;
                     }
 
                     html += `
@@ -4728,7 +4728,7 @@ const QuizEngine = {
 
         let html = '';
         this.practiceSelectedMains.forEach(mainTopic => {
-            html += `<h4 style="font-size: 14px; font-weight: 700; color: #64748b; margin: 24px 0 12px 4px; text-transform: uppercase; letter-spacing: 0.5px;">${mainTopic}</h4>`;
+            html += `<h4 style="font-size: 14px; font-weight: 600; color: #64748b; margin: 24px 0 12px 4px; text-transform: uppercase; letter-spacing: 0.5px;">${mainTopic}</h4>`;
 
             const subTopics = this.practiceAidsData[mainTopic].subTopics;
             Object.keys(subTopics).forEach(subTopic => {
@@ -4744,7 +4744,7 @@ const QuizEngine = {
 
                 html += `
                     <div class="practice-card ${isSelected ? 'selected' : ''}" onclick="QuizEngine.togglePracticeSub('${subTopic}')" style="align-items: center; padding: 12px; cursor: pointer; border: ${isSelected ? '1.5px solid rgba(70, 107, 169, 0.3)' : 'none'}; background: ${isSelected ? '#eff6ff' : '#ffffff'}; margin-bottom: 12px; border-radius: 16px; transition: all 0.2s ease; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);">
-                        <div style="flex: 1; font-size: 16px; font-weight: 700; color: ${isSelected ? '#1e3a8a' : '#0f172a'};">${subTopic}</div>
+                        <div style="flex: 1; font-size: 16px; font-weight: 600; color: ${isSelected ? '#1e3a8a' : '#0f172a'};">${subTopic}</div>
                         <div class="mixed-checkbox" style="width: 24px; height: 24px; border-radius: 6px; border: 2px solid ${isSelected ? '#466ba9' : '#cbd5e1'}; background: ${isSelected ? '#466ba9' : 'transparent'}; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; margin-right: ${badge ? '30px' : '0'};">
                             ${isSelected ? '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' : ''}
                         </div>
@@ -4811,7 +4811,7 @@ const QuizEngine = {
                     html += `
                         <div class="practice-card" style="background: #ffffff; border-radius: 16px; margin-bottom: 16px; border: none; overflow: hidden; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);">
                             <div onclick="QuizEngine.togglePracticeSubCollapse('${subTopic}')" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #f8fafc; border-bottom: ${isCollapsed ? 'none' : '1.5px solid rgba(15, 23, 42, 0.08)'}; cursor: pointer;">
-                                <h4 style="font-size: 15px; font-weight: 700; color: #0f172a; margin: 0; text-transform: capitalize;">${subTopic}</h4>
+                                <h4 style="font-size: 15px; font-weight: 600; color: #0f172a; margin: 0; text-transform: capitalize;">${subTopic}</h4>
                                 <svg style="transform: rotate(${isCollapsed ? '-90deg' : '0deg'}); transition: transform 0.2s ease; color: #64748b;" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </div>
                             <div style="display: ${isCollapsed ? 'none' : 'block'};">

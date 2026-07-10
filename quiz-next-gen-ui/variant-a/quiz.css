@@ -269,7 +269,7 @@ body {
 .header-title {
     font-family: 'Poppins', sans-serif;
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 700;
     color: #ffffff;
     letter-spacing: -0.4px;
     line-height: 1.15;
@@ -359,7 +359,7 @@ body {
 
 .section-title {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
 }
 
@@ -724,7 +724,7 @@ textarea::placeholder {
 
 .recent-card-info h3 {
     font-size: 17px;
-    font-weight: 700;
+    font-weight: 600;
     color: white;
     margin-bottom: 4px;
     font-family: 'Inter', sans-serif;
@@ -784,7 +784,7 @@ textarea::placeholder {
 
 .card-title {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.3;
     letter-spacing: -0.2px;
     margin-bottom: 6px;
@@ -1019,7 +1019,7 @@ textarea::placeholder {
     background: #f59e0b;
     color: white;
     font-size: 10px;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
     padding: 4px 12px;
     border-radius: 0 16px 0 16px;
@@ -1032,7 +1032,7 @@ textarea::placeholder {
     background: #f59e0b;
     color: white;
     font-size: 11px;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
     padding: 6px 16px;
     border-radius: 20px 16px 0 20px;
@@ -1269,7 +1269,7 @@ textarea::placeholder {
 .countdown-number {
     font-family: 'Poppins', sans-serif;
     font-size: 120px;
-    font-weight: 800;
+    font-weight: 700;
     color: white;
     animation: popIn 1s infinite cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -1356,7 +1356,7 @@ textarea::placeholder {
 
 .quiz-timer {
     font-variant-numeric: tabular-nums;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 18px;
     color: white;
 }
@@ -1366,7 +1366,7 @@ textarea::placeholder {
     color: #ea580c;
     padding: 6px 12px;
     border-radius: 20px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -1419,7 +1419,7 @@ textarea::placeholder {
     border: 1.5px solid #e2e8f0;
     color: #475569;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     min-height: 44px;
     padding: 11px 18px;
     border-radius: 22px;
@@ -1440,7 +1440,7 @@ textarea::placeholder {
     border: none;
     color: white;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     min-height: 44px;
     padding: 11px 18px;
     border-radius: 22px;
@@ -1479,7 +1479,7 @@ textarea::placeholder {
     background: #3b82f6;
     color: white;
     font-size: 10px;
-    font-weight: 800;
+    font-weight: 600;
     padding: 1px 6px;
     border-radius: 10px;
     min-width: 18px;
@@ -1490,7 +1490,7 @@ textarea::placeholder {
 .question-text {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-primary);
     line-height: 1.45;
     margin: 14px 0 14px;
@@ -1624,7 +1624,7 @@ textarea::placeholder {
     top: -20px;
     right: 20px;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 600;
     color: #f59e0b;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     pointer-events: none;
@@ -1658,7 +1658,7 @@ textarea::placeholder {
     flex: 1;
     height: 44px;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     padding: 0 16px;
     border-radius: 14px;
     cursor: pointer;
@@ -1820,7 +1820,7 @@ textarea::placeholder {
 }
 
 .feedback-xp {
-    font-weight: 700;
+    font-weight: 600;
     color: var(--success);
     font-size: 16px;
 }
@@ -1888,7 +1888,7 @@ textarea::placeholder {
 .completion-title {
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 8px;
 }
 
@@ -2172,7 +2172,7 @@ textarea::placeholder {
 
 .rank-number {
     width: 24px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-secondary);
     text-align: center;
 }
@@ -2220,7 +2220,7 @@ textarea::placeholder {
 }
 
 .rank-xp {
-    font-weight: 700;
+    font-weight: 600;
     color: var(--accent-blue);
     font-size: 14px;
 }
@@ -2252,7 +2252,7 @@ textarea::placeholder {
 
 .achievement-card h4 {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 4px;
     color: var(--text-primary);
 }
@@ -2294,7 +2294,7 @@ textarea::placeholder {
     background: var(--accent-blue);
     color: white;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2521,7 +2521,7 @@ textarea::placeholder {
 .pa-hub-tagline em {
     font-style: normal;
     color: #22d3ee;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .pa-curve-sheet {
@@ -2592,7 +2592,7 @@ textarea::placeholder {
 
 #view-hub .pa-stat-value {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     color: #0f172a;
     line-height: 1.2;
     letter-spacing: -0.2px;
@@ -2674,7 +2674,7 @@ textarea::placeholder {
 
 .pa-req-title {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
     color: #0f172a;
     margin: 0 0 16px;
     display: flex;
@@ -2715,7 +2715,7 @@ textarea::placeholder {
 
 .pa-req-pass strong {
     color: #059669;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 #view-hub .view-content.format-list {
@@ -2797,7 +2797,7 @@ textarea::placeholder {
 
 #view-hub .pa-section-head h2 {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 700;
     color: #1e293b;
     margin: 0 0 var(--pa-space-sm);
     line-height: 1.2;
@@ -2851,7 +2851,7 @@ textarea::placeholder {
 
 .pa-readiness-title {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     color: #475569;
     margin: 0 0 20px;
     text-transform: uppercase;
@@ -2882,7 +2882,7 @@ textarea::placeholder {
 
 .pa-readiness-score {
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 600;
     color: #0f172a;
     line-height: 1;
     margin-bottom: 4px;
@@ -2890,7 +2890,7 @@ textarea::placeholder {
 
 .pa-readiness-status {
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
     color: #0d7a72;
     background: #e6f7f5;
     padding: 2px 8px;
@@ -2913,7 +2913,7 @@ textarea::placeholder {
 
 .pa-readiness-stat-value {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 600;
     color: #0f172a;
 }
 
@@ -3075,10 +3075,16 @@ textarea::placeholder {
     padding-top: 0;
 }
 
+.pa-exam-card .pa-card-title,
+.pa-accent-card .pa-card-title,
+.pa-topic-card-head .pa-card-title {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 .pa-accent-card .pa-card-title {
     margin: 0 0 8px;
-    font-size: 17px;
-    font-weight: 800;
+    font-size: 18px;
+    font-weight: 500;
     color: #0f172a;
     line-height: 1.18;
     letter-spacing: -0.2px;
@@ -3244,8 +3250,8 @@ textarea::placeholder {
 
 .pa-topic-card-head .pa-card-title {
     margin: 0;
-    font-size: 17px;
-    font-weight: 800;
+    font-size: 18px;
+    font-weight: 500;
     color: #0f172a;
     line-height: 1.18;
     letter-spacing: -0.2px;
@@ -3354,7 +3360,7 @@ textarea::placeholder {
 
 .pa-exam-stat-value {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     color: #0f172a;
 }
 
@@ -3423,8 +3429,8 @@ textarea::placeholder {
 
 .pa-exam-card .pa-card-title {
     margin: 0 0 8px;
-    font-size: 17px;
-    font-weight: 800;
+    font-size: 18px;
+    font-weight: 500;
     color: #0f172a;
     line-height: 1.18;
     letter-spacing: -0.2px;
@@ -3497,7 +3503,7 @@ textarea::placeholder {
     width: 28px;
     height: 28px;
     border-radius: 9px;
-    font-weight: 700;
+    font-weight: 600;
     flex-shrink: 0;
     font-size: 14px;
     margin-left: 4px;
@@ -3664,7 +3670,7 @@ textarea::placeholder {
 .pa-exit-option-copy strong {
     display: block;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 2px;
 }
 
@@ -3683,11 +3689,11 @@ textarea::placeholder {
 
 #view-active .question-text {
     background: transparent;
-    border-radius: 18px;
+    border-radius: 0px;
     padding: 0px;
     box-shadow: none;
     margin-bottom: 16px;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.55;
 }
 
@@ -3733,7 +3739,7 @@ textarea::placeholder {
 
 .format-info h3 {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 4px;
     font-family: 'Inter', sans-serif;
@@ -3757,7 +3763,7 @@ textarea::placeholder {
     padding: 4px 8px;
     border-radius: 6px;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .format-card-right>svg {
@@ -3898,7 +3904,7 @@ textarea::placeholder {
 
 .colleague-info h4 {
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 2px;
 }
@@ -3956,7 +3962,7 @@ textarea::placeholder {
 
 .matchmaking-text h4 {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 4px;
 }
@@ -4093,7 +4099,7 @@ textarea::placeholder {
 
 .colleague-info h4 {
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 2px;
 }
@@ -4151,7 +4157,7 @@ textarea::placeholder {
 
 .matchmaking-text h4 {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 4px;
 }
@@ -4554,7 +4560,7 @@ textarea::placeholder {
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
@@ -4574,7 +4580,7 @@ textarea::placeholder {
     padding: 6px 14px;
     border-radius: 100px;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .highlight-xp {
@@ -4619,7 +4625,7 @@ textarea::placeholder {
     background: #f1f5f9;
     color: var(--text-secondary);
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4664,7 +4670,7 @@ textarea::placeholder {
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 8px rgba(239, 68, 68, 0.15);
@@ -4680,7 +4686,7 @@ textarea::placeholder {
 
 .plc-timer {
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     color: #ef4444;
 }
 
@@ -4690,7 +4696,7 @@ textarea::placeholder {
 
 .plc-title {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 700;
     color: #0f172a;
     line-height: 1.3;
     margin-bottom: 12px;
@@ -4708,7 +4714,7 @@ textarea::placeholder {
     padding: 6px 14px;
     border-radius: 100px;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .plc-divider {
@@ -4752,7 +4758,7 @@ textarea::placeholder {
     box-shadow: var(--pa-cta-shadow);
     background: var(--pa-cta-gradient);
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.2s ease;
     border: none;
@@ -4782,7 +4788,7 @@ textarea::placeholder {
     color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -4896,7 +4902,7 @@ textarea::placeholder {
     align-items: center;
     justify-content: center;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 600;
     color: white;
     border: 2px solid white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -4904,7 +4910,7 @@ textarea::placeholder {
 
 .lb-podium-name {
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     color: #0f172a;
     text-align: center;
     margin-top: 16px;
@@ -4919,7 +4925,7 @@ textarea::placeholder {
 
 .lb-podium-score {
     font-size: 13px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--accent-blue);
     background: rgba(59, 130, 246, 0.1);
     padding: 4px 12px;
@@ -5001,7 +5007,7 @@ textarea::placeholder {
 
 .lb-list-rank {
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 600;
     color: #94a3b8;
     width: 24px;
     text-align: center;
@@ -5038,7 +5044,7 @@ textarea::placeholder {
 
 .lb-list-name {
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     color: #0f172a;
     white-space: nowrap;
     overflow: hidden;
@@ -5064,13 +5070,13 @@ textarea::placeholder {
 
 .lb-list-score {
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--accent-blue);
 }
 
 .lb-trend {
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
     padding: 2px 6px;
     border-radius: 4px;
 }
@@ -5152,7 +5158,7 @@ textarea::placeholder {
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 600;
     border: 2px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
@@ -5180,14 +5186,14 @@ textarea::placeholder {
 
 .lb-sticky-score {
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: -0.5px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .lb-sticky-trend {
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
     background: rgba(0, 0, 0, 0.25);
     padding: 4px 10px;
     border-radius: 12px;
@@ -5341,7 +5347,7 @@ textarea::placeholder {
 
 .achieve-summary-label {
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
     color: rgba(255, 255, 255, 0.8);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -5350,7 +5356,7 @@ textarea::placeholder {
 
 .achieve-summary-value {
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 600;
     color: #ffffff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -5370,7 +5376,7 @@ textarea::placeholder {
     display: flex;
     justify-content: space-between;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
     margin-bottom: 12px;
 }
@@ -5403,7 +5409,7 @@ textarea::placeholder {
     flex: 1;
     padding: 8px 0;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     color: #64748b;
     background: transparent;
     border: none;
@@ -5470,7 +5476,7 @@ textarea::placeholder {
 
 .achieve-card-title {
     font-size: 15px;
-    font-weight: 800;
+    font-weight: 600;
     color: #1e293b;
     margin-bottom: 6px;
     letter-spacing: -0.2px;
@@ -5563,7 +5569,7 @@ textarea::placeholder {
 
 .achieve-empty-title {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 12px;
 }
@@ -5731,7 +5737,7 @@ textarea::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 12px;
     flex-shrink: 0;
 }
@@ -5743,7 +5749,7 @@ textarea::placeholder {
 
 .pa-journey-item__title {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     color: #0f172a;
     line-height: 1.25;
     margin-bottom: 2px;
@@ -5759,7 +5765,7 @@ textarea::placeholder {
 .pa-journey-item__score {
     flex-shrink: 0;
     font-size: 13px;
-    font-weight: 800;
+    font-weight: 600;
     padding: 4px 10px;
     border-radius: 20px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
@@ -5952,7 +5958,7 @@ textarea::placeholder {
 .premium-completion-title {
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 8px;
     letter-spacing: -0.5px;
@@ -5976,7 +5982,7 @@ textarea::placeholder {
 
 .premium-section-title {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 16px;
     font-family: 'Inter', sans-serif;
@@ -6020,7 +6026,7 @@ textarea::placeholder {
 
 .premium-stat-value {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--text-primary);
     font-family: 'Poppins', sans-serif;
 }
@@ -6039,7 +6045,7 @@ textarea::placeholder {
 
 .progress-xp-total {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--accent-blue);
 }
 
@@ -6181,7 +6187,7 @@ textarea::placeholder {
     padding: 18px;
     border-radius: 20px;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: var(--pa-cta-shadow);
@@ -6200,7 +6206,7 @@ textarea::placeholder {
     padding: 16px;
     border-radius: 20px;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     transition: background 0.2s;
 }
@@ -6276,7 +6282,7 @@ textarea::placeholder {
 .victory-title {
     font-family: 'Poppins', sans-serif;
     font-size: 36px;
-    font-weight: 800;
+    font-weight: 700;
     color: #ffffff;
     margin-bottom: 8px;
     letter-spacing: -0.5px;
@@ -6308,7 +6314,7 @@ textarea::placeholder {
 .vs-header {
     text-align: center;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.5);
     letter-spacing: 1px;
@@ -6337,7 +6343,7 @@ textarea::placeholder {
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -6355,7 +6361,7 @@ textarea::placeholder {
 .vs-score {
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 16px;
 }
 
@@ -6392,7 +6398,7 @@ textarea::placeholder {
 
 .vs-stat-row strong {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .vs-divider {
@@ -6418,7 +6424,7 @@ textarea::placeholder {
     background: #1e293b;
     color: white;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 600;
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -6510,7 +6516,7 @@ textarea::placeholder {
 
 .rank-title {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .rank-level {
@@ -6520,7 +6526,7 @@ textarea::placeholder {
 
 .progress-xp-earned {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 700;
     color: #f59e0b;
     font-family: 'Poppins', sans-serif;
 }
@@ -6587,7 +6593,7 @@ textarea::placeholder {
 
 .reveal-header {
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
     color: #fcd34d;
     letter-spacing: 1px;
@@ -6644,7 +6650,7 @@ textarea::placeholder {
 
 .reveal-badge-title {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 600;
     color: white;
 }
 
@@ -6744,7 +6750,7 @@ textarea::placeholder {
 .challenge-title {
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 8px;
     letter-spacing: -0.5px;
@@ -6761,7 +6767,7 @@ textarea::placeholder {
     display: inline-block;
     font-family: 'Poppins', sans-serif;
     font-size: 48px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--accent-blue);
     background: white;
     padding: 8px 32px;
@@ -6803,7 +6809,7 @@ textarea::placeholder {
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
     color: white;
     margin-bottom: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -6829,7 +6835,7 @@ textarea::placeholder {
 .challenge-score {
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .user-player .challenge-score {
@@ -6863,7 +6869,7 @@ textarea::placeholder {
     background: #ffffff;
     color: var(--text-secondary);
     font-size: 13px;
-    font-weight: 800;
+    font-weight: 600;
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -6886,7 +6892,7 @@ textarea::placeholder {
 
 .performance-header {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 20px;
     font-family: 'Inter', sans-serif;
@@ -6923,7 +6929,7 @@ textarea::placeholder {
 
 .perf-val {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
 }
 
@@ -6978,7 +6984,7 @@ textarea::placeholder {
 .perf-opp-val {
     font-size: 32px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     width: 80px;
 }
 
@@ -7071,7 +7077,7 @@ textarea::placeholder {
 
 .m-tab span {
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     white-space: nowrap;
     letter-spacing: -0.4px;
     text-transform: uppercase;
@@ -7095,7 +7101,7 @@ textarea::placeholder {
 
 .performance-header {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 20px;
     font-family: 'Inter', sans-serif;
@@ -7132,7 +7138,7 @@ textarea::placeholder {
 
 .perf-val {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
 }
 
@@ -7187,7 +7193,7 @@ textarea::placeholder {
 .perf-opp-val {
     font-size: 32px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     width: 80px;
 }
 
@@ -7280,7 +7286,7 @@ textarea::placeholder {
 
 .m-tab span {
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     white-space: nowrap;
     letter-spacing: -0.4px;
     text-transform: uppercase;
@@ -7317,7 +7323,7 @@ textarea::placeholder {
     padding: 16px 12px;
     border-radius: 16px;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     z-index: 11000;
     opacity: 0;
     pointer-events: none;
@@ -7405,7 +7411,7 @@ textarea::placeholder {
 
 .hero-name {
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin: 0 0 4px;
     letter-spacing: -0.5px;
@@ -7436,7 +7442,7 @@ textarea::placeholder {
 .hero-stat-label {
     font-size: 11px;
     color: var(--text-dim);
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 6px;
@@ -7444,7 +7450,7 @@ textarea::placeholder {
 
 .hero-stat-value {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
 }
 
@@ -7470,14 +7476,14 @@ textarea::placeholder {
 
 .journey-title {
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin: 0;
 }
 
 .journey-xp {
     font-size: 15px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--accent-blue);
 }
 
@@ -7506,7 +7512,7 @@ textarea::placeholder {
 
 .journey-reward {
     color: var(--warning);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .report-option-label:has(input[type="radio"]:checked) {
@@ -7679,7 +7685,7 @@ textarea::placeholder {
 .result-status-headline {
     font-family: 'Poppins', sans-serif;
     font-size: 28px;
-    font-weight: 800;
+    font-weight: 700;
     color: #ffffff;
     margin: 0;
     line-height: 1.1;
@@ -7895,7 +7901,7 @@ textarea::placeholder {
 .result-stats__score {
     font-family: 'Poppins', sans-serif;
     font-size: 26px;
-    font-weight: 800;
+    font-weight: 700;
     color: #1e293b;
     line-height: 1;
     font-variant-numeric: tabular-nums;
@@ -7943,7 +7949,7 @@ textarea::placeholder {
 .result-score-ring__value {
     font-family: 'Poppins', sans-serif;
     font-size: 26px;
-    font-weight: 800;
+    font-weight: 700;
     color: #1e293b;
     line-height: 1;
 }
