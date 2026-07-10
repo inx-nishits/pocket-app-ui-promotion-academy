@@ -2390,6 +2390,17 @@ const QuizEngine = {
         this.loadQuestion();
     },
 
+    splitQuestionParts: function (text) {
+        const parts = text.split(/\n\n+/);
+        if (parts.length > 1) {
+            return {
+                scenario: parts.slice(0, -1).join('\n\n').trim(),
+                question: parts[parts.length - 1].trim()
+            };
+        }
+        return { scenario: '', question: text.trim() };
+    },
+
     loadQuestion: function (targetQuestion = null) {
         if (targetQuestion !== null) {
             this.currentQuestion = targetQuestion;
@@ -2443,7 +2454,19 @@ const QuizEngine = {
 
         // Mock Question Data
         const qData = this.questionsData[(this.currentQuestion - 1) % this.questionsData.length];
-        document.getElementById('question-text').innerText = qData.q;
+        const { scenario, question } = this.splitQuestionParts(qData.q);
+        const scenarioEl = document.getElementById('question-scenario');
+        const questionEl = document.getElementById('question-text');
+        if (scenarioEl) {
+            if (scenario) {
+                scenarioEl.textContent = scenario;
+                scenarioEl.hidden = false;
+            } else {
+                scenarioEl.textContent = '';
+                scenarioEl.hidden = true;
+            }
+        }
+        if (questionEl) questionEl.innerText = question;
 
         const answersGrid = document.getElementById('answers-grid');
         const optClasses = ['opt-a', 'opt-b', 'opt-c', 'opt-d'];
@@ -3782,8 +3805,8 @@ const QuizEngine = {
 
             list.innerHTML += `
                 <div class="breakdown-item ${statusClass}" style="flex-direction: column; align-items: flex-start; padding: 16px; cursor: pointer;" onclick="const details = this.querySelector('.breakdown-details'); const icon = this.querySelector('.toggle-icon'); const wasClosed = details.style.display === 'none'; this.parentElement.querySelectorAll('.breakdown-details').forEach(el => el.style.display = 'none'); this.parentElement.querySelectorAll('.toggle-icon').forEach(el => el.style.transform = 'rotate(0deg)'); if(wasClosed) { details.style.display = 'block'; icon.style.transform = 'rotate(180deg)'; }">
-                    <div style="display: flex; gap: 12px; width: 100%; align-items: center;">
-                        <div class="breakdown-icon" style="flex-shrink: 0;">
+                    <div style="display: flex; gap: 12px; width: 100%; align-items: flex-start;">
+                        <div class="breakdown-icon" style="flex-shrink: 0; margin-top: 2px;">
                             ${iconSvg}
                         </div>
                         <div class="breakdown-text" style="flex-grow: 1; margin: 0;"><strong>Q${i + 1}:</strong> ${qData.q}</div>

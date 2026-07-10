@@ -15,7 +15,7 @@
         rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="quiz.css?v=120">
+    <link rel="stylesheet" href="quiz.css?v=129">
 
     <!-- Chart.js & Plugins -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -3601,7 +3601,15 @@
             </div>
 
             <div class="view-content quiz-content-area">
-                <h2 class="question-text" id="question-text">Loading question...</h2>
+                <div class="pa-question-block" id="question-block">
+                    <div class="pa-question-prompt-wrap">
+                        <span class="pa-question-label" aria-label="Question">Q.</span>
+                        <div class="pa-question-content">
+                            <p class="pa-question-scenario" id="question-scenario" hidden></p>
+                            <h2 class="question-text pa-question-prompt" id="question-text">Loading question...</h2>
+                        </div>
+                    </div>
+                </div>
 
                 <div style="width: 500px; max-width: 100%; margin-top: 8px;">
                     <div class="answers-grid" id="answers-grid">
@@ -4389,37 +4397,37 @@
                                 <span style="font-size: 10px; font-weight: 600; color: #64748b;">M</span>
                                 <div
                                     style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
-                                    ✅</div>
+                                    <span class="pa-marker-icon pa-marker-icon--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
                                 <span style="font-size: 10px; font-weight: 600; color: #64748b;">T</span>
                                 <div
                                     style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
-                                    ✅</div>
+                                    <span class="pa-marker-icon pa-marker-icon--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
                                 <span style="font-size: 10px; font-weight: 600; color: #64748b;">W</span>
                                 <div
                                     style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
-                                    ✅</div>
+                                    <span class="pa-marker-icon pa-marker-icon--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
                                 <span style="font-size: 10px; font-weight: 600; color: #64748b;">T</span>
                                 <div
                                     style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
-                                    ✅</div>
+                                    <span class="pa-marker-icon pa-marker-icon--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
                                 <span style="font-size: 10px; font-weight: 600; color: #64748b;">F</span>
                                 <div
                                     style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
-                                    ✅</div>
+                                    <span class="pa-marker-icon pa-marker-icon--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
                                 <span style="font-size: 10px; font-weight: 600; color: #64748b;">S</span>
                                 <div
                                     style="width: 26px; height: 26px; border-radius: 50%; background: #22c55e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(34,197,94,0.2);">
-                                    ✅</div>
+                                    <span class="pa-marker-icon pa-marker-icon--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                             </div>
                             <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
                                 <span style="font-size: 10px; font-weight: 600; color: #3b82f6;">S</span>
@@ -4591,7 +4599,7 @@
                                 onmouseout="this.style.opacity='1'">
                                 <div
                                     style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #ecfdf5; border: 2.5px solid #10b981; display: flex; align-items: center; justify-content: center; color: #10b981; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(16,185,129,0.15);">
-                                    ✅</div>
+                                    <span class="pa-marker-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                                 <div>
                                     <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #6</div>
                                     <div style="font-size: 12px; color: #64748b; font-weight: 500;">Oct 24, 2025 at
@@ -4607,7 +4615,7 @@
                                 onmouseout="this.style.opacity='1'">
                                 <div
                                     style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #ecfdf5; border: 2.5px solid #10b981; display: flex; align-items: center; justify-content: center; color: #10b981; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(16,185,129,0.15);">
-                                    ✅</div>
+                                    <span class="pa-marker-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                                 <div>
                                     <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #5</div>
                                     <div style="font-size: 12px; color: #64748b; font-weight: 500;">Oct 17, 2025 at
@@ -4623,7 +4631,7 @@
                                 onmouseout="this.style.opacity='1'">
                                 <div
                                     style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #ecfdf5; border: 2.5px solid #10b981; display: flex; align-items: center; justify-content: center; color: #10b981; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(16,185,129,0.15);">
-                                    ✅</div>
+                                    <span class="pa-marker-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                                 <div>
                                     <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #4</div>
                                     <div style="font-size: 12px; color: #64748b; font-weight: 500;">Oct 10, 2025 at
@@ -4639,7 +4647,7 @@
                                 onmouseout="this.style.opacity='1'">
                                 <div
                                     style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #fff7ed; border: 2.5px solid #ea580c; display: flex; align-items: center; justify-content: center; color: #ea580c; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(234,88,12,0.15);">
-                                    ✅</div>
+                                    <span class="pa-marker-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                                 <div>
                                     <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #3</div>
                                     <div style="font-size: 12px; color: #64748b; font-weight: 500;">Oct 03, 2025 at
@@ -4657,7 +4665,7 @@
                                     onmouseout="this.style.opacity='1'">
                                     <div
                                         style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #fff7ed; border: 2.5px solid #ea580c; display: flex; align-items: center; justify-content: center; color: #ea580c; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(234,88,12,0.15);">
-                                        ✅</div>
+                                        <span class="pa-marker-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                                     <div>
                                         <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #2
                                         </div>
@@ -4673,7 +4681,7 @@
                                     onmouseout="this.style.opacity='1'">
                                     <div
                                         style="position: absolute; left: -36px; width: 28px; height: 28px; border-radius: 50%; background: #fef2f2; border: 2.5px solid #ef4444; display: flex; align-items: center; justify-content: center; color: #ef4444; font-weight: 600; font-size: 12px; box-shadow: 0 2px 4px rgba(239,68,68,0.15);">
-                                        ✖️</div>
+                                        <span class="pa-marker-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></div>
                                     <div>
                                         <div style="font-size: 14px; font-weight: 600; color: #0f172a;">Mock Exam #1
                                         </div>
@@ -4757,7 +4765,7 @@
                 <div class="question-breakdown-list" id="analytics-question-list">
                     <!-- Example -->
                     <div class="breakdown-item correct">
-                        <div class="breakdown-icon">✅</div>
+                        <div class="breakdown-icon"><span class="pa-marker-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span></div>
                         <div class="breakdown-text">Question 1 Summary...</div>
                     </div>
                 </div>
@@ -5700,7 +5708,7 @@
                 }
             }
         </script>
-        <script src="quiz.js?v=13"></script>
+        <script src="quiz.js?v=15"></script>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
                 const emojiMap = {
@@ -5769,8 +5777,12 @@
             <div onclick="event.stopPropagation()" class="exit-confirm-modal pa-exit-modal"
                 style="background: #ffffff; border-radius: 28px; padding: 24px 20px 20px; width: 85%; max-width: 340px; text-align: left; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35); position: relative; display: flex; flex-direction: column; align-items: stretch; margin: auto; border: 1px solid rgba(15, 23, 42, 0.05); transform: scale(1.05); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
 
-                <button type="button" onclick="QuizEngine.cancelExit()"
-                    style="position: absolute; top: 14px; right: 14px; width: 28px; height: 28px; border: none; background: transparent; color: #94a3b8; cursor: pointer; font-size: 20px; line-height: 1;">&times;</button>
+                <button type="button" class="pa-sheet-close-btn" onclick="QuizEngine.cancelExit()" aria-label="Close">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
 
                 <!-- Icon -->
                 <div class="pa-exit-icon"
@@ -5836,8 +5848,12 @@
             <div onclick="event.stopPropagation()" class="exit-confirm-modal"
                 style="background: #ffffff; border-radius: 28px; padding: 26px; width: 85%; max-width: 340px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.8); position: relative; display: flex; flex-direction: column; align-items: center; margin: auto; border: 1px solid rgba(15, 23, 42, 0.05); transform: scale(1.1); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
 
-                <button type="button" onclick="QuizEngine.cancelDiscardConfirm()"
-                    style="position: absolute; top: 14px; right: 14px; width: 28px; height: 28px; border: none; background: transparent; color: #94a3b8; cursor: pointer; font-size: 20px; line-height: 1;">&times;</button>
+                <button type="button" class="pa-sheet-close-btn" onclick="QuizEngine.cancelDiscardConfirm()" aria-label="Close">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
 
                 <!-- Icon -->
                 <div class="pa-exit-icon"
@@ -5879,12 +5895,16 @@
             <div onclick="event.stopPropagation()" class="exit-confirm-modal"
                 style="background: #ffffff; border-radius: 28px; padding: 26px; width: 85%; max-width: 340px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.8); position: relative; display: flex; flex-direction: column; align-items: center; margin: auto; border: 1px solid rgba(15, 23, 42, 0.05); transform: scale(1.1); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
 
-                <button type="button" onclick="QuizEngine.cancelResumeExam()"
-                    style="position: absolute; top: 14px; right: 14px; width: 28px; height: 28px; border: none; background: transparent; color: #94a3b8; cursor: pointer; font-size: 20px; line-height: 1;">&times;</button>
+                <button type="button" class="pa-sheet-close-btn" onclick="QuizEngine.cancelResumeExam()" aria-label="Close">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
 
                 <!-- Icon -->
                 <div
-                    style="width: 68px; height: 68px; border-radius: 20px; background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); color: #ffffff; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; box-shadow: 0 10px 24px rgba(59, 130, 246, 0.35), inset 0 2px 4px rgba(255,255,255,0.4); transform: rotate(-5deg);">
+                    style="width: 68px; height: 68px; border-radius: 20px; background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); color: #ffffff; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px auto; box-shadow: 0 10px 24px rgba(59, 130, 246, 0.35), inset 0 2px 4px rgba(255,255,255,0.4); transform: rotate(-5deg);">
                     <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                         stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(5deg);">
                         <circle cx="12" cy="12" r="10"></circle>
@@ -5916,7 +5936,12 @@
             style="z-index: 10000; padding: 12px 12px 32px; background: #ffffff; border-radius: 24px 24px 0 0; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-sizing: border-box;">
             <div class="pa-sheet-topbar">
                 <div class="pa-sheet-handle" aria-hidden="true"></div>
-                <button type="button" class="pa-sheet-close-btn" onclick="QuizEngine.closeReportSheet()" aria-label="Close">&times;</button>
+                <button type="button" class="pa-sheet-close-btn" onclick="QuizEngine.closeReportSheet()" aria-label="Close">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
             </div>
             <h3 style="margin: 0 0 20px; font-size: 20px; font-weight: 600; color: #0f172a; line-height: 1.3;">Help us
                 improve AI-generated
