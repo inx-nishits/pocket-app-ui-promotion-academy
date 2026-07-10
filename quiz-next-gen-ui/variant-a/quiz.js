@@ -16,7 +16,7 @@ const QuizEngine = {
     practiceSelectedSubSubs: [],
     practiceAidsData: {
         "Crime": {
-            icon: "../images/3d-icons/mock-exam.png",
+            icon: "../images/3d-icons/crime-sub.png",
             subTopics: {
                 "Mens Rea (State of Mind)": { badge: "Gold", subSubs: { "Intent": 8, "Recklessness": 3, "Negligence": 1, "Strict Liability": 3, "Transferred Mens Rea": 4 } },
                 "Actus Reus (Criminal Conduct)": { badge: "Gold", subSubs: { "Automatism": 2, "Coincidence with Mens Rea": 5, "Omissions": 3, "Causal Link or Chain of Causation": 5, "Intervening Act": 5, "Principals and Accessories": 18, "Joint Enterprise": 3, "Corporate Liability": 2 } },
@@ -37,7 +37,7 @@ const QuizEngine = {
             }
         },
         "Evidence & Procedure": {
-            icon: "../images/3d-icons/inspector-exam-sub.png",
+            icon: "../images/3d-icons/evidence-procedure-sub.png",
             subTopics: {
                 "Instituting Criminal Proceedings": { badge: "Silver", subSubs: { "Written Charge and Requisition": 2, "Service of Summons, Written Charge and Requisition": 3, "Service Outside England and Wales": 1, "Execution of Warrants": 6 } },
                 "Release of Person Arrested": { badge: "Bronze", subSubs: { "Person Arrested Elsewhere than at a Police Station": 18, "Pre-Charge Release of Person Arrested and Bail": 12, "Police Bail After Charge": 2, "Police Bail Restrictions": 6, "Grounds for Refusing Police Bail": 12, "Custody Officer - Granting Bail": 9, "Police Bail - Surety": 8, "Security": 2, "Liability to Arrest for Absconding or Breaking Bail Conditions": 4, "Offence of Absconding by Person Released on Bail": 2, "Remands in Police Custody": 1 } },
@@ -50,7 +50,7 @@ const QuizEngine = {
             }
         },
         "General Police Duties": {
-            icon: "../images/3d-icons/sergeant-exam-sub.png",
+            icon: "../images/3d-icons/general-police-duties-sub.png",
             subTopics: {
                 "Stop and Search": { badge: "", subSubs: { "Code A - 1 Principles Governing Stop and Search": 4, "Code A - 2 Types of Stop and Search Powers": 29, "Code A - 3 Conduct of Searches": 7, "Code A - 4 Recording Requirements": 9 } },
                 "Entry, Search and Seizure": { badge: "", subSubs: { "Code B - 2 General": 4, "Code B - 3 Search Warrants and Production Orders": 5, "Search Warrants for Indictable Offences": 3, "Execution of a Warrant": 1, "Code B - 4 Entry without Warrant - Particular Powers": 20, "Code B - 5 Search with Consent": 2, "Code B - 6 Searching Premises - General Considerations": 6, "Code B - 7 Seizure and Retention of Property": 13, "Code B - 8 Action After Searches": 2 } },
