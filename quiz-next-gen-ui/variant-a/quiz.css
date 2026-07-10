@@ -3404,7 +3404,11 @@ textarea::placeholder {
     --pa-rail-deep: #334155;
     --pa-icon-bg: #f1f5f9;
     --pa-icon-border: #cbd5e1;
-    --pa-nav-arrow-bg: #f8fafc;
+    --pa-nav-arrow-bg: #edf6ff;
+}
+
+.pa-exam-card.rail-blue-dark .card-nav-arrow {
+    color: #64748b;
 }
 
 .pa-exam-card .pa-exam-top {
