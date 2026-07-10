@@ -2630,6 +2630,12 @@ textarea::placeholder {
     color: var(--pa-teal);
 }
 
+/* Inspector exam card stat icons */
+.pa-exam-card.rail-teal .pa-stat-icon.teal {
+    background: #e0f2fe;
+    color: #0891B2;
+}
+
 .pa-stat-icon.blue {
     background: var(--pa-blue-soft);
     color: var(--pa-blue);
@@ -2638,6 +2644,12 @@ textarea::placeholder {
 .pa-stat-icon.blue-dark {
     background: var(--pa-blue-dark-soft);
     color: var(--pa-blue-dark);
+}
+
+/* NIE exam card stat icons */
+.pa-exam-card.rail-blue-dark .pa-stat-icon.blue-dark {
+    background: #f1f5f9;
+    color: #475569;
 }
 
 .pa-stat-icon.green {
@@ -2999,8 +3011,8 @@ textarea::placeholder {
 .pa-accent-card .pa-card-icon.pa-card-icon-3d img,
 .pa-exam-card .pa-card-icon.pa-card-icon-3d img,
 .pa-topic-card .pa-card-icon.pa-card-icon-3d img {
-    width: 68%;
-    height: 68%;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
     display: block;
 }
@@ -3033,11 +3045,23 @@ textarea::placeholder {
     color: var(--pa-teal);
 }
 
+/* Inspector exam card: override teal icon to #0891B2 */
+.pa-exam-card.rail-teal .pa-card-icon.teal {
+    background: #e0f2fe !important;
+    color: #0891B2;
+}
+
 .pa-accent-card .pa-card-icon.blue-dark,
 .pa-exam-card .pa-card-icon.blue-dark,
 .pa-topic-card .pa-card-icon.blue-dark {
     background: var(--pa-blue-dark-soft) !important;
     color: var(--pa-blue-dark);
+}
+
+/* National Investigators exam card: override blue-dark icon to #475569 */
+.pa-exam-card.rail-blue-dark .pa-card-icon.blue-dark {
+    background: #f1f5f9 !important;
+    color: #475569;
 }
 
 .pa-accent-card .pa-card-body {
@@ -3140,6 +3164,12 @@ textarea::placeholder {
 .pa-pill.teal {
     color: var(--pa-teal);
     background: var(--pa-teal-soft);
+}
+
+/* Inspector exam card pill */
+.pa-exam-card.rail-teal .pa-pill.teal {
+    color: #0891B2;
+    background: #e0f2fe;
 }
 
 .pa-pill.blue-dark {
@@ -3355,19 +3385,19 @@ textarea::placeholder {
 }
 
 .pa-exam-card.rail-teal {
-    --pa-rail: var(--pa-teal);
-    --pa-rail-deep: #0b4f4b;
-    --pa-icon-bg: var(--pa-teal-soft);
-    --pa-icon-border: #ccfbf1;
-    --pa-nav-arrow-bg: #e6f7f5;
+    --pa-rail: #0891B2;
+    --pa-rail-deep: #0e7490;
+    --pa-icon-bg: #e0f2fe;
+    --pa-icon-border: #bae6fd;
+    --pa-nav-arrow-bg: #e0f2fe;
 }
 
 .pa-exam-card.rail-blue-dark {
-    --pa-rail: var(--pa-blue-dark);
-    --pa-rail-deep: #312e81;
-    --pa-icon-bg: var(--pa-blue-dark-soft);
-    --pa-icon-border: #bfdbfe;
-    --pa-nav-arrow-bg: #edf6ff;
+    --pa-rail: #475569;
+    --pa-rail-deep: #334155;
+    --pa-icon-bg: #f1f5f9;
+    --pa-icon-border: #cbd5e1;
+    --pa-nav-arrow-bg: #f8fafc;
 }
 
 .pa-exam-card .pa-exam-top {
