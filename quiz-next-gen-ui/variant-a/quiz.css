@@ -645,6 +645,7 @@ body {
 }
 
 @keyframes pa-search-cursor-blink {
+
     0%,
     49% {
         opacity: 1;
@@ -1324,7 +1325,7 @@ textarea::placeholder {
     z-index: 1;
 }
 
-.quiz-header > * {
+.quiz-header>* {
     position: relative;
     z-index: 2;
 }
@@ -2145,7 +2146,7 @@ textarea::placeholder {
     box-shadow: 0 4px 16px rgba(70, 107, 169, 0.15);
 }
 
-.header-left > .header-title {
+.header-left>.header-title {
     flex: 1;
     min-width: 0;
     text-align: left;
@@ -2390,16 +2391,62 @@ textarea::placeholder {
 .pa-hub-header {
     padding-bottom: 0;
     margin-bottom: 0;
+    overflow: visible;
 }
 
 .pa-hub-header .header-inner {
-    padding: calc(16px + env(safe-area-inset-top, 0px)) 16px 0;
+    padding: calc(16px + env(safe-area-inset-top, 0px)) 16px 0 !important;
+    overflow: visible;
+    position: relative;
+    z-index: 10 !important;
+    /* anchor for the absolutely-positioned 3D icon */
 }
 
 .pa-hub-header .header-inner::before {
     display: none;
 }
 
+.pa-hub-header .header-left {
+    padding-right: 70px;
+    /* Space for the right-aligned icon */
+}
+
+/* ─── 3D Header Icon: absolute to header-inner, straddles header/white boundary ─── */
+.pa-header-icon-container {
+    position: absolute;
+    bottom: -28px;
+    /* Shifted down to prevent touching the top edge */
+    right: 10px;
+    width: 110px;
+    height: 110px;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+/* Soft radial glow halo */
+.pa-header-icon-container::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, transparent 65%);
+    filter: blur(12px);
+    pointer-events: none;
+}
+
+/* 3D icon — rich multi-layer shadow for genuine depth */
+.pa-header-3d-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+
+}
+
+/* ─── Stats shell — true full-width, taller white card ───────────────── */
 .pa-hub-stats-shell,
 .pa-header-float-shell {
     position: relative;
@@ -2410,6 +2457,17 @@ textarea::placeholder {
     transform: none;
     overflow: visible;
     padding: 10px var(--pa-space-xl) var(--pa-space-lg);
+}
+
+/* Hub stats shell: padding-top clears the 42px icon overhang; 16px sides as before */
+.pa-hub-stats-shell {
+    margin-top: -14px;
+    /* Pulls the white box up to reduce blue space */
+    padding-top: 26px;
+    /* Compensates for the increased overlap of the icon (28 + 14) */
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .pa-header-float-shell .search-section {
@@ -2436,9 +2494,9 @@ textarea::placeholder {
 }
 
 #view-mock-exams .pa-mock-list,
-#view-category > .view-content,
-#view-topics > .view-content,
-#view-mixed-topic-selection > .view-content {
+#view-category>.view-content,
+#view-topics>.view-content,
+#view-mixed-topic-selection>.view-content {
     padding-top: var(--pa-float-search-content-top-spacing) !important;
 }
 
@@ -2501,12 +2559,12 @@ textarea::placeholder {
     padding: 0 6px;
 }
 
-#view-hub .pa-stat-item + .pa-stat-item {
+#view-hub .pa-stat-item+.pa-stat-item {
     border-left: none;
     position: relative;
 }
 
-#view-hub .pa-stat-item + .pa-stat-item::before {
+#view-hub .pa-stat-item+.pa-stat-item::before {
     content: "";
     position: absolute;
     left: 0;
@@ -2661,7 +2719,7 @@ textarea::placeholder {
     -webkit-overflow-scrolling: touch;
 }
 
-#view-hub .view-content.format-list > * {
+#view-hub .view-content.format-list>* {
     flex: none;
     flex-shrink: 0;
     min-height: 0;
@@ -2699,6 +2757,7 @@ textarea::placeholder {
     white-space: normal;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    margin-bottom: 0px;
 }
 
 #view-hub .pa-accent-card .pa-card-icon {
@@ -2714,8 +2773,8 @@ textarea::placeholder {
 #view-hub .pa-accent-card .pa-card-icon.pa-card-icon-3d img {
     width: 100%;
     height: 100%;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 85%;
+    max-height: 85%;
     object-fit: contain;
 }
 
@@ -2773,7 +2832,7 @@ textarea::placeholder {
     z-index: 0;
 }
 
-.format-card.pa-readiness-card > * {
+.format-card.pa-readiness-card>* {
     position: relative;
     z-index: 1;
 }
@@ -2908,10 +2967,8 @@ textarea::placeholder {
 .pa-accent-card .pa-card-icon,
 .pa-exam-card .pa-card-icon,
 .pa-topic-card .pa-card-icon {
-    width: min(
-        calc((100% - var(--pa-card-icon-gap, 12px)) * var(--pa-card-icon-content-ratio, 0.52) / (1 + var(--pa-card-icon-content-ratio, 0.52))),
-        var(--pa-card-icon-max-size, 88px)
-    );
+    width: min(calc((100% - var(--pa-card-icon-gap, 12px)) * var(--pa-card-icon-content-ratio, 0.52) / (1 + var(--pa-card-icon-content-ratio, 0.52))),
+            var(--pa-card-icon-max-size, 88px));
     aspect-ratio: 1 / 1;
     height: auto;
     border-radius: 14px;
@@ -2942,8 +2999,8 @@ textarea::placeholder {
 .pa-accent-card .pa-card-icon.pa-card-icon-3d img,
 .pa-exam-card .pa-card-icon.pa-card-icon-3d img,
 .pa-topic-card .pa-card-icon.pa-card-icon-3d img {
-    width: 76%;
-    height: 76%;
+    width: 68%;
+    height: 68%;
     object-fit: contain;
     display: block;
 }
@@ -5684,24 +5741,24 @@ textarea::placeholder {
     gap: var(--pa-space-xl);
 }
 
-#progress-popup-journey-sheet .pa-journey-timeline > div[onclick],
-#older-exams-container > div[onclick] {
+#progress-popup-journey-sheet .pa-journey-timeline>div[onclick],
+#older-exams-container>div[onclick] {
     gap: var(--pa-space-md) !important;
     min-height: 44px;
 }
 
-#progress-popup-journey-sheet .pa-journey-timeline > div[onclick]:hover,
-#older-exams-container > div[onclick]:hover {
+#progress-popup-journey-sheet .pa-journey-timeline>div[onclick]:hover,
+#older-exams-container>div[onclick]:hover {
     opacity: 0.72;
 }
 
-#progress-popup-journey-sheet .pa-journey-timeline > div[onclick] > div[style*="left: -36px"],
-#older-exams-container > div[onclick] > div[style*="left: -36px"] {
+#progress-popup-journey-sheet .pa-journey-timeline>div[onclick]>div[style*="left: -36px"],
+#older-exams-container>div[onclick]>div[style*="left: -36px"] {
     left: -40px !important;
 }
 
-#progress-popup-journey-sheet .pa-journey-timeline > div[onclick] > div:not([style*="left: -36px"]) > div:first-child,
-#older-exams-container > div[onclick] > div:not([style*="left: -36px"]) > div:first-child {
+#progress-popup-journey-sheet .pa-journey-timeline>div[onclick]>div:not([style*="left: -36px"])>div:first-child,
+#older-exams-container>div[onclick]>div:not([style*="left: -36px"])>div:first-child {
     margin-bottom: 2px;
 }
 
