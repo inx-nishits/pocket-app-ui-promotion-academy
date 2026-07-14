@@ -2418,7 +2418,6 @@ const QuizEngine = {
         // Update Progress Bar & Counters
         const progress = (this.currentQuestion / this.totalQuestions) * 100;
         document.getElementById('active-progress-fill').style.width = `${progress}%`;
-        document.getElementById('active-progress-text').innerText = `${Math.round(progress)}% Complete`;
         document.getElementById('active-question-counter').innerText = `Question ${this.currentQuestion} of ${this.totalQuestions}`;
 
         // Hide Feedback
@@ -3606,10 +3605,19 @@ const QuizEngine = {
         const container = document.getElementById('topic-performance-list');
         if (!container) return;
 
+        // Medium-light bar fills for this list only (badges / other screens keep original colors)
+        const barFillByTitle = {
+            Mastered: '#1F9A90',
+            Strong: '#4A7DE0',
+            Developing: '#8B6AE0',
+            Weak: '#E55A5A'
+        };
+
         let html = '';
         this.topicsPerformance.forEach(topic => {
             const tier = this.getTopicPerformanceTier(topic.score);
             const { color, bg: bgColor, title } = tier;
+            const barColor = barFillByTitle[title] || color;
 
             const diff = topic.score - topic.prevScore;
             let trendHtml = '';
@@ -3634,7 +3642,7 @@ const QuizEngine = {
                         </div>
                     </div>
                     <div style="height: 6px; background: #f1f5f9; border-radius: 3px; width: 100%; overflow: hidden;">
-                        <div style="height: 100%; background: ${color}; width: ${topic.score}%; border-radius: 3px;"></div>
+                        <div style="height: 100%; background: ${barColor}; width: ${topic.score}%; border-radius: 3px;"></div>
                     </div>
                 </div>
             `;
@@ -3687,8 +3695,8 @@ const QuizEngine = {
             if (parseInt(btn.dataset.count) === count) {
                 btn.classList.add('selected');
                 btn.style.background = 'rgba(70, 107, 169, 0.1)';
-                btn.style.border = '2px solid #466ba9';
-                btn.style.color = '#466ba9';
+                btn.style.border = '2px solid #19366c';
+                btn.style.color = '#19366c';
             } else {
                 btn.classList.remove('selected');
                 btn.style.background = 'white';
@@ -4736,10 +4744,10 @@ const QuizEngine = {
         // update UI for count buttons
         document.querySelectorAll('#practice-count-selector .count-btn').forEach(btn => {
             if (parseInt(btn.dataset.count) === count) {
-                btn.style.background = '#466ba9';
+                btn.style.background = '#19366c';
                 btn.style.color = '#ffffff';
-                btn.style.borderColor = '#466ba9';
-                btn.style.boxShadow = '0 4px 10px rgba(70, 107, 169, 0.3)';
+                btn.style.borderColor = '#19366c';
+                btn.style.boxShadow = '0 4px 10px rgba(25, 54, 108, 0.3)';
                 btn.style.transform = 'translateY(-1px) scale(1.02)';
             } else {
                 btn.style.background = '#ffffff';

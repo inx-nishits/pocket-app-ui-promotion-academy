@@ -1384,13 +1384,6 @@ textarea::placeholder {
     white-space: nowrap;
 }
 
-#active-progress-text {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 12px;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
 .quiz-top-bar .quiz-progress-bar {
     width: 100%;
     margin: 0;
@@ -2002,18 +1995,55 @@ textarea::placeholder {
 
 
 /* Analytics Screen */
-.analytics-summary {
+.card.analytics-summary {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 16px;
+    padding: 24px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(59, 130, 246, 0.14);
+    background:
+        radial-gradient(circle at 12% 8%, rgba(59, 130, 246, 0.28) 0%, transparent 48%),
+        radial-gradient(circle at 88% 14%, rgba(37, 99, 235, 0.18) 0%, transparent 42%),
+        linear-gradient(165deg, #dbeafe 0%, #e8f0fb 48%, #dce8f8 100%);
+    box-shadow: 0 8px 24px rgba(15, 36, 71, 0.06), 0 1px 4px rgba(15, 36, 71, 0.03);
+}
+
+.card.analytics-summary #analytics-title {
+    margin: 8px 0 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f2447;
+    letter-spacing: -0.2px;
+}
+
+.card.analytics-summary #analytics-subtitle {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    line-height: 1.45;
+    max-width: 280px;
+}
+
+.card.analytics-summary .circle-bg {
+    stroke: rgba(15, 36, 71, 0.1);
+}
+
+.card.analytics-summary .percentage {
+    fill: #0f2447;
 }
 
 .analytics-chart-container {
     width: 120px;
     height: 120px;
     margin-bottom: 0px;
+}
+
+.analytics-chart-container .circular-chart.blue .circle {
+    stroke: #3E71C8;
 }
 
 .circular-chart {
