@@ -2499,6 +2499,7 @@ const QuizEngine = {
         buttons.forEach(btn => btn.disabled = true);
 
         // Add micro-interaction: slight scale down
+        btnElement.classList.add('user-selected');
         btnElement.style.transform = 'scale(0.95)';
         setTimeout(() => { btnElement.style.transform = 'scale(1)'; }, 150);
 
@@ -2532,7 +2533,13 @@ const QuizEngine = {
         const isPracticeAidsFlow = (this.currentFlow === 'topic' || this.currentFlow === 'mixed' || this.currentMode === 'Practice By Topic' || this.currentMode === 'Mixed Practice' || this.currentMode === 'Practice Weak Areas' || this.selectedFormat === 'Practice By Topic' || this.selectedFormat === 'Mixed Practice');
 
         if (isCorrect) {
-            btnElement.classList.add('correct');
+            btnElement.classList.add('correct', 'correct-revealed');
+
+            buttons.forEach(btn => {
+                if (btn !== btnElement) {
+                    btn.style.opacity = '0.4';
+                }
+            });
 
             this.score++;
             this.streak++;
@@ -3288,7 +3295,8 @@ const QuizEngine = {
             const soloView = document.getElementById('view-solo-completion');
             if (soloView) {
                 if (quizType === 'mock' || quizType === 'practice' || quizType === 'ai-tutor') {
-                    soloView.style.background = 'linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5)';
+                    // Use CSS header-wrapper / pa-mock-header background (do not inline override)
+                    soloView.style.background = '';
                 } else {
                     soloView.style.background = '#466ba9';
                 }

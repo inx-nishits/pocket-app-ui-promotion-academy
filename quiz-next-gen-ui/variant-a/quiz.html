@@ -3517,33 +3517,27 @@
                         </svg>
                     </button>
 
+                    <div class="quiz-top-progress">
+                        <div class="quiz-top-progress-meta">
+                            <span id="active-question-counter">Question 1 of 10</span>
+                            <span id="active-progress-text">0% Complete</span>
+                        </div>
+                        <div class="quiz-progress-bar">
+                            <div class="quiz-progress-fill" id="active-progress-fill"
+                                style="width: 0%; background: #22c55e;">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="quiz-timer timer-normal" id="active-timer"
-                        style="display: flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.2); padding: 8px 16px; border-radius: 20px; font-size: 16px; font-weight: 600; color: white; margin-left: auto; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                        <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/23f0.png"
-                            style="width: 20px; height: 20px;">
+                        style="display: flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.2); padding: 8px 16px; border-radius: 20px; font-size: 16px; font-weight: 600; color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                         <span id="active-timer-text" style="letter-spacing: 0.5px;">00:00</span>
                     </div>
                 </div>
 
-                <div style="padding: 8px 20px 16px;">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
-                        <span id="active-question-counter"
-                            style="color: white; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">Question
-                            1 of 10</span>
-                        <span id="active-progress-text"
-                            style="color: rgba(255,255,255,0.8); font-size: 12px; font-weight: 600; white-space: nowrap;">0%
-                            Complete</span>
-                    </div>
-                    <div class="quiz-progress-bar"
-                        style="width: 100%; margin: 0; background: rgba(255,255,255,0.2); height: 6px; border-radius: 4px;">
-                        <div class="quiz-progress-fill" id="active-progress-fill"
-                            style="width: 0%; background: #22c55e; border-radius: 4px;">
-                        </div>
-                    </div>
-
+                <div style="padding: 0 20px 16px;">
                     <div id="mock-stats-container"
-                        style="display: none; justify-content: center; align-items: center; gap: 32px; margin-top: 16px;">
+                        style="display: none; justify-content: center; align-items: center; gap: 32px; margin-top: 4px;">
 
                         <!-- Answered Stat -->
                         <div style="display: flex; align-items: center; gap: 8px;">
@@ -3984,7 +3978,7 @@
 
         <!-- Screen: Solo Quiz Completion -->
         <div id="view-solo-completion" class="quiz-view"
-            style="background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); height: 100%; font-family: 'Poppins', sans-serif;">
+            style="height: 100%; font-family: 'Poppins', sans-serif;">
 
             <div class="view-content"
                 style="padding: 0 20px; overflow-y: auto; -webkit-overflow-scrolling: touch;">
