@@ -2347,6 +2347,18 @@ const QuizEngine = {
             difficultyBadge.innerHTML = `${diffIcon} ${diffText}`;
         }
 
+        const isPracticeAidsFlow = (
+            this.currentFlow === 'topic' ||
+            this.currentFlow === 'mixed' ||
+            this.currentMode === 'Practice By Topic' ||
+            this.currentMode === 'Mixed Practice' ||
+            this.currentMode === 'Practice Weak Areas' ||
+            this.selectedFormat === 'Practice By Topic' ||
+            this.selectedFormat === 'Mixed Practice'
+        );
+        const activeView = document.getElementById('view-active');
+        if (activeView) activeView.classList.toggle('practice-aids', isPracticeAidsFlow);
+
         // Start timer
         this.timeElapsed = 0;
         const timerText = document.getElementById('active-timer-text');
@@ -2355,13 +2367,13 @@ const QuizEngine = {
 
         if (this.timerInterval) clearInterval(this.timerInterval);
 
-        if (this.currentMode === 'Practice By Topic' || this.selectedFormat === 'Practice By Topic' || this.selectedFormat === 'Mixed Practice' || this.currentMode === 'Practice Weak Areas') {
-            timerContainer.style.display = 'none'; // Hide timer for practice modes
+        if (isPracticeAidsFlow) {
+            timerContainer.style.setProperty('display', 'none', 'important'); // Hide timer for practice modes
             this.timerInterval = setInterval(() => {
                 this.timeElapsed++;
             }, 1000);
         } else {
-            timerContainer.style.display = 'flex'; // Show timer for other flows
+            timerContainer.style.removeProperty('display'); // Show timer for other flows
             this.timeLeft = 120; // 2 minutes countdown
 
             this.timerInterval = setInterval(() => {
@@ -2432,10 +2444,25 @@ const QuizEngine = {
 
         const mockActions = document.getElementById('mock-exam-actions');
         const isMockExam = (this.currentFlow === 'mock' || this.selectedCategory === 'Mock Exam' || this.selectedCategory === 'Promotion Exam');
+        const isPracticeAidsActive = (
+            this.currentFlow === 'topic' ||
+            this.currentFlow === 'mixed' ||
+            this.currentMode === 'Practice By Topic' ||
+            this.currentMode === 'Mixed Practice' ||
+            this.currentMode === 'Practice Weak Areas' ||
+            this.selectedFormat === 'Practice By Topic' ||
+            this.selectedFormat === 'Mixed Practice'
+        );
+        const activeView = document.getElementById('view-active');
+        if (activeView) activeView.classList.toggle('practice-aids', isPracticeAidsActive);
 
         const mockStatsContainer = document.getElementById('mock-stats-container');
         if (mockStatsContainer) {
-            mockStatsContainer.style.display = isMockExam ? 'flex' : 'none';
+            if (isMockExam) {
+                mockStatsContainer.style.removeProperty('display');
+            } else {
+                mockStatsContainer.style.setProperty('display', 'none', 'important');
+            }
         }
         if (isMockExam) {
             this.updateMockStats();
@@ -3183,14 +3210,33 @@ const QuizEngine = {
                 }
             }
 
-            document.getElementById('solo-time-val').innerText = `${avgTime}s`;
+            const isPracticeResult = (
+                this.currentFlow === 'topic' ||
+                this.currentFlow === 'mixed' ||
+                this.currentMode === 'Practice By Topic' ||
+                this.currentMode === 'Mixed Practice' ||
+                this.currentMode === 'Practice Weak Areas' ||
+                this.selectedFormat === 'Practice By Topic' ||
+                this.selectedFormat === 'Mixed Practice'
+            );
+            const avgTimeEl = document.getElementById('solo-time-val');
+            if (avgTimeEl) {
+                avgTimeEl.innerText = `${avgTime}s`;
+                const avgTimeRow = avgTimeEl.closest('.perf-summary__row');
+                if (avgTimeRow) avgTimeRow.style.display = isPracticeResult ? 'none' : 'flex';
+            }
 
             // Show total time for the second occurrence
             const totalMin2 = Math.floor(this.finalTotalTimeSeconds / 60);
             const totalSec2 = this.finalTotalTimeSeconds % 60;
             const totalTimeStr2 = totalMin2 > 0 ? `${totalMin2}m ${totalSec2}s` : `${totalSec2}s`;
             const totalTimeEl2 = document.getElementById('solo-total-time-val');
-            if (totalTimeEl2) totalTimeEl2.innerText = totalTimeStr2;
+            if (totalTimeEl2) {
+                totalTimeEl2.innerText = totalTimeStr2;
+                const totalTimeRow = totalTimeEl2.closest('.perf-summary__row');
+                const totalTimeLabel = totalTimeRow ? totalTimeRow.querySelector('.perf-summary__label') : null;
+                if (totalTimeLabel) totalTimeLabel.innerText = 'Total Time';
+            }
 
 
             const bestTopicContainer = document.getElementById('solo-best-topic-container');
@@ -3233,39 +3279,16 @@ const QuizEngine = {
                     this.renderResultActions(actionsContainer, buttons);
                 } else if (quizType === 'practice') {
                     this.setResultBackLink(null);
-                    const defaultPracticeBack = this.currentFlow === 'mixed' ? "QuizEngine.restartFlow('mixed')" : "QuizEngine.restartFlow('topic')";
-                    const backAction = this.launchedFromProgress ? "QuizEngine.returnToProgress()" : defaultPracticeBack;
-
-                    if (this.launchedFromProgress) {
-                        if (actualIncorrect > 0) {
-                            this.renderResultActions(actionsContainer, [
-                                this.buildResultCta('Back', 'back', backAction, 'primary', 'compact'),
-                                this.buildResultCta('Practice Topic', 'practice-topic', "QuizEngine.startFlow('topic')", 'secondary', 'grow')
-                            ]);
-                        } else {
-                            this.renderResultActions(actionsContainer, [
-                                this.buildResultCta('Back', 'back', backAction, 'primary')
-                            ]);
-                        }
-                    } else {
-                        this.renderResultActions(actionsContainer, [
-                            this.buildResultCta('Back', 'back', backAction, 'primary', 'compact'),
-                            this.buildResultCta('Start Mock Exam', 'mock-exam', "QuizEngine.startFlow('mock')", 'secondary', 'grow')
-                        ]);
-                    }
+                    this.renderResultActions(actionsContainer, [
+                        this.buildResultCta('Return to Hub', 'back', "QuizEngine.returnHome()", 'primary'),
+                        this.buildResultCta('Start Mock Exam', 'mock-exam', "QuizEngine.startFlow('mock')", 'secondary')
+                    ]);
                 } else if (quizType === 'ai-tutor') {
                     this.setResultBackLink(null);
-                    const backAction = this.launchedFromProgress ? "QuizEngine.returnToProgress()" : "QuizEngine.returnHome()";
-                    if (actualIncorrect > 0) {
-                        this.renderResultActions(actionsContainer, [
-                            this.buildResultCta('Back', 'back', backAction, 'primary', 'compact'),
-                            this.buildResultCta('Practice Topic', 'practice-topic', "QuizEngine.startFlow('topic')", 'secondary', 'grow')
-                        ]);
-                    } else {
-                        this.renderResultActions(actionsContainer, [
-                            this.buildResultCta('Back', 'back', backAction, 'primary')
-                        ]);
-                    }
+                    this.renderResultActions(actionsContainer, [
+                        this.buildResultCta('Return to Hub', 'back', "QuizEngine.returnHome()", 'primary'),
+                        this.buildResultCta('Start Mock Exam', 'mock-exam', "QuizEngine.startFlow('mock')", 'secondary')
+                    ]);
                 } else {
                     this.setResultBackLink(null);
                     this.renderResultActions(actionsContainer, [
@@ -3464,6 +3487,14 @@ const QuizEngine = {
         const gaugeEl = document.getElementById('readiness-gauge');
         const statusEl = document.getElementById('readiness-status');
         const gapEl = document.getElementById('readiness-gap');
+        const readinessTier = this.getTopicPerformanceTier(avg);
+        const readinessFillByTitle = {
+            Mastered: '#1F9A90',
+            Strong: '#4A7DE0',
+            Developing: '#8B6AE0',
+            Weak: '#E55A5A'
+        };
+        const readinessColor = readinessFillByTitle[readinessTier.title] || readinessTier.color;
 
         if (scoreEl) scoreEl.innerText = `${avg}%`;
         if (gaugeEl) gaugeEl.setAttribute('stroke-dasharray', `${avg}, 100`);
@@ -3471,33 +3502,31 @@ const QuizEngine = {
         if (statusEl) {
             if (avg >= 75) {
                 statusEl.innerText = 'Ready';
-                statusEl.style.color = this.paPerfColors.teal.color;
-                statusEl.style.background = this.paPerfColors.teal.bg;
+                statusEl.style.color = readinessColor;
+                statusEl.style.background = readinessTier.bg;
             } else if (avg >= 60) {
                 statusEl.innerText = 'Developing';
-                statusEl.style.color = this.paPerfColors.purple.color;
-                statusEl.style.background = this.paPerfColors.purple.bg;
+                statusEl.style.color = readinessColor;
+                statusEl.style.background = readinessTier.bg;
             } else {
                 statusEl.innerText = 'Needs Work';
-                statusEl.style.color = this.paPerfColors.red.color;
-                statusEl.style.background = this.paPerfColors.red.bg;
+                statusEl.style.color = readinessColor;
+                statusEl.style.background = readinessTier.bg;
             }
         }
 
         if (gaugeEl) {
-            if (avg >= 75) gaugeEl.setAttribute('stroke', this.paPerfColors.teal.color);
-            else if (avg >= 60) gaugeEl.setAttribute('stroke', this.paPerfColors.purple.color);
-            else gaugeEl.setAttribute('stroke', this.paPerfColors.red.color);
+            gaugeEl.setAttribute('stroke', readinessColor);
         }
 
         if (gapEl) {
             const gap = avg - 75;
             if (gap >= 0) {
                 gapEl.innerText = `+${gap}%`;
-                gapEl.style.color = this.paPerfColors.teal.color;
+                gapEl.style.color = '#1F9A90';
             } else {
                 gapEl.innerText = `${gap}%`;
-                gapEl.style.color = this.paPerfColors.red.color;
+                gapEl.style.color = '#E55A5A';
             }
         }
     },
@@ -4653,7 +4682,7 @@ const QuizEngine = {
                         <div class="practice-sub-card ${isSubSelected ? 'selected' : ''}" onclick="event.stopPropagation(); QuizEngine.togglePracticeSub('${subTopic}')" style="display: flex; align-items: center; justify-content: space-between; padding: 12px; margin-bottom: 8px; cursor: pointer; border-radius: 12px; background: ${isSubSelected ? '#eff6ff' : 'rgba(15, 23, 42, 0.01)'}; border: ${isSubSelected ? '1.5px solid rgba(37, 99, 235, 0.2)' : 'none'}; box-shadow: ${isSubSelected ? '0 4px 10px rgba(37, 99, 235, 0.05)' : 'none'}; transition: all 0.2s ease;">
                             
                             <div style="display: flex; align-items: center; gap: 12px; flex: 1;">
-                                <div class="mixed-checkbox" style="width: 20px; height: 20px; border-radius: 6px; border: 2px solid ${isSubSelected ? '#466ba9' : '#cbd5e1'}; background: ${isSubSelected ? '#466ba9' : 'transparent'}; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0;">
+                                <div class="mixed-checkbox" style="width: 20px; height: 20px; border-radius: 6px; border: 2px solid ${isSubSelected ? '#19366c' : '#cbd5e1'}; background: ${isSubSelected ? '#19366c' : 'transparent'}; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; flex-shrink: 0;">
                                     ${isSubSelected ? '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' : ''}
                                 </div>
                                 
@@ -4784,7 +4813,7 @@ const QuizEngine = {
                 html += `
                     <div class="practice-card ${isSelected ? 'selected' : ''}" onclick="QuizEngine.togglePracticeSub('${subTopic}')" style="align-items: center; padding: 12px; cursor: pointer; border: ${isSelected ? '1.5px solid rgba(70, 107, 169, 0.3)' : 'none'}; background: ${isSelected ? '#eff6ff' : '#ffffff'}; margin-bottom: 12px; border-radius: 16px; transition: all 0.2s ease; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);">
                         <div style="flex: 1; font-size: 16px; font-weight: 600; color: ${isSelected ? '#1e3a8a' : '#0f172a'};">${subTopic}</div>
-                        <div class="mixed-checkbox" style="width: 24px; height: 24px; border-radius: 6px; border: 2px solid ${isSelected ? '#466ba9' : '#cbd5e1'}; background: ${isSelected ? '#466ba9' : 'transparent'}; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; margin-right: ${badge ? '30px' : '0'};">
+                        <div class="mixed-checkbox" style="width: 24px; height: 24px; border-radius: 6px; border: 2px solid ${isSelected ? '#19366c' : '#cbd5e1'}; background: ${isSelected ? '#19366c' : 'transparent'}; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; margin-right: ${badge ? '30px' : '0'};">
                             ${isSelected ? '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' : ''}
                         </div>
                     </div>
@@ -4866,7 +4895,7 @@ const QuizEngine = {
                         html += `
                             <div class="practice-sub-row" onclick="QuizEngine.togglePracticeSubSub('${safeSubSub}')" style="display: flex; align-items: center; padding: 16px 20px; cursor: pointer; border-bottom: ${isLast ? 'none' : '1.5px solid rgba(15, 23, 42, 0.04)'}; background: transparent; transition: background 0.2s ease;">
                                 <div style="flex: 1; font-size: 15px; font-weight: ${isSelected ? '700' : '500'}; color: ${isSelected ? '#1e3a8a' : '#334155'};">${subSub} <span style="color: #64748b; font-weight: 400; font-size: 14px;">(${count})</span></div>
-                                <div class="mixed-checkbox" style="width: 24px; height: 24px; border-radius: 6px; border: 2px solid ${isSelected ? '#466ba9' : '#cbd5e1'}; background: ${isSelected ? '#466ba9' : 'transparent'}; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;">
+                                <div class="mixed-checkbox" style="width: 24px; height: 24px; border-radius: 6px; border: 2px solid ${isSelected ? '#19366c' : '#cbd5e1'}; background: ${isSelected ? '#19366c' : 'transparent'}; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;">
                                     ${isSelected ? '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' : ''}
                                 </div>
                             </div>

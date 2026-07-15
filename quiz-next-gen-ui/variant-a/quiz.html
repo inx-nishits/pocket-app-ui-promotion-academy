@@ -15,12 +15,159 @@
         rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="quiz.css?v=132">
+    <link rel="stylesheet" href="quiz.css?v=160">
 
     <!-- Chart.js & Plugins -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1"></script>
+
+    <!-- Force quiz-header layout (bypasses stale CSS cache) -->
+    <style id="quiz-header-layout-fix">
+        #view-active .quiz-header {
+            display: flex !important;
+            flex-direction: column !important;
+            overflow: hidden !important;
+            padding: 0 !important;
+        }
+        #view-active .quiz-header-main {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0 !important;
+            width: 100% !important;
+        }
+        #view-active .quiz-top-bar {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            gap: 12px !important;
+            padding: 14px 16px 0 !important;
+        }
+        #view-active .quiz-top-bar-left {
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            min-width: 0 !important;
+            flex: 1 !important;
+        }
+        #view-active #active-question-counter {
+            color: #fff !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+            white-space: nowrap !important;
+        }
+        #view-active .quiz-timer {
+            display: flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            margin-right: 8px !important;
+            background: transparent !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+            color: #fff !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+        }
+        #view-active .quiz-timer-icon {
+            width: 18px !important;
+            height: 18px !important;
+            display: block !important;
+        }
+        /* Progress bar sits directly under Question row */
+        #view-active .quiz-header-progress {
+            display: block !important;
+            width: 100% !important;
+            /* Align bar start with Question text (16 + 36 close + 10 gap) */
+            padding: 0 16px 0 62px !important;
+            box-sizing: border-box !important;
+            order: initial !important;
+        }
+        #view-active.practice-aids .quiz-header-progress {
+            padding-bottom: 16px !important;
+        }
+        #view-active .quiz-header-progress .quiz-progress-bar {
+            width: 100% !important;
+            height: 6px !important;
+            margin: 0 !important;
+            background: rgba(255, 255, 255, 0.16) !important;
+            border-radius: 999px !important;
+            overflow: hidden !important;
+        }
+        #view-active .quiz-header-progress .quiz-progress-fill {
+            height: 100% !important;
+            background: #22c55e !important;
+            border-radius: 999px !important;
+        }
+        #view-active .quiz-header-stats {
+            padding: 0 16px 16px !important;
+            box-sizing: border-box !important;
+        }
+        /* Restored old Answered | Skipped */
+        #view-active .quiz-stats-panel {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 32px !important;
+            margin-top: 16px !important;
+            width: 100% !important;
+            background: transparent !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
+        #view-active .quiz-stat-item {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            flex: 0 0 auto !important;
+        }
+        #view-active .quiz-stat-icon {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 24px !important;
+            height: 24px !important;
+            border-radius: 50% !important;
+        }
+        #view-active .quiz-stat-icon--answered {
+            background: #22c55e !important;
+        }
+        #view-active .quiz-stat-icon--skipped {
+            background: rgba(255, 255, 255, 0.2) !important;
+        }
+        #view-active .quiz-stat-text {
+            display: flex !important;
+            align-items: baseline !important;
+            gap: 6px !important;
+        }
+        #view-active .quiz-stat-label {
+            font-size: 13px !important;
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 600 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+        }
+        #view-active .quiz-stat-value {
+            margin-left: 0 !important;
+            color: #fff !important;
+            font-size: 18px !important;
+            font-weight: 900 !important;
+        }
+        #view-active .quiz-stat-divider {
+            width: 2px !important;
+            height: 16px !important;
+            background: rgba(255, 255, 255, 0.2) !important;
+            border-radius: 2px !important;
+            margin: 0 !important;
+            flex-shrink: 0 !important;
+        }
+        #view-active.practice-aids .quiz-timer,
+        #view-active.practice-aids .quiz-header-stats,
+        #view-active.practice-aids #mock-stats-container {
+            display: none !important;
+        }
+    </style>
 
     <style>
         .rating-btn {
@@ -994,7 +1141,7 @@
                 </div>
             </div>
 
-            <div class="view-content" style="padding-top: 16px; padding-bottom: 120px;">
+            <div class="view-content exam-review-content" style="padding-top: 16px; padding-bottom: 120px;">
                 <!-- Step 1: Main Topics -->
                 <div id="practice-step-1">
                     <div id="practice-count-selector"
@@ -3508,77 +3655,72 @@
 
         <div id="view-active" class="quiz-view">
             <div class="quiz-header">
-                <div class="quiz-top-bar" style="padding-bottom: 12px;">
-                    <button class="back-btn" onclick="QuizEngine.confirmExit()">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="18" y1="6" x2="6" y2="18" />
-                            <line x1="6" y1="6" x2="18" y2="18" />
-                        </svg>
-                    </button>
-
-                    <div class="quiz-top-progress">
-                        <div class="quiz-top-progress-meta">
+                <div class="quiz-header-main">
+                    <!-- Row 1: Close + Question | Timer -->
+                    <div class="quiz-top-bar">
+                        <div class="quiz-top-bar-left">
+                            <button type="button" class="back-btn" onclick="QuizEngine.confirmExit()" aria-label="Close">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </button>
                             <span id="active-question-counter">Question 1 of 10</span>
                         </div>
-                        <div class="quiz-progress-bar">
-                            <div class="quiz-progress-fill" id="active-progress-fill"
-                                style="width: 0%; background: #22c55e;">
-                            </div>
+
+                        <div class="quiz-timer timer-normal" id="active-timer">
+                            <img class="quiz-timer-icon"
+                                src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/23f0.png"
+                                alt="" width="18" height="18">
+                            <span id="active-timer-text">00:00</span>
                         </div>
                     </div>
 
-                    <div class="quiz-timer timer-normal" id="active-timer"
-                        style="display: flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.2); padding: 8px 16px; border-radius: 20px; font-size: 16px; font-weight: 600; color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                        <span id="active-timer-text" style="letter-spacing: 0.5px;">00:00</span>
+                    <!-- Row 2: Progress bar — directly after Question -->
+                    <div class="quiz-header-progress">
+                        <div class="quiz-progress-bar">
+                            <div class="quiz-progress-fill" id="active-progress-fill" style="width: 0%;"></div>
+                        </div>
                     </div>
                 </div>
 
-                <div style="padding: 0 20px 16px;">
-                    <div id="mock-stats-container"
-                        style="display: none; justify-content: center; align-items: center; gap: 32px; margin-top: 4px;">
-
+                <!-- Row 3: Answered | Skipped (restored old flat style) -->
+                <div class="quiz-header-stats">
+                    <div id="mock-stats-container" class="quiz-stats-panel" style="display: none;">
                         <!-- Answered Stat -->
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <div
-                                style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: #22c55e;">
+                        <div class="quiz-stat-item">
+                            <div class="quiz-stat-icon quiz-stat-icon--answered" aria-hidden="true">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white"
                                     stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </div>
-                            <div style="display: flex; align-items: baseline; gap: 6px;">
-                                <span
-                                    style="font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Answered</span>
-                                <strong id="stat-answered"
-                                    style="color: white; font-size: 18px; font-weight: 900;">0</strong>
+                            <div class="quiz-stat-text">
+                                <span class="quiz-stat-label">Answered</span>
+                                <strong id="stat-answered" class="quiz-stat-value">0</strong>
                             </div>
                         </div>
 
                         <!-- Divider -->
-                        <div style="width: 2px; height: 16px; background: rgba(255,255,255,0.2); border-radius: 2px;">
-                        </div>
+                        <div class="quiz-stat-divider" aria-hidden="true"></div>
 
                         <!-- Skipped Stat -->
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <div
-                                style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,0.2);">
+                        <div class="quiz-stat-item">
+                            <div class="quiz-stat-icon quiz-stat-icon--skipped" aria-hidden="true">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white"
                                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <circle cx="12" cy="12" r="10"></circle>
                                     <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
                                 </svg>
                             </div>
-                            <div style="display: flex; align-items: baseline; gap: 6px;">
-                                <span
-                                    style="font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Skipped</span>
-                                <strong id="stat-skipped"
-                                    style="color: white; font-size: 18px; font-weight: 900;">0</strong>
+                            <div class="quiz-stat-text">
+                                <span class="quiz-stat-label">Skipped</span>
+                                <strong id="stat-skipped" class="quiz-stat-value">0</strong>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--<div style="height: 12px;"></div>-->
             </div>
 
             <div class="view-content quiz-content-area">
@@ -3985,7 +4127,7 @@
                 <!-- Hero Section -->
                 <div class="result-hero result-badge-hero">
                     <div id="solo-completion-emoji" class="hero-illustration"
-                        style="animation: popIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); display: flex; justify-content: center;">
+                        style="animation: popIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); display: flex; justify-content: center; margin-bottom: 10px;">
                         <img src="../images/exam_image-badge.png" class="result-badge-img" alt="">
                     </div>
                     <div class="result-title-block">
@@ -4280,7 +4422,7 @@
 
 
                 <!-- Topic Performance Breakdown -->
-                <div class="format-card"
+                <div class="format-card pa-progress-topic-card"
                     style="display: flex; flex-direction: column; align-items: stretch; cursor: default; padding: 20px; margin-bottom: 16px; background: white; border-radius: 16px; border: 1.5px solid rgba(15, 23, 42, 0.04);">
                     <h3
                         style="font-size: 17px; font-weight: 600; color: #0f172a; margin: 0 0 20px 0;">
@@ -4292,7 +4434,7 @@
                 </div>
 
                 <!-- AI Focus Topic Revision -->
-                <div class="format-card"
+                <div class="format-card pa-progress-ai-card"
                     style="display: flex; flex-direction: column; align-items: stretch; cursor: default; padding: 20px; margin-bottom: 16px; background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); border-radius: 16px; border: 1.5px solid rgba(59, 130, 246, 0.2);">
                     <h3
                         style="font-size: 17px; font-weight: 600; color: #0f172a; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
@@ -4330,7 +4472,7 @@
                 </div>
 
                 <!-- Focus Areas -->
-                <div class="format-card"
+                <div class="format-card pa-progress-focus-card"
                     style="display: flex; flex-direction: column; align-items: stretch; cursor: default; padding: 20px; margin-bottom: 16px; background: white; border-radius: 16px; border: 1.5px solid rgba(15, 23, 42, 0.04);">
                     <h3 style="font-size: 17px; font-weight: 600; color: #0f172a; margin: 0 0 8px 0;">
                         Deep Dive Focus Areas
@@ -4486,9 +4628,9 @@
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
+                <div class="pa-progress-action-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
                     <!-- Performance Trend Button -->
-                    <div class="format-card" onclick="QuizEngine.openProgressPopup('trend')"
+                    <div class="format-card pa-progress-action-card" onclick="QuizEngine.openProgressPopup('trend')"
                         style="display: flex; align-items: center; justify-content: space-between; padding: 14px 12px; cursor: pointer; background: white; border-radius: 16px; border: 1.5px solid rgba(15, 23, 42, 0.04); box-shadow: 0 4px 10px rgba(0,0,0,0.02); transition: all 0.2s;"
                         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.05)';"
                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.02)';"
@@ -4505,7 +4647,7 @@
                     </div>
 
                     <!-- Mock Exam Journey Button -->
-                    <div class="format-card" onclick="QuizEngine.openProgressPopup('journey')"
+                    <div class="format-card pa-progress-action-card" onclick="QuizEngine.openProgressPopup('journey')"
                         style="display: flex; align-items: center; justify-content: space-between; padding: 14px 12px; cursor: pointer; background: white; border-radius: 16px; border: 1.5px solid rgba(15, 23, 42, 0.04); box-shadow: 0 4px 10px rgba(0,0,0,0.02); transition: all 0.2s;"
                         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.05)';"
                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.02)';"
@@ -5419,44 +5561,46 @@
                 </div>
 
                 <!-- Question View -->
-                <div id="review-question-container"
-                    style="background: white; border-radius: 16px; padding: 24px; border: 1.5px solid rgba(15,23,42,0.04); margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                        <span id="review-q-num"
-                            style="font-size: 13px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px;">Question
-                            1 of 5</span>
-                        <span id="review-q-status"
-                            style="font-size: 13px; font-weight: 600; color: #16a34a; background: #ecfdf5; padding: 4px 12px; border-radius: 20px;">Correct</span>
+                <div id="review-question-container" class="exam-review-question-card">
+                    <div class="exam-review-meta-row">
+                        <span id="review-q-num" class="exam-review-question-count">Question 1 of 5</span>
+                        <span id="review-q-status" class="exam-review-status-pill">Correct</span>
                     </div>
 
-                    <div class="quiz-content-area" style="padding: 0; min-height: auto;">
-                        <h2 class="question-text" id="review-q-text">
-                            <!-- Question Text -->
-                        </h2>
-
-                        <div style="width: 500px; max-width: 100%;">
-                            <div class="answers-grid" id="review-options-container">
-                                <!-- Options injected via JS -->
+                    <div class="pa-question-block exam-review-prompt-block">
+                        <div class="pa-question-prompt-wrap">
+                            <span class="pa-question-label" aria-label="Question">Q.</span>
+                            <div class="pa-question-content">
+                                <h2 class="question-text pa-question-prompt" id="review-q-text">
+                                    <!-- Question Text -->
+                                </h2>
                             </div>
                         </div>
                     </div>
 
+                    <div class="exam-review-answers-wrap">
+                        <div class="answers-grid" id="review-options-container">
+                            <!-- Options injected via JS -->
+                        </div>
+                    </div>
+
                     <!-- Explanation -->
-                    <div
-                        style="margin-top: 24px; background: #f8fafc; border-radius: 12px; padding: 20px; border: 1px solid rgba(15,23,42,0.04);">
-                        <h4
-                            style="font-size: 14px; font-weight: 600; color: #0f172a; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-                            <span>💡</span> Explanation
+                    <div class="exam-review-explanation-card">
+                        <h4 class="exam-review-explanation-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path>
+                            </svg>
+                            AI EXPLANATION
                         </h4>
-                        <p id="review-explanation-text"
-                            style="font-size: 14px; color: #475569; margin: 0; line-height: 1.6;">
+                        <p id="review-explanation-text" class="exam-review-explanation-text">
                             <!-- Explanation text -->
                         </p>
                     </div>
                 </div>
 
                 <!-- Footer Nav -->
-                <div style="display: flex; gap: 16px; margin-top: 24px;">
+                <div class="exam-review-nav">
                     <button id="review-prev-btn" class="btn-secondary"
                         style="flex: 1; margin-top: 0; background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1.5px solid #ffffff; color: var(--accent-blue); font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.03);"
                         onclick="changeReviewQuestion(-1)">Previous</button>
@@ -5615,6 +5759,16 @@
             }
 
             function closeExamReview() {
+                const journeyOverlay = document.getElementById('progress-popup-journey');
+                const journeySheet = document.getElementById('progress-popup-journey-sheet');
+                const viewBtn = document.getElementById('view-previous-exams-btn');
+                const olderContainer = document.getElementById('older-exams-container');
+
+                if (journeyOverlay) journeyOverlay.classList.remove('active');
+                if (journeySheet) journeySheet.classList.remove('active');
+                if (viewBtn) viewBtn.style.display = 'flex';
+                if (olderContainer) olderContainer.style.display = 'none';
+
                 document.querySelectorAll('.quiz-view').forEach(v => v.classList.remove('active'));
                 document.getElementById('view-progress').classList.add('active');
                 window.scrollTo(0, 0);
@@ -5647,10 +5801,12 @@
                     const opt = q.options.find(o => o.isCorrect);
                     const idx = q.options.indexOf(opt);
                     const letter = String.fromCharCode(65 + idx);
+                    const optClass = `opt-${letter.toLowerCase()}`;
                     html = `
-                    <button class="answer-btn correct correct-revealed" style="display: flex; gap: 12px; align-items: flex-start; cursor: default; pointer-events: none;">
-                        <span style="font-weight: 600; opacity: 0.7; flex-shrink: 0;">${letter}.</span>
-                        <span style="text-align: left;">${opt.text}</span>
+                    <button class="answer-btn pa-answer-btn ${optClass} correct correct-revealed user-selected exam-review-answer" style="cursor: default; pointer-events: none;">
+                        <span class="pa-answer-letter">${letter}</span>
+                        <span class="pa-answer-text">${opt.text}</span>
+                        <span class="pa-answer-radio" aria-hidden="true"></span>
                     </button>`;
                 } else {
                     const userOpt = q.options[q.userSelectedIndex];
@@ -5658,18 +5814,22 @@
                     const userLetter = String.fromCharCode(65 + q.userSelectedIndex);
                     const correctIdx = q.options.indexOf(correctOpt);
                     const correctLetter = String.fromCharCode(65 + correctIdx);
+                    const userOptClass = `opt-${userLetter.toLowerCase()}`;
+                    const correctOptClass = `opt-${correctLetter.toLowerCase()}`;
 
                     html = `
-                    <div style="margin-bottom: 6px; font-size: 12px; font-weight: 600; color: #ef4444; text-transform: uppercase; letter-spacing: 0.5px;">Your Answer</div>
-                    <button class="answer-btn wrong" style="display: flex; gap: 12px; align-items: flex-start; cursor: default; pointer-events: none; margin-bottom: 16px;">
-                        <span style="font-weight: 600; opacity: 0.7; flex-shrink: 0;">${userLetter}.</span>
-                        <span style="text-align: left;">${userOpt.text}</span>
+                    <div class="exam-review-answer-label exam-review-answer-label--wrong">Your Answer</div>
+                    <button class="answer-btn pa-answer-btn ${userOptClass} wrong user-selected exam-review-answer" style="cursor: default; pointer-events: none;">
+                        <span class="pa-answer-letter">${userLetter}</span>
+                        <span class="pa-answer-text">${userOpt.text}</span>
+                        <span class="pa-answer-radio" aria-hidden="true"></span>
                     </button>
                     
-                    <div style="margin-bottom: 6px; font-size: 12px; font-weight: 600; color: #16a34a; text-transform: uppercase; letter-spacing: 0.5px;">Correct Answer</div>
-                    <button class="answer-btn correct correct-revealed" style="display: flex; gap: 12px; align-items: flex-start; cursor: default; pointer-events: none;">
-                        <span style="font-weight: 600; opacity: 0.7; flex-shrink: 0;">${correctLetter}.</span>
-                        <span style="text-align: left;">${correctOpt.text}</span>
+                    <div class="exam-review-answer-label exam-review-answer-label--correct">Correct Answer</div>
+                    <button class="answer-btn pa-answer-btn ${correctOptClass} correct correct-revealed exam-review-answer" style="cursor: default; pointer-events: none;">
+                        <span class="pa-answer-letter">${correctLetter}</span>
+                        <span class="pa-answer-text">${correctOpt.text}</span>
+                        <span class="pa-answer-radio" aria-hidden="true"></span>
                     </button>`;
                 }
                 optionsContainer.innerHTML = html;
@@ -5689,7 +5849,7 @@
                 }
             }
         </script>
-        <script src="quiz.js?v=18"></script>
+        <script src="quiz.js?v=24"></script>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
                 const emojiMap = {
