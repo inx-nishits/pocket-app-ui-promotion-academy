@@ -3978,7 +3978,7 @@ textarea::placeholder {
     overflow: hidden;
     display: flex !important;
     gap: 12px;
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
     padding: 14px 16px 14px 14px !important;
     border-radius: 16px !important;

@@ -4877,7 +4877,7 @@ const QuizEngine = {
                 if (this.practiceSelectedSubs.includes(subTopic)) {
                     const isCollapsed = this.practiceCollapsedSubs.includes(subTopic);
                     html += `
-                        <div class="practice-card" style="background: #ffffff; border-radius: 16px; margin-bottom: 16px; border: none; overflow: hidden; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);">
+                        <div class="practice-card-accordion" style="background: #ffffff; border-radius: 16px; margin-bottom: 16px; border: none; overflow: hidden; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);">
                             <div onclick="QuizEngine.togglePracticeSubCollapse('${subTopic}')" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #f8fafc; border-bottom: ${isCollapsed ? 'none' : '1.5px solid rgba(15, 23, 42, 0.08)'}; cursor: pointer;">
                                 <h4 style="font-size: 15px; font-weight: 600; color: #0f172a; margin: 0; text-transform: capitalize;">${subTopic}</h4>
                                 <svg style="transform: rotate(${isCollapsed ? '-90deg' : '0deg'}); transition: transform 0.2s ease; color: #64748b;" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
