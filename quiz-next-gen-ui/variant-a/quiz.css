@@ -121,7 +121,7 @@ body {
         margin: 0 auto;
         border-radius: 50px;
         height: 932px;
-        max-height: 932px;
+        max-height: min(932px, calc(100vh - 40px));
         border: 12px solid #0f172a;
         box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
     }
@@ -335,8 +335,11 @@ body {
     margin-top: 0 !important;
 }
 
-.view-content::-webkit-scrollbar {
-    display: none;
+.view-content::-webkit-scrollbar,
+#analytics-review-content::-webkit-scrollbar,
+.feedback-sheet::-webkit-scrollbar,
+.feedback-sheet *::-webkit-scrollbar {
+    display: none !important;
 }
 
 .flex-center {
@@ -1994,6 +1997,10 @@ textarea::placeholder {
     transform: translateY(0);
     transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     z-index: 60;
+    max-height: calc(100% - 24px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .feedback-sheet.hidden {
@@ -3085,7 +3092,7 @@ textarea::placeholder {
     position: relative;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 128px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 128px;
     column-gap: 18px;
     row-gap: 16px;
     align-items: stretch;
@@ -3233,12 +3240,13 @@ textarea::placeholder {
 }
 
 #view-progress .format-card.pa-readiness-card {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: 14px;
+    grid-template-columns: minmax(0, 1fr) 118px;
+    column-gap: 16px;
     row-gap: 10px;
-    padding: 16px 16px !important;
-    margin-bottom: 12px;
-    border-radius: 18px !important;
+    padding: 18px !important;
+    margin-bottom: 14px !important;
+    border-radius: 16px !important;
+    align-items: center;
 }
 
 #view-progress .pa-readiness-title {
@@ -3252,8 +3260,9 @@ textarea::placeholder {
 }
 
 #view-progress .pa-readiness-score {
-    font-size: 28px;
-    margin-bottom: 3px;
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
 }
 
 #view-progress .pa-readiness-status {
@@ -3262,38 +3271,55 @@ textarea::placeholder {
 }
 
 #view-progress .pa-readiness-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 8px;
-    align-items: center;
-    text-align: center;
+    min-width: 0;
+    width: 100%;
 }
 
-#view-progress .pa-readiness-stats > div:not(.pa-readiness-stat-divider) {
+#view-progress .pa-readiness-stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    border-radius: 12px;
+    padding: 12px 14px;
     width: 100%;
-    padding-left: 0;
-    text-align: center !important;
 }
 
 #view-progress .pa-readiness-stat-label {
-    font-size: 10.5px;
-    margin-bottom: 4px;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #64748b !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    margin: 0 !important;
 }
 
 #view-progress .pa-readiness-stat-value {
-    font-size: 16px;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    margin: 0 !important;
 }
 
 #view-progress .pa-progress-topic-card,
 #view-progress .pa-progress-ai-card,
 #view-progress .pa-progress-focus-card {
-    padding: 16px !important;
-    margin-bottom: 12px !important;
-    border-radius: 15px !important;
+    padding: 18px !important;
+    margin-bottom: 14px !important;
+    border-radius: 16px !important;
 }
 
 #view-progress .pa-progress-topic-card > h3,
 #view-progress .pa-progress-ai-card > h3,
 #view-progress .pa-progress-focus-card > h3 {
     font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
 }
 
 #view-progress .pa-progress-topic-card > h3 {
@@ -3338,7 +3364,7 @@ textarea::placeholder {
 
 #view-progress #ai-weak-subjects-container {
     gap: 6px !important;
-    margin-bottom: 12px !important;
+    margin-bottom: 0px !important;
 }
 
 #view-progress #ai-weak-subjects-container span {

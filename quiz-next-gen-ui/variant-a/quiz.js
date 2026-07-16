@@ -2192,8 +2192,8 @@ const QuizEngine = {
                 stateClass = 'border-color: #22c55e; color: #22c55e;';
                 iconHtml = `<div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; background: #22c55e; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>`;
             } else if (isExplicitlySkipped || isPending) {
-                stateClass = 'border-color: #9ca3af; color: #9ca3af;';
-                iconHtml = `<div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; background: white; border: 2px solid #9ca3af; box-sizing: border-box; box-shadow: 0 0 0 2px white;"></div>`;
+                stateClass = 'border-color: #f59e0b; color: #b45309; background: #fffbeb;';
+                iconHtml = `<div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; background: #f59e0b; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></div>`;
             }
 
             if (isCurrent) {
@@ -3088,7 +3088,7 @@ const QuizEngine = {
             viewCompletion.style.setProperty('--result-accent', accentColor);
         }
 
-        document.getElementById('completion-emoji').innerHTML = `<img src="../images/exam_image-badge.png" class="result-badge-img" alt="">`;
+        document.getElementById('completion-emoji').innerHTML = `<img src="../images/result-badge.png" class="result-badge-img" alt="" style="width: 160px; height: 160px; object-fit: contain;">`;
 
         // Multiplier for score to make it look like a real game score
         const scoreMultiplier = 25;
@@ -3183,8 +3183,11 @@ const QuizEngine = {
             // Sync this.score just in case
             this.score = actualCorrect;
 
-            document.getElementById('solo-score-val').innerText = `${this.score}/${this.totalQuestions}`;
-            document.getElementById('solo-accuracy-val').innerText = `${accuracy}%`;
+            const scoreValEl = document.getElementById('solo-score-val');
+            if (scoreValEl) scoreValEl.innerText = `${this.score}/${this.totalQuestions}`;
+
+            const accuracyValEl = document.getElementById('solo-accuracy-val');
+            if (accuracyValEl) accuracyValEl.innerText = `${accuracy}%`;
 
             const accuracyRing = document.getElementById('solo-accuracy-ring');
             if (accuracyRing) {
@@ -3225,6 +3228,10 @@ const QuizEngine = {
                 const avgTimeRow = avgTimeEl.closest('.perf-summary__row');
                 if (avgTimeRow) avgTimeRow.style.display = isPracticeResult ? 'none' : 'flex';
             }
+            const avgTimeElTop = document.getElementById('solo-avg-time-val-top');
+            if (avgTimeElTop) {
+                avgTimeElTop.innerText = `${avgTime}s`;
+            }
 
             // Show total time for the second occurrence
             const totalMin2 = Math.floor(this.finalTotalTimeSeconds / 60);
@@ -3236,6 +3243,10 @@ const QuizEngine = {
                 const totalTimeRow = totalTimeEl2.closest('.perf-summary__row');
                 const totalTimeLabel = totalTimeRow ? totalTimeRow.querySelector('.perf-summary__label') : null;
                 if (totalTimeLabel) totalTimeLabel.innerText = 'Total Time';
+            }
+            const totalTimeElTop = document.getElementById('solo-total-time-val-top');
+            if (totalTimeElTop) {
+                totalTimeElTop.innerText = totalTimeStr2;
             }
 
 
@@ -3300,17 +3311,17 @@ const QuizEngine = {
 
             const emojiEl = document.getElementById('solo-completion-emoji');
             if (emojiEl) {
-                emojiEl.innerHTML = `<img src="../images/exam_image-badge.png" class="result-badge-img" alt="">`;
+                emojiEl.innerHTML = `<img src="../images/result-badge.png" class="result-badge-img" alt="" style="width: 160px; height: 160px; object-fit: contain;">`;
             }
 
             const statusEl = document.getElementById('solo-completion-status');
             if (statusEl) {
                 if (quizType === 'mock') {
-                    statusEl.innerText = 'Assessment Complete';
+                    statusEl.innerText = "You've completed the exam. Here's your performance summary.";
                 } else if (quizType === 'ai-tutor' || quizType === 'practice') {
-                    statusEl.innerText = 'Practice Completed';
+                    statusEl.innerText = "You've completed the practice. Here's your performance summary.";
                 } else {
-                    statusEl.innerText = 'Quiz Complete';
+                    statusEl.innerText = "You've completed the quiz. Here's your performance summary.";
                 }
             }
 
@@ -3462,6 +3473,10 @@ const QuizEngine = {
     },
 
     closeProgressPopup: function (type) {
+        if (type === 'ai-selection' && this.aiStartTimeout) {
+            clearTimeout(this.aiStartTimeout);
+            this.aiStartTimeout = null;
+        }
         const overlay = document.getElementById(`progress-popup-${type}`);
         const sheet = document.getElementById(`progress-popup-${type}-sheet`);
         if (overlay && sheet) {
@@ -3496,23 +3511,14 @@ const QuizEngine = {
         };
         const readinessColor = readinessFillByTitle[readinessTier.title] || readinessTier.color;
 
-        if (scoreEl) scoreEl.innerText = `${avg}%`;
+        if (scoreEl) {
+            scoreEl.innerText = `${avg}%`;
+            scoreEl.style.margin = '0';
+        }
         if (gaugeEl) gaugeEl.setAttribute('stroke-dasharray', `${avg}, 100`);
 
         if (statusEl) {
-            if (avg >= 75) {
-                statusEl.innerText = 'Ready';
-                statusEl.style.color = readinessColor;
-                statusEl.style.background = readinessTier.bg;
-            } else if (avg >= 60) {
-                statusEl.innerText = 'Developing';
-                statusEl.style.color = readinessColor;
-                statusEl.style.background = readinessTier.bg;
-            } else {
-                statusEl.innerText = 'Needs Work';
-                statusEl.style.color = readinessColor;
-                statusEl.style.background = readinessTier.bg;
-            }
+            statusEl.style.display = 'none';
         }
 
         if (gaugeEl) {
@@ -3630,8 +3636,20 @@ const QuizEngine = {
         this.initProgressChart(mode);
     },
 
+    showAllTopicPerformance: false,
+
+    toggleTopicPerformanceView: function (showAll) {
+        if (typeof showAll === 'boolean') {
+            this.showAllTopicPerformance = showAll;
+        } else {
+            this.showAllTopicPerformance = !this.showAllTopicPerformance;
+        }
+        this.renderTopicPerformance();
+    },
+
     renderTopicPerformance: function () {
         const container = document.getElementById('topic-performance-list');
+        const viewMoreContainer = document.getElementById('topic-performance-view-more-container');
         if (!container) return;
 
         // Medium-light bar fills for this list only (badges / other screens keep original colors)
@@ -3642,8 +3660,14 @@ const QuizEngine = {
             Weak: '#E55A5A'
         };
 
+        const initialLimit = 4;
+        const isExpanded = !!this.showAllTopicPerformance;
+        const topicsToShow = (isExpanded || this.topicsPerformance.length <= initialLimit)
+            ? this.topicsPerformance
+            : this.topicsPerformance.slice(0, initialLimit);
+
         let html = '';
-        this.topicsPerformance.forEach(topic => {
+        topicsToShow.forEach(topic => {
             const tier = this.getTopicPerformanceTier(topic.score);
             const { color, bg: bgColor, title } = tier;
             const barColor = barFillByTitle[title] || color;
@@ -3677,6 +3701,22 @@ const QuizEngine = {
             `;
         });
         container.innerHTML = html;
+
+        if (viewMoreContainer) {
+            if (this.topicsPerformance.length > initialLimit) {
+                if (!isExpanded) {
+                    viewMoreContainer.innerHTML = `
+                        <button type="button" onclick="QuizEngine.toggleTopicPerformanceView(true)" style="background: none; border: none; padding: 4px 8px; color: #19366c; font-size: 13.5px; font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; letter-spacing: -0.2px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">View more</button>
+                    `;
+                } else {
+                    viewMoreContainer.innerHTML = `
+                        <button type="button" onclick="QuizEngine.toggleTopicPerformanceView(false)" style="background: none; border: none; padding: 4px 8px; color: #19366c; font-size: 13.5px; font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; letter-spacing: -0.2px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">View less</button>
+                    `;
+                }
+            } else {
+                viewMoreContainer.innerHTML = '';
+            }
+        }
     },
 
     renderFocusAreas: function () {
@@ -3713,9 +3753,57 @@ const QuizEngine = {
 
         let html = '';
         this.weakestSubjectsList.forEach(name => {
-            html += `<span style="font-size: 12px; font-weight: 600; color: ${this.paPerfColors.blue.color}; background: ${this.paPerfColors.blue.bg}; padding: 4px 10px; border-radius: 20px;">${name}</span>`;
+            html += `<span style="font-size: 12px; font-weight: 600; color: ${this.paPerfColors.blue.color}; background: ${this.paPerfColors.blue.bg}; padding: 6px 12px; border-radius: 20px; cursor: default; transition: all 0.2s;">${name}</span>`;
         });
         container.innerHTML = html;
+        this.hideAiQuestionSelection();
+    },
+
+    showAiQuestionSelection: function (clickedSubject) {
+        if (clickedSubject && typeof clickedSubject === 'string') {
+            this.selectedPopupSubjects = [clickedSubject];
+        } else {
+            this.selectedPopupSubjects = [...this.weakestSubjectsList];
+        }
+
+        const popupContainer = document.getElementById('popup-ai-subjects-container');
+        if (popupContainer) {
+            let html = '';
+            this.selectedPopupSubjects.forEach(name => {
+                html += `<span class="popup-subject-tab" data-subject="${name}" style="font-size: 12px; font-weight: 600; color: ${this.paPerfColors.blue.color}; background: ${this.paPerfColors.blue.bg}; border: 1.5px solid #3b82f6; padding: 6px 12px; border-radius: 20px; cursor: default;">${name}</span>`;
+            });
+            popupContainer.innerHTML = html;
+        }
+
+        this.openProgressPopup('ai-selection');
+    },
+
+    togglePopupSubject: function (subjectName) {
+        // No-op if only selected subjects are displayed
+    },
+
+    hideAiQuestionSelection: function () {
+        this.closeProgressPopup('ai-selection');
+    },
+
+    selectAiCountAndStart: function (count) {
+        this.setAiCount(count);
+        if (this.aiStartTimeout) {
+            clearTimeout(this.aiStartTimeout);
+        }
+        this.aiStartTimeout = setTimeout(() => {
+            this.aiStartTimeout = null;
+            this.startAiPracticeFromPopup();
+        }, 1200);
+    },
+
+    startAiPracticeFromPopup: function () {
+        if (this.aiStartTimeout) {
+            clearTimeout(this.aiStartTimeout);
+            this.aiStartTimeout = null;
+        }
+        this.closeProgressPopup('ai-selection');
+        this.startAiPractice(this.selectedPopupSubjects);
     },
 
     setAiCount: function (count) {
@@ -3735,15 +3823,17 @@ const QuizEngine = {
         });
     },
 
-    startAiPractice: function () {
-        this.selectedMixedTopics = this.weakestSubjectsList;
+    startAiPractice: function (customTopics) {
+        this.selectedMixedTopics = (customTopics && customTopics.length > 0) ? customTopics : this.weakestSubjectsList;
         this.selectedCategory = 'AI Focus Tutor';
-        this.currentFormat = 'Standard Quiz';
+        this.currentFlow = 'topic';
+        this.currentFormat = 'Practice By Topic';
+        this.selectedFormat = 'Practice By Topic';
         this.currentMode = 'Practice Weak Areas';
         this.launchedFromProgress = true;
 
         // Setup state for new quiz
-        this.totalQuestions = this.selectedAiQuestionCount;
+        this.totalQuestions = this.selectedAiQuestionCount || 5;
         this.currentQuestion = 0;
         this.score = 0;
         this.streak = 0;
@@ -3751,8 +3841,7 @@ const QuizEngine = {
         this.timeLeft = 600; // arbitrary 10 min for AI tutor
         this.isTimeUp = false;
 
-        this.navigate('view-active', 'view-progress');
-        this.startQuiz();
+        this.navigate('view-active');
     },
 
     startTopicRevision: function (topicName) {
@@ -3822,8 +3911,33 @@ const QuizEngine = {
 
         let skippedCount = 0;
 
+        let gridHtml = `
+            <div class="card" style="padding: 20px; background: white; border-radius: 16px; border: 1.5px solid rgba(15, 23, 42, 0.04);">
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; margin-bottom: 20px; font-size: 13px; color: #4b5563; font-weight: 500; border-bottom: 1px solid #f1f5f9; padding-bottom: 14px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 18px; height: 18px; border-radius: 50%; background: #22c55e; display: flex; align-items: center; justify-content: center;">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        Correct
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 18px; height: 18px; border-radius: 50%; background: #ef4444; display: flex; align-items: center; justify-content: center;">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </div>
+                        Incorrect
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <div style="width: 18px; height: 18px; border-radius: 50%; background: #f59e0b; display: flex; align-items: center; justify-content: center;">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                        </div>
+                        Skipped
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(48px, 1fr)); gap: 16px 12px; padding: 4px 2px;">
+        `;
+
         for (let i = 0; i < this.totalQuestions; i++) {
-            const qData = this.questionsData[i % this.questionsData.length];
             const answerData = this.mockAnswers ? this.mockAnswers[i] : null;
             if (!answerData || answerData.status !== 'answered') {
                 skippedCount++;
@@ -3833,49 +3947,29 @@ const QuizEngine = {
             const isCorrect = isAnswered && answerData.isCorrect;
             const isSkipped = !isAnswered;
 
-            let statusClass = isSkipped ? 'skipped' : (isCorrect ? 'correct' : 'wrong');
+            let stateClass = '';
+            let iconHtml = '';
 
-            let iconSvg = '';
             if (isCorrect) {
-                iconSvg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-            } else if (isSkipped) {
-                iconSvg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
+                stateClass = 'border-color: #22c55e; color: #15803d; background: #f0fdf4;';
+                iconHtml = `<div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: #22c55e; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>`;
+            } else if (!isSkipped) {
+                stateClass = 'border-color: #ef4444; color: #b91c1c; background: #fef2f2;';
+                iconHtml = `<div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: #ef4444; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div>`;
             } else {
-                iconSvg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                stateClass = 'border-color: #f59e0b; color: #b45309; background: #fffbeb;';
+                iconHtml = `<div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: #f59e0b; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></div>`;
             }
 
-            const chosenText = isSkipped ? 'Skipped' : (answerData.selectedIndex >= 0 ? qData.opts[answerData.selectedIndex] : 'Unknown');
-            const correctText = qData.opts[qData.correct];
-            const explanation = isCorrect ? (qData.expCorrect || '') : (qData.expWrong || qData.expCorrect || '');
-
-            list.innerHTML += `
-                <div class="breakdown-item ${statusClass}" style="flex-direction: column; align-items: flex-start; padding: 16px; cursor: pointer;" onclick="const details = this.querySelector('.breakdown-details'); const icon = this.querySelector('.toggle-icon'); const wasClosed = details.style.display === 'none'; this.parentElement.querySelectorAll('.breakdown-details').forEach(el => el.style.display = 'none'); this.parentElement.querySelectorAll('.toggle-icon').forEach(el => el.style.transform = 'rotate(0deg)'); if(wasClosed) { details.style.display = 'block'; icon.style.transform = 'rotate(180deg)'; }">
-                    <div style="display: flex; gap: 12px; width: 100%; align-items: flex-start;">
-                        <div class="breakdown-icon" style="flex-shrink: 0; margin-top: 2px;">
-                            ${iconSvg}
-                        </div>
-                        <div class="breakdown-text" style="flex-grow: 1; margin: 0;"><strong>Q${i + 1}:</strong> ${qData.q}</div>
-                        <div class="toggle-icon" style="flex-shrink: 0; transition: transform 0.3s ease; display: flex; align-items: center; justify-content: center; align-self: flex-start; margin-top: 2px;">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </div>
-                    </div>
-                    
-                    <div class="breakdown-details" style="display: none; width: 100%; margin-top: 12px;">
-                        <div style="font-size: 14px; width: 100%; background: rgba(0,0,0,0.03); padding: 12px; border-radius: 8px; margin-bottom: 8px;">
-                            <div style="margin-bottom: 8px;"><strong>Your Answer:</strong> <span style="color: ${isCorrect ? '#10b981' : (isSkipped ? '#64748b' : '#ef4444')}">${chosenText}</span></div>
-                            ${!isCorrect ? `<div style=\"margin-bottom:8px\"><strong>✅ Correct Answer:</strong> <span style=\"color: #10b981\">${correctText}</span></div>` : ''}
-                        </div>
-                        
-                        ${explanation ? `
-                        <div style="font-size: 13px; color: #475569; width: 100%; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.05);">
-                            <strong>AI Explanation:</strong>
-                            <div style="margin-top: 4px;">${explanation}</div>
-                        </div>
-                        ` : ''}
-                    </div>
-                </div>
-            `;
+            gridHtml += `<button type="button" onclick="QuizEngine.openAnalyticsQuestionSheet(${i})" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 50px; border-radius: 12px; border: 1.5px solid currentColor; ${stateClass} font-weight: 600; font-size: 16px; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">${i + 1}${iconHtml}</button>`;
         }
+
+        gridHtml += `
+                </div>
+            </div>
+        `;
+
+        list.innerHTML = gridHtml;
 
         if (timeCard) {
             let existingRow = document.getElementById('analytics-skipped-row');
@@ -3891,6 +3985,148 @@ const QuizEngine = {
                 existingRow.remove();
             }
         }
+    },
+
+    openAnalyticsQuestionSheet: function (index) {
+        const overlay = document.getElementById('analytics-review-overlay');
+        const sheet = document.getElementById('analytics-review-sheet');
+        const content = document.getElementById('analytics-review-content');
+        if (!overlay || !sheet || !content) return;
+
+        const qData = this.questionsData[index % this.questionsData.length];
+        const answerData = this.mockAnswers ? this.mockAnswers[index] : null;
+        const isAnswered = answerData && answerData.status === 'answered';
+        const isCorrect = isAnswered && answerData.isCorrect;
+        const isSkipped = !isAnswered;
+
+        let statusBadge = '';
+        if (isCorrect) {
+            statusBadge = `<span style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 999px; background: #dcfce7; color: #166534; font-size: 13px; font-weight: 600;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Correct</span>`;
+        } else if (!isSkipped) {
+            statusBadge = `<span style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 999px; background: #fee2e2; color: #991b1b; font-size: 13px; font-weight: 600;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Incorrect</span>`;
+        } else {
+            statusBadge = `<span style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 999px; background: #fffbeb; border: 1px solid #fde68a; color: #b45309; font-size: 13px; font-weight: 600;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Skipped</span>`;
+        }
+
+        const explanation = isCorrect ? (qData.expCorrect || 'Good job! You answered correctly.') : (qData.expWrong || qData.expCorrect || 'Review the correct concept and rationale above.');
+
+        const optClasses = ['opt-a', 'opt-b', 'opt-c', 'opt-d'];
+        let optionsHtml = '';
+
+        if (isCorrect) {
+            const correctIdx = qData.correct;
+            const letter = String.fromCharCode(65 + correctIdx);
+            const optClass = optClasses[correctIdx] || 'opt-a';
+            optionsHtml = `
+                <button class="answer-btn pa-answer-btn ${optClass} correct correct-revealed user-selected exam-review-answer" style="cursor: default; pointer-events: none; width: 100%; text-align: left; margin-bottom: 0;">
+                    <span class="pa-answer-letter">${letter}</span>
+                    <span style="display: flex; align-items: center; min-height: 28px; flex: 1; min-width: 0; line-height: 1.45;">${qData.opts[correctIdx]}</span>
+                    <span class="pa-answer-radio" aria-hidden="true"></span>
+                </button>
+            `;
+        } else if (!isSkipped) {
+            const userIdx = answerData.selectedIndex;
+            const userLetter = String.fromCharCode(65 + userIdx);
+            const userClass = optClasses[userIdx] || 'opt-a';
+
+            const correctIdx = qData.correct;
+            const correctLetter = String.fromCharCode(65 + correctIdx);
+            const correctClass = optClasses[correctIdx] || 'opt-a';
+
+            optionsHtml = `
+                <div class="exam-review-answer-label exam-review-answer-label--wrong" style="margin-top: 4px; margin-bottom: 8px; font-size: 13px; font-weight: 700;">Your Answer</div>
+                <button class="answer-btn pa-answer-btn ${userClass} wrong user-selected exam-review-answer" style="cursor: default; pointer-events: none; width: 100%; text-align: left; margin-bottom: 18px;">
+                    <span class="pa-answer-letter">${userLetter}</span>
+                    <span style="display: flex; align-items: center; min-height: 28px; flex: 1; min-width: 0; line-height: 1.45;">${qData.opts[userIdx]}</span>
+                    <span class="pa-answer-radio" aria-hidden="true"></span>
+                </button>
+
+                <div class="exam-review-answer-label exam-review-answer-label--correct" style="margin-top: 4px; margin-bottom: 8px; font-size: 13px; font-weight: 700;">Correct Answer</div>
+                <button class="answer-btn pa-answer-btn ${correctClass} correct correct-revealed exam-review-answer" style="cursor: default; pointer-events: none; width: 100%; text-align: left; margin-bottom: 0;">
+                    <span class="pa-answer-letter">${correctLetter}</span>
+                    <span style="display: flex; align-items: center; min-height: 28px; flex: 1; min-width: 0; line-height: 1.45;">${qData.opts[correctIdx]}</span>
+                    <span class="pa-answer-radio" aria-hidden="true"></span>
+                </button>
+            `;
+        } else {
+            const correctIdx = qData.correct;
+            const correctLetter = String.fromCharCode(65 + correctIdx);
+            const correctClass = optClasses[correctIdx] || 'opt-a';
+
+            optionsHtml = `
+                <div class="exam-review-answer-label exam-review-answer-label--wrong" style="margin-top: 4px; margin-bottom: 8px; font-size: 13px; font-weight: 700; color: #b45309;">Your Answer: Skipped</div>
+                <div class="exam-review-answer-label exam-review-answer-label--correct" style="margin-top: 14px; margin-bottom: 8px; font-size: 13px; font-weight: 700;">Correct Answer</div>
+                <button class="answer-btn pa-answer-btn ${correctClass} correct correct-revealed exam-review-answer" style="cursor: default; pointer-events: none; width: 100%; text-align: left; margin-bottom: 0;">
+                    <span class="pa-answer-letter">${correctLetter}</span>
+                    <span style="display: flex; align-items: center; min-height: 28px; flex: 1; min-width: 0; line-height: 1.45;">${qData.opts[correctIdx]}</span>
+                    <span class="pa-answer-radio" aria-hidden="true"></span>
+                </button>
+            `;
+        }
+
+        const prevIdx = index > 0 ? index - 1 : null;
+        const nextIdx = index < this.totalQuestions - 1 ? index + 1 : null;
+
+        content.innerHTML = `
+            <div class="exam-review-meta-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px;">
+                <span class="exam-review-question-count" style="font-size: 16px; font-weight: 700; color: #0f172a;">Question ${index + 1} of ${this.totalQuestions}</span>
+                ${statusBadge}
+            </div>
+
+            <div class="pa-question-block exam-review-prompt-block" style="margin-bottom: 22px;">
+                <div class="pa-question-prompt-wrap">
+                    <span class="pa-question-label" aria-label="Question">Q.</span>
+                    <div class="pa-question-content">
+                        <h2 class="question-text pa-question-prompt" style="font-size: 17px; font-weight: 600; color: #0f172a; line-height: 1.55; margin: 0;">
+                            ${qData.q}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exam-review-answers-wrap" style="margin-bottom: 24px;">
+                <div class="answers-grid">
+                    ${optionsHtml}
+                </div>
+            </div>
+
+            <div class="exam-review-explanation-card" style="margin-bottom: 28px;">
+                <h4 class="exam-review-explanation-title" style="font-size: 13px; font-weight: 700; color: #3b82f6; letter-spacing: 0.5px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path>
+                    </svg>
+                    AI EXPLANATION
+                </h4>
+                <p class="exam-review-explanation-text" style="margin: 0; line-height: 1.6; font-size: 15px; color: #334155;">
+                    ${explanation}
+                </p>
+            </div>
+
+            <div style="display: flex; gap: 12px; justify-content: space-between; align-items: center; padding-top: 4px;">
+                <button type="button" class="btn-secondary" ${prevIdx !== null ? `onclick="QuizEngine.openAnalyticsQuestionSheet(${prevIdx})"` : 'disabled'} style="flex: 1; margin-top: 0; min-height: 50px; padding: 12px 16px; gap: 8px; ${prevIdx === null ? 'opacity: 0.5; cursor: not-allowed;' : ''}">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg> Previous
+                </button>
+                <button type="button" class="btn-primary" ${nextIdx !== null ? `onclick="QuizEngine.openAnalyticsQuestionSheet(${nextIdx})"` : 'disabled'} style="flex: 1; margin-top: 0; min-height: 50px; padding: 12px 16px; gap: 8px; ${nextIdx === null ? 'opacity: 0.5; cursor: not-allowed; box-shadow: none;' : ''}">
+                    Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        `;
+
+        document.body.style.overflow = 'hidden';
+        overlay.classList.remove('hidden');
+        sheet.classList.remove('hidden');
+        sheet.style.transform = 'translateY(0)';
+    },
+
+    closeAnalyticsQuestionSheet: function () {
+        const overlay = document.getElementById('analytics-review-overlay');
+        const sheet = document.getElementById('analytics-review-sheet');
+        if (overlay) overlay.classList.add('hidden');
+        if (sheet) {
+            sheet.classList.add('hidden');
+            sheet.style.transform = '';
+        }
+        document.body.style.overflow = '';
     },
 
 
@@ -4145,7 +4381,7 @@ const QuizEngine = {
 
         document.getElementById('completion-title').innerText = title;
         document.getElementById('completion-subtitle').innerText = subtitle;
-        document.getElementById('completion-emoji').innerHTML = `<img src="../images/exam_image-badge.png" class="result-badge-img" alt="">`;
+        document.getElementById('completion-emoji').innerHTML = `<img src="../images/result-badge.png" class="result-badge-img" alt="" style="width: 160px; height: 160px; object-fit: contain;">`;
 
         document.getElementById('my-score-val').innerText = myScore;
         document.getElementById('opp-score-val').innerText = oppScore;
