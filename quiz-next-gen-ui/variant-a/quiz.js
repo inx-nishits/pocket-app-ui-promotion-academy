@@ -3311,7 +3311,11 @@ const QuizEngine = {
 
             const emojiEl = document.getElementById('solo-completion-emoji');
             if (emojiEl) {
-                emojiEl.innerHTML = `<img src="../images/result-badge.png" class="result-badge-img" alt="" style="width: 160px; height: 160px; object-fit: contain;">`;
+                if (quizType === 'mock') {
+                    emojiEl.innerHTML = `<img src="../images/exam-completed-badge.png" class="result-badge-img" alt="" style="width: 160px; height: 160px; object-fit: contain;">`;
+                } else {
+                    emojiEl.innerHTML = `<img src="../images/result-badge.png" class="result-badge-img" alt="" style="width: 160px; height: 160px; object-fit: contain;">`;
+                }
             }
 
             const statusEl = document.getElementById('solo-completion-status');
@@ -3706,11 +3710,11 @@ const QuizEngine = {
             if (this.topicsPerformance.length > initialLimit) {
                 if (!isExpanded) {
                     viewMoreContainer.innerHTML = `
-                        <button type="button" onclick="QuizEngine.toggleTopicPerformanceView(true)" style="background: none; border: none; padding: 4px 8px; color: #19366c; font-size: 13.5px; font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; letter-spacing: -0.2px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">View more</button>
+                        <button type="button" onclick="QuizEngine.toggleTopicPerformanceView(true)" style="background: none; border: none; padding: 4px 8px; color: #19366c; font-size: 13.5px; font-weight: 600; cursor: pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'"><span style="display:inline-flex; align-items:center;">View more <svg style="width:14px; height:14px; margin-left:3px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></button>
                     `;
                 } else {
                     viewMoreContainer.innerHTML = `
-                        <button type="button" onclick="QuizEngine.toggleTopicPerformanceView(false)" style="background: none; border: none; padding: 4px 8px; color: #19366c; font-size: 13.5px; font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; letter-spacing: -0.2px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">View less</button>
+                        <button type="button" onclick="QuizEngine.toggleTopicPerformanceView(false)" style="background: none; border: none; padding: 4px 8px; color: #19366c; font-size: 13.5px; font-weight: 600; cursor: pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'"><span style="display:inline-flex; align-items:center;">View less <svg style="width:14px; height:14px; margin-left:3px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></span></button>
                     `;
                 }
             } else {
