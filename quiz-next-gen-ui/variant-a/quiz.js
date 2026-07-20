@@ -2168,9 +2168,8 @@ const QuizEngine = {
         let html = '';
 
         for (let i = 0; i < this.totalQuestions; i++) {
-            const isAnswered = this.mockAnswers && this.mockAnswers[i] && this.mockAnswers[i].status === 'answered';
-            const isPending = !isAnswered;
-            if (isPending) {
+            const isExplicitlySkipped = this.mockAnswers && this.mockAnswers[i] && this.mockAnswers[i].status === 'skipped';
+            if (isExplicitlySkipped) {
                 skippedCount++;
             }
         }
@@ -2191,7 +2190,7 @@ const QuizEngine = {
             if (isAnswered) {
                 stateClass = 'border-color: #22c55e; color: #22c55e;';
                 iconHtml = `<div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; background: #22c55e; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>`;
-            } else if (isExplicitlySkipped || isPending) {
+            } else if (isExplicitlySkipped) {
                 stateClass = 'border-color: #f59e0b; color: #b45309; background: #fffbeb;';
                 iconHtml = `<div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; background: #f59e0b; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></div>`;
             }
@@ -3314,7 +3313,7 @@ const QuizEngine = {
                 if (quizType === 'mock') {
                     emojiEl.innerHTML = `<img src="../images/exam-completed-final.png" class="result-badge-img" alt="" style="width: 160px; height: 160px; object-fit: contain;">`;
                 } else {
-                    emojiEl.innerHTML = `<img src="file:///C:/Users/Moksha Patel/Downloads/Practice Completed Final.png" class="result-badge-img" alt="" style="width: 160px; height: 160px; object-fit: contain;">`;
+                    emojiEl.innerHTML = `<img src="../images/practice-completed-final.png" class="result-badge-img" alt="" style="width: 160px; height: 160px; object-fit: contain;">`;
                 }
             }
 
