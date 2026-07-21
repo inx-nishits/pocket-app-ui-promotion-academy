@@ -92,17 +92,17 @@ const QuizEngine = {
 
         const examsData = {
             'Sergeant Exam': {
-                iconBg: '#e0f2fe', iconSrc: '../images/3d-icons/sergeant-exam-sub.png',
+                iconBg: '#eff6ff', iconSrc: '../images/3d-icons/Seargeant-Exam-1.png',
                 desc: 'Comprehensive mock exam covering all sergeant level responsibilities.',
                 q: 150, d: '3h 15m', pass: '55%'
             },
             'Inspector Exam': {
-                iconBg: '#bfdbfe', iconSrc: '../images/3d-icons/inspector-exam-sub.png',
+                iconBg: '#e0f2fe', iconSrc: '../images/3d-icons/Inspector-Exam-1.png',
                 desc: 'Comprehensive mock exam covering all inspector level responsibilities.',
                 q: 150, d: '3h 15m', pass: '55%'
             },
             'National Investigators Exam': {
-                iconBg: '#bfdbfe', iconSrc: '../images/3d-icons/national-investigators-sub.png',
+                iconBg: '#f1f5f9', iconSrc: '../images/3d-icons/National-Investigator-Exam-1.png',
                 desc: 'Assess your investigative skills and knowledge.',
                 q: 80, d: '2h', pass: '55%'
             }
@@ -1007,10 +1007,7 @@ const QuizEngine = {
                         <div style="margin-bottom: 16px;">${optionsHTML}</div>
                         <div style="background: #f3e8ff; border-radius: 12px; padding: 12px; border: 1px solid rgba(139, 92, 246, 0.08);">
                             <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px; font-size: 11px; font-weight: 600; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px;">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path>
-                                </svg>
-                                AI Explanation
+                                Question Explanation
                             </div>
                             <p style="margin: 0; font-size: 13px; line-height: 1.45; color: #5b21b6;">${qData.expWrong}</p>
                         </div>
@@ -3730,13 +3727,13 @@ const QuizEngine = {
         let html = '';
         weakTopics.forEach(topic => {
             html += `
-                <div onclick="QuizEngine.startTopicRevision('${topic.name}')" style="cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: ${this.paPerfColors.purple.bg}; padding: 14px 16px; border-radius: 12px; border: 1px solid #ddd6fe; transition: transform 0.1s ease, box-shadow 0.2s; box-shadow: 0 1px 2px rgba(124, 58, 237, 0.05);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(124, 58, 237, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px rgba(124, 58, 237, 0.05)';">
+                <div onclick="QuizEngine.startTopicRevision('${topic.name}')" style="cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #fef2f2; padding: 14px 16px; border-radius: 12px; border: 1px solid #fecaca; transition: transform 0.1s ease, box-shadow 0.2s; box-shadow: 0 1px 2px rgba(229, 90, 90, 0.05);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(229, 90, 90, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px rgba(229, 90, 90, 0.05)';">
                     <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="font-size: 15px; font-weight: 600; color: ${this.paPerfColors.purple.color};">${topic.name}</span>
+                        <span style="font-size: 15px; font-weight: 600; color: #E55A5A;">${topic.name}</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px;">
-                        <span style="font-size: 12px; font-weight: 600; color: ${this.paPerfColors.purple.color}; background: rgba(124, 58, 237, 0.1); padding: 4px 8px; border-radius: 6px;">${topic.score}% Accuracy</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="${this.paPerfColors.purple.color}" stroke-width="2" style="width: 16px; height: 16px;"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span style="font-size: 12px; font-weight: 600; color: #E55A5A; background: rgba(229, 90, 90, 0.1); padding: 4px 8px; border-radius: 6px;">${topic.score}% Accuracy</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#E55A5A" stroke-width="2" style="width: 16px; height: 16px;"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
                 </div>
             `;
@@ -4094,11 +4091,8 @@ const QuizEngine = {
             </div>
 
             <div class="exam-review-explanation-card" style="margin-bottom: 28px;">
-                <h4 class="exam-review-explanation-title" style="font-size: 13px; font-weight: 700; color: #3b82f6; letter-spacing: 0.5px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path>
-                    </svg>
-                    AI EXPLANATION
+                <h4 class="exam-review-explanation-title" style="font-size: 13px; font-weight: 700; color: #1e40af; letter-spacing: 0.5px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                    QUESTION EXPLANATION
                 </h4>
                 <p class="exam-review-explanation-text" style="margin: 0; line-height: 1.6; font-size: 15px; color: #334155;">
                     ${explanation}

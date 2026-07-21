@@ -183,13 +183,13 @@ const newCode = `
         weakTopics.forEach(topic => {
             const pooIcon = topic.score < 50 ? '💩 ' : '';
             html += \`
-                <div onclick="QuizEngine.startTopicRevision('\${topic.name}')" style="cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #fff7ed; padding: 14px 16px; border-radius: 12px; border: 1px solid #ffedd5; transition: transform 0.1s ease, box-shadow 0.2s; box-shadow: 0 1px 2px rgba(234, 88, 12, 0.05);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(234, 88, 12, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px rgba(234, 88, 12, 0.05)';">
+                <div onclick="QuizEngine.startTopicRevision('\${topic.name}')" style="cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #fef2f2; padding: 14px 16px; border-radius: 12px; border: 1px solid #fecaca; transition: transform 0.1s ease, box-shadow 0.2s; box-shadow: 0 1px 2px rgba(229, 90, 90, 0.05);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(229, 90, 90, 0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px rgba(229, 90, 90, 0.05)';">
                     <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="font-size: 15px; font-weight: 800; color: #c2410c;">\${pooIcon}\${topic.name}</span>
+                        <span style="font-size: 15px; font-weight: 800; color: #E55A5A;">\${pooIcon}\${topic.name}</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px;">
-                        <span style="font-size: 12px; font-weight: 700; color: #ea580c; background: rgba(234, 88, 12, 0.1); padding: 4px 8px; border-radius: 6px;">\${topic.score}% Accuracy</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" style="width: 16px; height: 16px;"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span style="font-size: 12px; font-weight: 700; color: #E55A5A; background: rgba(229, 90, 90, 0.1); padding: 4px 8px; border-radius: 6px;">\${topic.score}% Accuracy</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#E55A5A" stroke-width="2" style="width: 16px; height: 16px;"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
                 </div>
             \`;

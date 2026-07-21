@@ -65,7 +65,7 @@ const newHTML = `
                 <div class="format-card" style="padding: 20px; margin-bottom: 16px; background: white; border-radius: 16px; border: 1.5px solid rgba(15, 23, 42, 0.04);">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                         <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0; display: flex; align-items: center; gap: 8px;">
-                            <span style="background: #eff6ff; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">📈</span>
+                            <span style="background: #eff6ff; width: 28px; height: 28px; border-radius: 8px; display: none; align-items: center; justify-content: center;">📈</span>
                             Performance Trend
                         </h3>
                         
@@ -80,31 +80,7 @@ const newHTML = `
                     </div>
                 </div>
 
-                <!-- AI Focus Topic Revision -->
-                <div class="format-card" style="padding: 20px; margin-bottom: 16px; background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); border-radius: 16px; border: 1.5px solid rgba(59, 130, 246, 0.2);">
-                    <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-                        <span style="background: #dbeafe; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px;">🤖</span>
-                        AI Focus Tutor
-                    </h3>
-                    <p style="font-size: 13px; color: #475569; margin: 0 0 16px 0; line-height: 1.5;">Based on your recent mock exams, our AI has identified your weakest subjects. Target these now to maximize score improvement.</p>
-                    
-                    <div id="ai-weak-subjects-container" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;">
-                        <!-- Injected via JS -->
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <div style="font-size: 12px; font-weight: 600; color: #64748b; margin-bottom: 10px;">Select Practice Length:</div>
-                        <div style="display: flex; gap: 8px;">
-                            <button class="ai-count-btn selected" onclick="QuizEngine.setAiCount(10)" data-count="10" style="flex: 1; padding: 10px 0; border-radius: 10px; border: 2px solid #3b82f6; background: #eff6ff; color: #466ba9; font-weight: 700; font-size: 13px; cursor: pointer; transition: all 0.2s;">10 Qs</button>
-                            <button class="ai-count-btn" onclick="QuizEngine.setAiCount(20)" data-count="20" style="flex: 1; padding: 10px 0; border-radius: 10px; border: 2px solid #e2e8f0; background: white; color: #64748b; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.2s;">20 Qs</button>
-                            <button class="ai-count-btn" onclick="QuizEngine.setAiCount(30)" data-count="30" style="flex: 1; padding: 10px 0; border-radius: 10px; border: 2px solid #e2e8f0; background: white; color: #64748b; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.2s;">30 Qs</button>
-                        </div>
-                    </div>
 
-                    <button onclick="QuizEngine.startAiPractice()" style="background: #466ba9; color: white; width: 100%; padding: 16px; border-radius: 12px; font-size: 15px; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(70, 107, 169, 0.25); transition: background 0.2s;">
-                        Start AI Focus Session
-                    </button>
-                </div>
 
                 <!-- Topic Performance Breakdown -->
                 <div class="format-card" style="padding: 20px; margin-bottom: 16px; background: white; border-radius: 16px; border: 1.5px solid rgba(15, 23, 42, 0.04);">

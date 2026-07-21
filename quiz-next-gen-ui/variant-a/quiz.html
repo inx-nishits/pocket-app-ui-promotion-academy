@@ -831,7 +831,7 @@
                         <div class="format-card-left" style="align-items: flex-start; flex: 1;">
                             <div class="category-icon-top"
                                 style="background: #eff6ff; color: #3b82f6; width: 48px; height: 48px; margin-bottom: 0;">
-                                <img src="../images/3d-icons/sergeant-exam-sub.png"
+                                <img src="../images/3d-icons/Seargeant-Exam-1.png"
                                     style="width: 38px; height: 38px; object-fit: contain;" alt="Sergeant">
                             </div>
                             <div class="format-info" style="width: 100%;">
@@ -1394,14 +1394,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pa-header-float-shell">
-                    <div class="search-section">
-                        <div class="search-input-wrapper">
-                            <img src="../images/search.svg" alt="Search">
-                            <input type="text" class="search-input" placeholder="Search categories...">
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
             <div class="view-content pa-mock-list">
@@ -1411,7 +1404,7 @@
                         <div class="pa-exam-top">
                             <div class="pa-exam-main">
                                 <div class="pa-card-icon blue pa-card-icon-3d" aria-hidden="true">
-                                    <img src="../images/3d-icons/sergeant-exam-sub.png" alt="">
+                                    <img src="../images/3d-icons/Seargeant-Exam-1.png" alt="">
                                 </div>
                                 <div class="pa-card-body">
                                     <h3 class="pa-card-title">Sergeant Exam</h3>
@@ -1478,7 +1471,7 @@
                         <div class="pa-exam-top">
                             <div class="pa-exam-main">
                                 <div class="pa-card-icon teal pa-card-icon-3d" aria-hidden="true">
-                                    <img src="../images/3d-icons/inspector-exam-sub.png" alt="">
+                                    <img src="../images/3d-icons/Inspector-Exam-1.png" alt="">
                                 </div>
                                 <div class="pa-card-body">
                                     <h3 class="pa-card-title">Inspector Exam</h3>
@@ -1545,7 +1538,7 @@
                         <div class="pa-exam-top">
                             <div class="pa-exam-main">
                                 <div class="pa-card-icon blue-dark pa-card-icon-3d" aria-hidden="true">
-                                    <img src="../images/3d-icons/national-investigators-sub.png" alt="">
+                                    <img src="../images/3d-icons/National-Investigator-Exam-1.png" alt="">
                                 </div>
                                 <div class="pa-card-body">
                                     <h3 class="pa-card-title">National Investigators Exam</h3>
@@ -3807,10 +3800,6 @@
                         <button class="btn-secondary"
                             style="flex: 1; height: 40px; margin-top: 0; padding: 0 12px; font-size: 13px; font-weight: 600; border-radius: 12px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: background 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 6px;"
                             onclick="QuizEngine.openFeedbackSheet()">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path>
-                            </svg>
                             View Explanation
                         </button>
                         <button class="btn-primary" id="inline-next-btn"
@@ -3889,11 +3878,7 @@
                     style="background: transparent; border-radius: 12px; padding: 0; margin: 12px 0 20px 0; border: none; flex-grow: 1; overflow-y: auto; min-height: 0;">
                     <div id="ai-explanation-badge"
                         style="display: flex; align-items: center; gap: 6px; margin-bottom: 12px; font-size: 14px; font-weight: 600; color: #1e40af;">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path>
-                        </svg>
-                        AI EXPLANATION
+                        QUESTION EXPLANATION
                     </div>
                     <p class="feedback-explanation" id="feedback-explanation"
                         style="margin: 0; font-size: 16px; line-height: 1.6; color: #334155; font-weight: 500;">This is
@@ -4565,27 +4550,6 @@
                     </div>
                 </div>
 
-                <!-- AI Focus Topic Revision -->
-                <div class="format-card pa-progress-ai-card"
-                    style="display: flex; flex-direction: column; align-items: stretch; cursor: default; padding: 20px; margin-bottom: 16px; background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); border-radius: 16px; border: 1.5px solid rgba(59, 130, 246, 0.2);">
-                    <h3
-                        style="font-size: 17px; font-weight: 600; color: #0f172a; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
-                        AI Focus Tutor
-                    </h3>
-                    <p style="font-size: 13px; color: #475569; margin: 0 0 16px 0; line-height: 1.5;">Based on your
-                        recent mock exams, our AI has identified your weakest subjects. Target these now to maximize
-                        score improvement.</p>
-
-                    <div id="ai-weak-subjects-container"
-                        style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
-                        <!-- Injected via JS -->
-                    </div>
-
-                    <button type="button" onclick="QuizEngine.showAiQuestionSelection()"
-                        style="margin-top: 12px; background: linear-gradient(to bottom, rgb(134, 174, 244), #4b73b7, #345da5); color: white; width: 100%; padding: 14px; border-radius: 12px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(70, 107, 169, 0.25); transition: background 0.2s;">
-                        Start AI Focus Session
-                    </button>
-                </div>
 
                 <!-- Focus Areas -->
                 <div class="format-card pa-progress-focus-card"
@@ -4783,7 +4747,7 @@
                         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.02)';"
                         onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
                         <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="font-size: 20px;">📈</span>
+                            <span style="font-size: 20px; display: none;">📈</span>
                             <span
                                 style="font-size: 13px; font-weight: 600; color: #0f172a; line-height: 1.2; text-align: left;">Performance<br>Trend</span>
                         </div>
@@ -5775,6 +5739,100 @@
                     </div>
                 </div>
 
+                <!-- Fixed Bottom Nav -->
+                <div class="skipped-navigator-bar" style="display: flex;">
+                    <div class="skipped-navigator-bar__inner">
+                        <button class="skipped-navigator-btn" type="button" onclick="openReviewNavigatorSheet()">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            Question Navigator
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Review Navigator Sheet -->
+                <div id="review-navigator-overlay" class="feedback-overlay hidden" onclick="closeReviewNavigatorSheet()" style="z-index: 100000;"></div>
+                <div id="review-navigator-sheet" class="feedback-sheet hidden" style="z-index: 100001; background: #ffffff; padding: 0; font-family: 'Inter', sans-serif; max-height: 85vh;">
+                    <div class="pa-sheet-topbar" style="flex-shrink: 0; padding-top: 10px;">
+                        <div class="pa-sheet-handle" aria-hidden="true"></div>
+                        <button type="button" class="pa-sheet-close-btn" onclick="closeReviewNavigatorSheet()" aria-label="Close">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
+                    </div>
+
+                    <div style="padding: 0 24px 16px; overflow-y: auto; flex-grow: 1; min-height: 0;">
+                        <!-- Header Area -->
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;">
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <!-- 3x3 Grid Icon -->
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#94a3b8" style="margin-top: 4px;">
+                                    <rect x="3" y="3" width="4.5" height="4.5" rx="1"></rect><rect x="9.5" y="3" width="4.5" height="4.5" rx="1"></rect><rect x="16" y="3" width="4.5" height="4.5" rx="1"></rect>
+                                    <rect x="3" y="9.5" width="4.5" height="4.5" rx="1"></rect><rect x="9.5" y="9.5" width="4.5" height="4.5" rx="1"></rect><rect x="16" y="9.5" width="4.5" height="4.5" rx="1"></rect>
+                                    <rect x="3" y="16" width="4.5" height="4.5" rx="1"></rect><rect x="9.5" y="16" width="4.5" height="4.5" rx="1"></rect><rect x="16" y="16" width="4.5" height="4.5" rx="1"></rect>
+                                </svg>
+                                <div>
+                                    <h3 style="font-size: 17px; font-weight: 600; color: #111827; margin: 0 0 2px 0;">Question Navigator</h3>
+                                    <p style="font-size: 13px; color: #6b7280; margin: 0;">Tap a number to go to that question</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The Grid -->
+                        <div id="review-navigator-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 20px 12px; margin-bottom: 32px; max-height: 50vh; overflow-y: auto; padding: 4px 4px 16px 4px;">
+                            <!-- Bubbles injected via JS -->
+                        </div>
+
+                        <!-- Legend -->
+                        <div style="display: flex; gap: 24px; justify-content: flex-start; margin-bottom: 16px; font-size: 13px; color: #4b5563; font-weight: 500; flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 18px; height: 18px; border-radius: 50%; background: #22c55e; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                Correct
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 18px; height: 18px; border-radius: 50%; background: #ef4444; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                </div>
+                                Incorrect
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 18px; height: 18px; border-radius: 50%; background: #f59e0b; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                                </div>
+                                Skipped
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 18px; height: 18px; border-radius: 50%; background: #466ba9; display: flex; align-items: center; justify-content: center;">
+                                    <div style="width: 6px; height: 6px; border-radius: 50%; background: white;"></div>
+                                </div>
+                                Current
+                            </div>
+                        </div>
+
+                        <!-- Paginator -->
+                        <div id="review-navigator-paginator" style="display: none; justify-content: space-between; align-items: center; gap: 14px; margin-top: 16px; padding-top: 16px; border-top: 1.5px solid #f1f5f9;">
+                            <button id="review-navigator-prev-btn" type="button" class="navigator-paginator-btn navigator-paginator-btn--secondary" onclick="prevReviewNavigatorPage()">
+                                <span class="navigator-paginator-btn__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+                                </span>
+                                <span class="navigator-paginator-btn__label">Previous</span>
+                            </button>
+                            <button id="review-navigator-next-btn" type="button" class="navigator-paginator-btn navigator-paginator-btn--primary" onclick="nextReviewNavigatorPage()">
+                                <span class="navigator-paginator-btn__label">Next</span>
+                                <span class="navigator-paginator-btn__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Question View -->
                 <div id="review-question-container" class="exam-review-question-card">
                     <div class="exam-review-meta-row">
@@ -5802,11 +5860,7 @@
                     <!-- Explanation -->
                     <div class="exam-review-explanation-card">
                         <h4 class="exam-review-explanation-title">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path>
-                            </svg>
-                            AI EXPLANATION
+                            QUESTION EXPLANATION
                         </h4>
                         <p id="review-explanation-text" class="exam-review-explanation-text">
                             <!-- Explanation text -->
@@ -5965,6 +6019,7 @@
                 }
 
                 currentReviewIndex = 0;
+                renderReviewNav();
                 renderReviewQuestion();
 
                 // Switch views
@@ -5987,6 +6042,104 @@
                 document.querySelectorAll('.quiz-view').forEach(v => v.classList.remove('active'));
                 document.getElementById('view-progress').classList.add('active');
                 window.scrollTo(0, 0);
+            }
+
+            let reviewNavigatorCurrentPage = 0;
+            const reviewNavigatorItemsPerPage = 42;
+
+            function renderReviewNav() {
+                const navContainer = document.getElementById('review-navigator-grid');
+                if (!navContainer) return;
+                
+                const totalQuestions = currentActiveBank.length;
+                const startIndex = reviewNavigatorCurrentPage * reviewNavigatorItemsPerPage;
+                const endIndex = Math.min(startIndex + reviewNavigatorItemsPerPage, totalQuestions);
+                
+                let html = '';
+                for (let index = startIndex; index < endIndex; index++) {
+                    const q = currentActiveBank[index];
+                    const isSkipped = q.userSelectedIndex === undefined || q.userSelectedIndex === null || q.userSelectedIndex === -1;
+                    const isCorrect = !isSkipped && q.userSelectedIndex === q.options.findIndex(o => o.isCorrect);
+                    const isCurrent = (index === currentReviewIndex);
+                    
+                    let stateClass = 'border-color: #9ca3af; color: #9ca3af;';
+                    let iconHtml = '';
+                    
+                    if (isCorrect) {
+                        stateClass = 'border-color: #22c55e; color: #22c55e;';
+                        iconHtml = `<div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; background: #22c55e; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>`;
+                    } else if (isSkipped) {
+                        stateClass = 'border-color: #f59e0b; color: #b45309; background: #fffbeb;';
+                        iconHtml = `<div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; background: #f59e0b; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></div>`;
+                    } else { // incorrect
+                        stateClass = 'border-color: #ef4444; color: #ef4444;';
+                        iconHtml = `<div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; background: #ef4444; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div>`;
+                    }
+                    
+                    if (isCurrent) {
+                        stateClass = 'border-color: #466ba9; color: #466ba9;';
+                        iconHtml = `<div style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 50%; background: #466ba9; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px white;"><div style="width: 6px; height: 6px; border-radius: 50%; background: white;"></div></div>`;
+                    }
+                    
+                    html += `<button id="review-nav-btn-${index}" onclick="currentReviewIndex = ${index}; renderReviewQuestion(); closeReviewNavigatorSheet();" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 50px; border-radius: 12px; border: 1.5px solid currentColor; ${stateClass} background: #ffffff; font-weight: 600; font-size: 16px; cursor: pointer;">${index + 1}${iconHtml}</button>`;
+                }
+                navContainer.innerHTML = html;
+
+                // Handle Paginator
+                const paginator = document.getElementById('review-navigator-paginator');
+                const prevBtn = document.getElementById('review-navigator-prev-btn');
+                const nextBtn = document.getElementById('review-navigator-next-btn');
+
+                if (paginator && totalQuestions > reviewNavigatorItemsPerPage) {
+                    paginator.style.display = 'flex';
+                    prevBtn.disabled = reviewNavigatorCurrentPage === 0;
+                    prevBtn.style.opacity = reviewNavigatorCurrentPage === 0 ? '0.5' : '1';
+                    
+                    const maxPage = Math.ceil(totalQuestions / reviewNavigatorItemsPerPage) - 1;
+                    nextBtn.disabled = reviewNavigatorCurrentPage >= maxPage;
+                    nextBtn.style.opacity = reviewNavigatorCurrentPage >= maxPage ? '0.5' : '1';
+                } else if (paginator) {
+                    paginator.style.display = 'none';
+                }
+            }
+
+            function prevReviewNavigatorPage() {
+                if (reviewNavigatorCurrentPage > 0) {
+                    reviewNavigatorCurrentPage--;
+                    renderReviewNav();
+                }
+            }
+
+            function nextReviewNavigatorPage() {
+                const maxPage = Math.ceil(currentActiveBank.length / reviewNavigatorItemsPerPage) - 1;
+                if (reviewNavigatorCurrentPage < maxPage) {
+                    reviewNavigatorCurrentPage++;
+                    renderReviewNav();
+                }
+            }
+
+            function openReviewNavigatorSheet() {
+                const overlay = document.getElementById('review-navigator-overlay');
+                const sheet = document.getElementById('review-navigator-sheet');
+                if (!overlay || !sheet) return;
+                overlay.classList.remove('hidden');
+                sheet.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => {
+                    sheet.style.transform = 'translateY(0)';
+                }, 10);
+            }
+
+            function closeReviewNavigatorSheet() {
+                const overlay = document.getElementById('review-navigator-overlay');
+                const sheet = document.getElementById('review-navigator-sheet');
+                if (!overlay || !sheet) return;
+                sheet.style.transform = 'translateY(100%)';
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                    sheet.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
             }
 
             function renderReviewQuestion() {
@@ -6054,6 +6207,14 @@
 
                 document.getElementById('review-next-btn').disabled = currentReviewIndex === currentActiveBank.length - 1;
                 document.getElementById('review-next-btn').style.opacity = currentReviewIndex === currentActiveBank.length - 1 ? '0.4' : '1';
+
+                // Update nav active state by re-rendering the grid
+                renderReviewNav();
+                const activeBtn = document.getElementById(`review-nav-btn-${currentReviewIndex}`);
+                const navSheet = document.getElementById('review-navigator-sheet');
+                if (activeBtn && navSheet && !navSheet.classList.contains('hidden')) {
+                    activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
             }
 
             function changeReviewQuestion(dir) {
@@ -6486,8 +6647,8 @@
                         Answered
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px;">
-                        <div
-                            style="width: 18px; height: 18px; border-radius: 50%; background: white; border: 2px solid #9ca3af; box-sizing: border-box;">
+                        <div style="width: 18px; height: 18px; border-radius: 50%; background: #f59e0b; display: flex; align-items: center; justify-content: center;">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
                         </div>
                         Skipped
                     </div>

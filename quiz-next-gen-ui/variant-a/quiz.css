@@ -3866,7 +3866,7 @@ textarea::placeholder {
 }
 
 .pa-mock-header .header-inner {
-    padding-bottom: var(--pa-space-sm);
+    padding-bottom: 16px;
 }
 
 .pa-mock-list-inner {
@@ -6582,6 +6582,9 @@ textarea::placeholder {
     border-radius: 14px;
     padding: 16px;
     border: 1px solid rgba(15, 23, 42, 0.06);
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
 }
 
 .exam-review-explanation-title {
@@ -6603,6 +6606,11 @@ textarea::placeholder {
     color: #475569;
     font-size: 13px;
     line-height: 1.55;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+    -webkit-line-clamp: unset !important;
 }
 
 .exam-review-nav {
