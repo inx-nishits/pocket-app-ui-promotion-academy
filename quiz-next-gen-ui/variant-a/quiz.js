@@ -92,17 +92,17 @@ const QuizEngine = {
 
         const examsData = {
             'Sergeant Exam': {
-                iconBg: '#eff6ff', iconSrc: '../images/3d-icons/Seargeant-Exam-1.png',
+                iconBg: '#f1f5f9', iconSrc: '../images/3d-icons/Sergeant-Exam-Final-Image-1.png',
                 desc: 'Comprehensive mock exam covering all sergeant level responsibilities.',
                 q: 150, d: '3h 15m', pass: '55%'
             },
             'Inspector Exam': {
-                iconBg: '#e0f2fe', iconSrc: '../images/3d-icons/Inspector-Exam-1.png',
+                iconBg: '#f1f5f9', iconSrc: '../images/3d-icons/Inspector-Exam-Final-Image-1.png',
                 desc: 'Comprehensive mock exam covering all inspector level responsibilities.',
                 q: 150, d: '3h 15m', pass: '55%'
             },
             'National Investigators Exam': {
-                iconBg: '#f1f5f9', iconSrc: '../images/3d-icons/National-Investigator-Exam-1.png',
+                iconBg: '#f1f5f9', iconSrc: '../images/3d-icons/National-Investigor-Exam-1.png',
                 desc: 'Assess your investigative skills and knowledge.',
                 q: 80, d: '2h', pass: '55%'
             }
